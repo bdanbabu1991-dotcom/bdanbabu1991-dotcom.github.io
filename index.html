@@ -7,7 +7,7 @@
   <meta name="description" content="Portfolio of Dan Babu Boddu - Aspiring Data Analyst specializing in Power BI, SQL, Python and Excel." />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
   <!-- Navbar -->
@@ -22,9 +22,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
     </div>
   </nav>
@@ -34,8 +32,10 @@
     <div class="container hero-content">
       <div class="hero-text">
         <p class="hello">HELLO!</p>
-        <h1>I'm <span>Dan Babu</span><br>Boddu</h1>
-        <h2 class="typing">Aspiring Data Analyst</h2>
+        <h1>I'm <span class="name-highlight">Dan Babu</span><br>Boddu</h1>
+        <h2 class="typing-text">
+          <span id="typing"></span><span class="cursor">|</span>
+        </h2>
         <p class="hero-desc">
           Transforming data into clear insights and interactive dashboards using Power BI, SQL, Python & Excel.
         </p>
@@ -44,12 +44,40 @@
           <a href="#contact" class="btn secondary">Contact Me</a>
         </div>
       </div>
-      <div class="hero-image">
-        <div class="illustration">
-          <i class="fas fa-chart-line"></i>
-          <i class="fas fa-database"></i>
-          <i class="fas fa-chart-pie"></i>
-          <i class="fas fa-laptop-code"></i>
+
+      <div class="hero-visual">
+        <div class="desk-scene">
+          <div class="monitor left">
+            <div class="screen">
+              <div class="bar chart1"></div>
+              <div class="bar chart2"></div>
+              <div class="bar chart3"></div>
+              <div class="bar chart4"></div>
+            </div>
+          </div>
+          <div class="monitor center">
+            <div class="screen">
+              <div class="pie"></div>
+              <div class="lines"></div>
+            </div>
+          </div>
+          <div class="monitor right">
+            <div class="screen">
+              <div class="code-line"></div>
+              <div class="code-line short"></div>
+              <div class="code-line"></div>
+            </div>
+          </div>
+          <div class="person">
+            <div class="head"></div>
+            <div class="body"></div>
+          </div>
+          <div class="floating-icons">
+            <i class="fas fa-chart-pie"></i>
+            <i class="fas fa-database"></i>
+            <i class="fas fa-code"></i>
+            <i class="fas fa-chart-line"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -59,37 +87,39 @@
   <section id="about" class="about">
     <div class="container">
       <h2 class="section-title">About Me</h2>
-      <div class="about-content">
+      <div class="about-wrapper">
+        <div class="about-photo">
+          <img src="profile.jpg" alt="Dan Babu Boddu" class="profile-img">
+        </div>
         <div class="about-text">
           <p>
             I’m an <strong>Aspiring Data Analyst</strong> with a professional background in accounts and data operations. 
-            I have expertise in <strong>Excel (Pivot Tables, VLOOKUP), SQL, Python, Power BI</strong>, attractive dashboards and DAX modeling.
+            Expertise in <strong>Excel (Pivot Tables, VLOOKUP), SQL, Python, Power BI</strong>, attractive dashboards and DAX modeling.
           </p>
           <p>
-            Passionate about uncovering trends and patterns through data. I bring a strong analytical mindset with a focus on 
+            Passionate about uncovering trends and patterns through data. Strong analytical mindset with a focus on 
             delivering high-quality visual reports and business insights.
           </p>
           <p>
-            Currently building expertise through <strong>Entri Elevate Data Analytics</strong> program (Feb 2026 – Jul 2026), 
-            learning data modeling, dashboard creation, and performance tracking.
+            Currently building expertise through <strong>Entri Elevate Data Analytics</strong> program (Feb 2026 – Jul 2026).
           </p>
-          <div class="about-info">
-            <div class="info-item">
-              <span class="label">Name</span>
-              <span>Dan Babu Boddu</span>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">2+</span>
+              <span class="stat-label">Projects</span>
             </div>
-            <div class="info-item">
-              <span class="label">Location</span>
-              <span>Rajahmundry, India</span>
+            <div class="stat">
+              <span class="stat-num">16+</span>
+              <span class="stat-label">Years Experience</span>
             </div>
-            <div class="info-item">
-              <span class="label">Email</span>
-              <span>b.danbabu1991@gmail.com</span>
+            <div class="stat">
+              <span class="stat-num">1</span>
+              <span class="stat-label">Certification</span>
             </div>
-            <div class="info-item">
-              <span class="label">Experience</span>
-              <span>Accounts & Operations (2010–2026)</span>
-            </div>
+          </div>
+          <div class="about-btns">
+            <a href="https://www.linkedin.com/in/dan_babu" target="_blank" class="btn primary">LinkedIn</a>
+            <a href="mailto:b.danbabu1991@gmail.com" class="btn secondary">Email Me</a>
           </div>
         </div>
       </div>
@@ -100,47 +130,55 @@
   <section id="skills" class="skills">
     <div class="container">
       <h2 class="section-title">My Skills</h2>
-      <p class="section-subtitle">A showcase of my technical abilities and the tools I use to turn data into insights.</p>
+      <p class="section-subtitle">Tools I use to turn data into insights</p>
       <div class="skills-grid">
         <div class="skill-card">
-          <i class="fas fa-chart-bar"></i>
+          <div class="skill-icon powerbi"><i class="fas fa-chart-bar"></i></div>
           <h3>Power BI</h3>
-          <p>Interactive dashboards, advanced DAX & star schema modeling</p>
         </div>
         <div class="skill-card">
-          <i class="fas fa-file-excel"></i>
-          <h3>Advanced Excel</h3>
-          <p>Power Query, Pivot Tables, VLOOKUP & automated reporting</p>
+          <div class="skill-icon excel"><i class="fas fa-file-excel"></i></div>
+          <h3>Excel</h3>
         </div>
         <div class="skill-card">
-          <i class="fas fa-database"></i>
+          <div class="skill-icon sql"><i class="fas fa-database"></i></div>
           <h3>SQL</h3>
-          <p>Optimized queries for data extraction & transformation</p>
         </div>
         <div class="skill-card">
-          <i class="fab fa-python"></i>
+          <div class="skill-icon python"><i class="fab fa-python"></i></div>
           <h3>Python</h3>
-          <p>Pandas, NumPy, data cleaning & basic automation</p>
         </div>
         <div class="skill-card">
-          <i class="fas fa-chart-area"></i>
-          <h3>Matplotlib & Seaborn</h3>
-          <p>Data visualization and exploratory analysis</p>
+          <div class="skill-icon pandas"><i class="fas fa-table"></i></div>
+          <h3>Pandas</h3>
         </div>
         <div class="skill-card">
-          <i class="fas fa-laptop-code"></i>
+          <div class="skill-icon numpy"><i class="fas fa-square-root-alt"></i></div>
+          <h3>NumPy</h3>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon matplotlib"><i class="fas fa-chart-area"></i></div>
+          <h3>Matplotlib</h3>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon seaborn"><i class="fas fa-chart-pie"></i></div>
+          <h3>Seaborn</h3>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon jupyter"><i class="fas fa-book-open"></i></div>
           <h3>Jupyter</h3>
-          <p>Interactive notebooks for analysis & documentation</p>
         </div>
         <div class="skill-card">
-          <i class="fas fa-calculator"></i>
-          <h3>Tally ERP / Prime</h3>
-          <p>Financial domain expertise for business insights</p>
+          <div class="skill-icon github"><i class="fab fa-github"></i></div>
+          <h3>Git & GitHub</h3>
         </div>
         <div class="skill-card">
-          <i class="fas fa-lightbulb"></i>
-          <h3>Analytical Thinking</h3>
-          <p>Delivering data-driven insights for strategic decisions</p>
+          <div class="skill-icon tally"><i class="fas fa-calculator"></i></div>
+          <h3>Tally ERP</h3>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon analytics"><i class="fas fa-lightbulb"></i></div>
+          <h3>Analytics</h3>
         </div>
       </div>
     </div>
@@ -150,57 +188,51 @@
   <section id="projects" class="projects">
     <div class="container">
       <h2 class="section-title">My Projects</h2>
-      <p class="section-subtitle">A selection of data analytics projects built using Power BI, SQL, Python and data visualization.</p>
+      <p class="section-subtitle">Data analytics projects built with Power BI, SQL, Python & visualization</p>
       
       <div class="projects-grid">
-        <!-- Project 1 -->
         <div class="project-card">
-          <div class="project-icon">
+          <div class="project-img sales">
             <i class="fas fa-chart-line"></i>
           </div>
-          <h3>Sales Analytics Dashboard</h3>
-          <p>
-            Multi-page interactive Power BI dashboard covering Executive, Product, Outlet and Overall Sales performance. 
-            Implemented advanced DAX measures (Total Sales, YTD Sales, Average Order Value, Sales per Outlet) with star schema modeling and interactive slicers.
-          </p>
-          <div class="project-tags">
-            <span>Power BI</span>
-            <span>DAX</span>
-            <span>Star Schema</span>
-            <span>Excel</span>
+          <div class="project-body">
+            <h3>Sales Analytics Dashboard</h3>
+            <p>
+              Multi-page interactive Power BI dashboard covering Executive, Product, Outlet & Overall Sales. 
+              Advanced DAX measures, star schema modeling and interactive slicers.
+            </p>
+            <div class="project-tags">
+              <span>Power BI</span><span>DAX</span><span>Star Schema</span>
+            </div>
+            <a href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" target="_blank" class="project-link">
+              View Project <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <a href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" target="_blank" class="project-link">
-            View on GitHub <i class="fas fa-external-link-alt"></i>
-          </a>
         </div>
 
-        <!-- Project 2 -->
         <div class="project-card">
-          <div class="project-icon">
+          <div class="project-img air">
             <i class="fas fa-cloud-sun-rain"></i>
           </div>
-          <h3>Air Quality, Weather & Health Dashboard</h3>
-          <p>
-            End-to-end analytics project (MySQL + Python + Power BI) analyzing air quality, weather and public health impact across Indian cities (2009–2024). 
-            Found strong correlation (r=0.82) between AQI and Health Risk Index.
-          </p>
-          <div class="project-tags">
-            <span>MySQL</span>
-            <span>Python</span>
-            <span>Power BI</span>
-            <span>Pandas</span>
-            <span>Seaborn</span>
+          <div class="project-body">
+            <h3>Air Quality & Health Dashboard</h3>
+            <p>
+              End-to-end project (MySQL + Python + Power BI) analyzing air quality, weather & public health across Indian cities. 
+              Strong AQI–Health Risk correlation (r=0.82).
+            </p>
+            <div class="project-tags">
+              <span>MySQL</span><span>Python</span><span>Power BI</span><span>Pandas</span>
+            </div>
+            <a href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" target="_blank" class="project-link">
+              View Project <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
-          <a href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" target="_blank" class="project-link">
-            View on GitHub <i class="fas fa-external-link-alt"></i>
-          </a>
         </div>
       </div>
 
       <div class="more-projects">
-        <p>More projects coming soon on GitHub</p>
         <a href="https://github.com/bdanbabu1991-dotcom" target="_blank" class="btn primary">
-          <i class="fab fa-github"></i> Visit GitHub
+          <i class="fab fa-github"></i> More on GitHub
         </a>
       </div>
     </div>
@@ -210,43 +242,42 @@
   <section id="contact" class="contact">
     <div class="container">
       <h2 class="section-title">Contact Me</h2>
-      <p class="section-subtitle">Below are the details to reach out to me!</p>
+      <p class="section-subtitle">Feel free to reach out</p>
       
       <div class="contact-grid">
         <div class="contact-card">
-          <i class="fas fa-map-marker-alt"></i>
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
           <h3>Address</h3>
           <p>Rajahmundry, India</p>
         </div>
         <div class="contact-card">
-          <i class="fas fa-phone-alt"></i>
-          <h3>Contact Number</h3>
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3>Phone</h3>
           <p><a href="tel:+919949711466">+91 99497 11466</a></p>
         </div>
         <div class="contact-card">
-          <i class="fas fa-envelope"></i>
-          <h3>Email Address</h3>
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3>
           <p><a href="mailto:b.danbabu1991@gmail.com">b.danbabu1991@gmail.com</a></p>
         </div>
         <div class="contact-card">
-          <i class="fab fa-linkedin"></i>
+          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
           <h3>LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/dan_babu" target="_blank">linkedin.com/in/dan_babu</a></p>
+          <p><a href="https://www.linkedin.com/in/dan_babu" target="_blank">dan_babu</a></p>
         </div>
       </div>
 
       <div class="social-links">
-        <a href="https://github.com/bdanbabu1991-dotcom" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/dan_babu" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:b.danbabu1991@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/bdanbabu1991-dotcom" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dan_babu" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:b.danbabu1991@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2026 Dan Babu Boddu. Built with ❤️ for Data Analytics.</p>
+      <p>© 2026 Dan Babu Boddu. Built with passion for Data Analytics.</p>
     </div>
   </footer>
 
