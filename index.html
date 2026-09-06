@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="container nav-container">
       <a href="#home" class="logo">Dan Babu Boddu</a>
@@ -27,7 +26,6 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container hero-content">
       <div class="hero-text">
@@ -83,8 +81,8 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="about">
+    <div class="section-bg-text">ABOUT</div>
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="about-wrapper">
@@ -126,12 +124,20 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills" class="skills">
+    <div class="section-bg-text">SKILLS</div>
     <div class="container">
       <h2 class="section-title">My Skills</h2>
       <p class="section-subtitle">Tools I use to turn data into insights</p>
       <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon python"><i class="fab fa-python"></i></div>
+          <h3>Python</h3>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon sql"><i class="fas fa-database"></i></div>
+          <h3>SQL</h3>
+        </div>
         <div class="skill-card">
           <div class="skill-icon powerbi"><i class="fas fa-chart-bar"></i></div>
           <h3>Power BI</h3>
@@ -139,14 +145,6 @@
         <div class="skill-card">
           <div class="skill-icon excel"><i class="fas fa-file-excel"></i></div>
           <h3>Excel</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon sql"><i class="fas fa-database"></i></div>
-          <h3>SQL</h3>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon python"><i class="fab fa-python"></i></div>
-          <h3>Python</h3>
         </div>
         <div class="skill-card">
           <div class="skill-icon pandas"><i class="fas fa-table"></i></div>
@@ -184,8 +182,8 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects" class="projects">
+    <div class="section-bg-text">PROJECTS</div>
     <div class="container">
       <h2 class="section-title">My Projects</h2>
       <p class="section-subtitle">Data analytics projects built with Power BI, SQL, Python & visualization</p>
@@ -212,7 +210,13 @@
 
         <div class="project-card">
           <div class="project-img air">
-            <i class="fas fa-cloud-sun-rain"></i>
+            <div class="weather-scene">
+              <div class="sun"></div>
+              <div class="cloud cloud1"></div>
+              <div class="cloud cloud2"></div>
+              <div class="rain" id="rain-container"></div>
+            </div>
+            <i class="fas fa-cloud-sun-rain" style="position:relative;z-index:2;font-size:2.8rem;opacity:0.9;"></i>
           </div>
           <div class="project-body">
             <h3>Air Quality & Health Dashboard</h3>
@@ -238,8 +242,8 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact" class="contact">
+    <div class="section-bg-text">CONTACT</div>
     <div class="container">
       <h2 class="section-title">Contact Me</h2>
       <p class="section-subtitle">Feel free to reach out</p>

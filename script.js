@@ -59,7 +59,7 @@ function typeEffect() {
   let speed = isDeleting ? 40 : 90;
 
   if (!isDeleting && charIndex === current.length) {
-    speed = 1800; // pause at end
+    speed = 1800;
     isDeleting = true;
   } else if (isDeleting && charIndex === 0) {
     isDeleting = false;
@@ -71,6 +71,19 @@ function typeEffect() {
 }
 
 typeEffect();
+
+// Create rain drops for weather project
+const rainContainer = document.getElementById('rain-container');
+if (rainContainer) {
+  for (let i = 0; i < 18; i++) {
+    const drop = document.createElement('div');
+    drop.className = 'rain-drop';
+    drop.style.left = Math.random() * 100 + '%';
+    drop.style.animationDelay = Math.random() * 1.2 + 's';
+    drop.style.animationDuration = (0.6 + Math.random() * 0.5) + 's';
+    rainContainer.appendChild(drop);
+  }
+}
 
 // Reveal on scroll
 const observer = new IntersectionObserver((entries) => {
