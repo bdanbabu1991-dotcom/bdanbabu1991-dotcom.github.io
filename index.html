@@ -15,53 +15,59 @@
 .cyber-grid{background-image:linear-gradient(to right,rgba(56,189,248,0.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(99,102,241,0.05) 1px,transparent 1px);background-size:40px 40px;}
 @keyframes streamScrollLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes streamScrollRight{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
-@keyframes neonPulse{0%,100%{opacity:0.3}50%{opacity:0.7}}
+@keyframes neonPulse{0%,100%{opacity:0.3}50%{opacity:0.65}}
 @keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes rainStream{0%{transform:translateY(-20px);opacity:0}40%{opacity:0.9}100%{transform:translateY(140px);opacity:0}}
-@keyframes sunGlow{0%,100%{filter:drop-shadow(0 0 16px rgba(251,191,36,0.7))}50%{filter:drop-shadow(0 0 28px rgba(245,158,11,0.95))}}
-.animate-stream-left{display:flex;width:max-content;animation:streamScrollLeft 35s linear infinite}
-.animate-stream-right{display:flex;width:max-content;animation:streamScrollRight 40s linear infinite}
+@keyframes particleTwinkle{0%,100%{opacity:0.25;transform:scale(0.8)}50%{opacity:1;transform:scale(1.25)}}
+@keyframes rainStream{0%{transform:translateY(-25px);opacity:0}35%{opacity:0.9}100%{transform:translateY(140px);opacity:0}}
+@keyframes sunGlow{0%,100%{filter:drop-shadow(0 0 14px rgba(251,191,36,0.7))}50%{filter:drop-shadow(0 0 26px rgba(245,158,11,0.95))}}
+@keyframes cloudDrift1{0%,100%{transform:translateX(0)}50%{transform:translateX(8px)}}
+@keyframes cloudDrift2{0%,100%{transform:translateX(0)}50%{transform:translateX(-6px)}}
+.animate-stream-left{display:flex;width:max-content;animation:streamScrollLeft 32s linear infinite}
+.animate-stream-right{display:flex;width:max-content;animation:streamScrollRight 38s linear infinite}
 .animate-pulse-slow{animation:neonPulse 5s ease-in-out infinite}
 .animate-float-slow{animation:floatSlow 5s ease-in-out infinite}
-.animate-sun-pulse{animation:sunGlow 3s ease-in-out infinite}
-.rain-drop{position:absolute;top:8px;width:1.5px;height:20px;background:linear-gradient(to bottom,transparent,#38BDF8);animation:rainStream 0.7s linear infinite;border-radius:9999px}
+.animate-twinkle{animation:particleTwinkle 3s ease-in-out infinite}
+.animate-sun-pulse{animation:sunGlow 3.2s ease-in-out infinite}
+.animate-float-cloud1{animation:cloudDrift1 6s ease-in-out infinite}
+.animate-float-cloud2{animation:cloudDrift2 7s ease-in-out infinite}
+.rain-drop{position:absolute;top:8px;width:1.5px;height:20px;background:linear-gradient(to bottom,transparent,#38BDF8);border-radius:9999px;animation:rainStream 0.7s linear infinite}
 .perspective-1000{perspective:1000px}
 .tilt-card{transition:transform 0.25s cubic-bezier(0.2,0.8,0.2,1);transform-style:preserve-3d;will-change:transform}
-/* Sales bars hover */
+/* Sales bars */
 .sales-bar{transition:height 0.5s ease,background-color 0.3s ease}
 .project-card-sales:hover .bar-q1{height:75%!important;background:#818CF8!important}
 .project-card-sales:hover .bar-q2{height:90%!important;background:#38BDF8!important}
 .project-card-sales:hover .bar-q3{height:60%!important;background:#A78BFA!important}
 .project-card-sales:hover .bar-q4{height:100%!important;background:#34D399!important}
-/* Air Quality weather morph */
+/* Air Quality morph */
 .weather-view,.chart-view{transition:opacity 0.4s ease,transform 0.4s ease}
-.project-card-air .chart-view{opacity:0;pointer-events:none;transform:translateY(12px)}
+.project-card-air .chart-view{opacity:0;pointer-events:none;transform:translateY(14px)}
 .project-card-air .weather-view{opacity:1;transform:translateY(0)}
-.project-card-air:hover .weather-view{opacity:0;pointer-events:none;transform:translateY(-12px)}
+.project-card-air:hover .weather-view{opacity:0;pointer-events:none;transform:translateY(-14px)}
 .project-card-air:hover .chart-view{opacity:1;pointer-events:auto;transform:translateY(0)}
 .project-card-air:hover .rain-layer{opacity:1!important}
 </style>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
-tailwind.config={darkMode:"class",theme:{extend:{colors:{"accent-cyan":"#38BDF8","surface-base":"#0B0F19","surface-card":"#111827","surface-elevated":"#1E293B","text-primary":"#F8FAFC","text-secondary":"#94A3B8","text-muted":"#64748B"},fontFamily:{"display":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"mono":["JetBrains Mono","monospace"]}}}}
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"accent-cyan":"#38BDF8","surface-base":"#0B0F19","surface-card":"#111827","surface-elevated":"#1E293B","text-primary":"#F8FAFC","text-secondary":"#94A3B8","text-muted":"#64748B","primary-container":"#8083ff","tertiary-container":"#a078ff"},fontFamily:{"display":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"mono":["JetBrains Mono","monospace"]}}}}
 </script>
 </head>
 <body class="bg-surface-base text-text-primary font-body min-h-screen flex flex-col antialiased cyber-grid">
 
 <!-- HEADER -->
-<header class="fixed top-0 left-0 w-full z-50 bg-surface-base/80 backdrop-blur-xl border-b border-white/10">
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-base/85 backdrop-blur-2xl border-b border-white/10">
   <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 border border-cyan-400/40 flex items-center justify-center text-cyan-400">
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 border border-cyan-400/40 flex items-center justify-center text-cyan-400 group-hover:scale-105 transition">
         <span class="material-symbols-outlined text-[22px]">terminal</span>
       </div>
       <div>
-        <div class="font-display font-bold text-lg leading-none">Dan Babu Boddu</div>
+        <div class="font-display font-bold text-lg leading-none flex items-center gap-1.5">Dan Babu Boddu <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span></div>
         <div class="text-[10px] text-cyan-400 uppercase tracking-widest mt-0.5">Data & BI Ops • Executive</div>
       </div>
     </a>
-    <nav class="hidden md:flex items-center gap-1 bg-surface-card/80 rounded-full px-1 py-1 border border-white/10">
-      <a href="#" class="px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-sm font-semibold">Home</a>
+    <nav class="hidden md:flex items-center gap-1 bg-surface-card/90 rounded-full px-1 py-1 border border-white/10">
+      <a href="#" class="px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-sm font-semibold text-white">Home</a>
       <a href="#about" class="px-4 py-1.5 rounded-full text-sm text-text-secondary hover:text-white">About</a>
       <a href="#skills" class="px-4 py-1.5 rounded-full text-sm text-text-secondary hover:text-white">Matrix & Tech</a>
       <a href="#projects" class="px-4 py-1.5 rounded-full text-sm text-text-secondary hover:text-white">BI Projects</a>
@@ -75,76 +81,77 @@ tailwind.config={darkMode:"class",theme:{extend:{colors:{"accent-cyan":"#38BDF8"
 
 <main class="pt-16 flex-1">
 
-  <!-- ========== HERO with CLEAR floating streams ========== -->
-  <section class="relative overflow-hidden py-16 lg:py-24 px-4 border-b border-white/5">
-    <!-- Floating Data Streams (very visible) -->
-    <div class="absolute inset-x-0 top-4 overflow-hidden pointer-events-none select-none opacity-90">
-      <div class="animate-stream-left flex gap-6 py-2">
-        <div class="flex gap-6">
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/90 border border-cyan-400/40 flex items-center gap-3 shadow-[0_0_20px_rgba(56,189,248,0.25)]">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+  <!-- ========== HERO + CLEAR FLOATING STREAMS (from index(1)) ========== -->
+  <section class="relative overflow-hidden py-16 lg:py-24 px-4 border-b border-white/5" id="hero">
+    <!-- Top Stream (very visible) -->
+    <div class="absolute inset-x-0 top-6 overflow-hidden pointer-events-none select-none opacity-95 z-0">
+      <div class="animate-stream-left flex gap-5 py-2">
+        <div class="flex gap-5">
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-cyan-400/50 flex items-center gap-3 shadow-[0_0_22px_rgba(56,189,248,0.3)]">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
             <span class="font-mono text-xs font-bold">SQL PIPELINE:</span>
-            <span class="font-mono text-xs text-cyan-400">Snowflake ➔ dbt ➔ Power BI DirectQuery</span>
-            <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px] font-bold">12ms LATENCY</span>
+            <span class="font-mono text-xs text-cyan-300">Snowflake ➔ dbt ➔ Power BI DirectQuery</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/25 text-cyan-200 font-mono text-[10px] font-bold">12ms LATENCY</span>
           </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/90 border border-indigo-400/40 flex items-center gap-3">
-            <span class="material-symbols-outlined text-[16px] text-indigo-400">schema</span>
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-indigo-400/50 flex items-center gap-3">
+            <span class="material-symbols-outlined text-[16px] text-indigo-300">schema</span>
             <span class="font-mono text-xs font-bold">DAX:</span>
-            <span class="font-mono text-xs text-indigo-300">[YoY Sales] = CALCULATE(SUM(Sales), SAMEPERIODLASTYEAR(...))</span>
-            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">+28.4%</span>
+            <span class="font-mono text-xs text-indigo-200">[YoY Sales] = CALCULATE(SUM(Sales), SAMEPERIODLASTYEAR(...))</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/25 text-emerald-300 font-mono text-[10px] font-bold">+28.4%</span>
           </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/90 border border-emerald-400/40 flex items-center gap-3">
-            <span class="material-symbols-outlined text-[16px] text-emerald-400">speed</span>
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-emerald-400/50 flex items-center gap-3">
+            <span class="material-symbols-outlined text-[16px] text-emerald-300">speed</span>
             <span class="font-mono text-xs font-bold">ETL:</span>
-            <span class="font-mono text-xs text-emerald-300">42.8M rows/sec • 0 Nulls</span>
-            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">PASS 100%</span>
+            <span class="font-mono text-xs text-emerald-200">42.8M rows/sec • 0 Nulls</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/25 text-emerald-300 font-mono text-[10px] font-bold">PASS 100%</span>
           </div>
         </div>
-        <!-- duplicate for seamless loop -->
-        <div class="flex gap-6">
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/90 border border-cyan-400/40 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+        <!-- duplicate -->
+        <div class="flex gap-5">
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-cyan-400/50 flex items-center gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
             <span class="font-mono text-xs font-bold">SQL PIPELINE:</span>
-            <span class="font-mono text-xs text-cyan-400">Snowflake ➔ dbt ➔ Power BI DirectQuery</span>
-            <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px] font-bold">12ms LATENCY</span>
+            <span class="font-mono text-xs text-cyan-300">Snowflake ➔ dbt ➔ Power BI DirectQuery</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/25 text-cyan-200 font-mono text-[10px] font-bold">12ms LATENCY</span>
           </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/90 border border-indigo-400/40 flex items-center gap-3">
-            <span class="material-symbols-outlined text-[16px] text-indigo-400">schema</span>
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-indigo-400/50 flex items-center gap-3">
+            <span class="material-symbols-outlined text-[16px] text-indigo-300">schema</span>
             <span class="font-mono text-xs font-bold">DAX:</span>
-            <span class="font-mono text-xs text-indigo-300">[YoY Sales] = CALCULATE(SUM(Sales), SAMEPERIODLASTYEAR(...))</span>
-            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">+28.4%</span>
+            <span class="font-mono text-xs text-indigo-200">[YoY Sales] = CALCULATE(SUM(Sales), SAMEPERIODLASTYEAR(...))</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/25 text-emerald-300 font-mono text-[10px] font-bold">+28.4%</span>
           </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/90 border border-emerald-400/40 flex items-center gap-3">
-            <span class="material-symbols-outlined text-[16px] text-emerald-400">speed</span>
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-emerald-400/50 flex items-center gap-3">
+            <span class="material-symbols-outlined text-[16px] text-emerald-300">speed</span>
             <span class="font-mono text-xs font-bold">ETL:</span>
-            <span class="font-mono text-xs text-emerald-300">42.8M rows/sec • 0 Nulls</span>
-            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">PASS 100%</span>
+            <span class="font-mono text-xs text-emerald-200">42.8M rows/sec • 0 Nulls</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/25 text-emerald-300 font-mono text-[10px] font-bold">PASS 100%</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="absolute inset-x-0 bottom-8 overflow-hidden pointer-events-none select-none opacity-80">
-      <div class="animate-stream-right flex gap-6 py-2">
-        <div class="flex gap-6">
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/90 border border-violet-400/30 flex items-center gap-3">
+    <!-- Bottom Stream -->
+    <div class="absolute inset-x-0 bottom-10 overflow-hidden pointer-events-none select-none opacity-85 z-0">
+      <div class="animate-stream-right flex gap-5 py-2">
+        <div class="flex gap-5">
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/95 border border-violet-400/40 flex items-center gap-3">
             <span class="font-mono text-xs font-bold text-violet-300">PYTHON:</span>
             <span class="font-mono text-xs text-violet-200">pd.pivot_table(df, values='margin', index='cluster')</span>
             <span class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 font-mono text-[10px]">VECTORIZED</span>
           </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/90 border border-cyan-400/30 flex items-center gap-3">
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/95 border border-cyan-400/40 flex items-center gap-3">
             <span class="font-mono text-xs font-bold">STAR SCHEMA:</span>
             <span class="font-mono text-xs text-cyan-300">Dim_Product 1:N Fact_Sales</span>
             <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px]">ACTIVE</span>
           </div>
         </div>
-        <div class="flex gap-6">
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/90 border border-violet-400/30 flex items-center gap-3">
+        <div class="flex gap-5">
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/95 border border-violet-400/40 flex items-center gap-3">
             <span class="font-mono text-xs font-bold text-violet-300">PYTHON:</span>
             <span class="font-mono text-xs text-violet-200">pd.pivot_table(df, values='margin', index='cluster')</span>
             <span class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 font-mono text-[10px]">VECTORIZED</span>
           </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/90 border border-cyan-400/30 flex items-center gap-3">
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/95 border border-cyan-400/40 flex items-center gap-3">
             <span class="font-mono text-xs font-bold">STAR SCHEMA:</span>
             <span class="font-mono text-xs text-cyan-300">Dim_Product 1:N Fact_Sales</span>
             <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px]">ACTIVE</span>
@@ -153,22 +160,22 @@ tailwind.config={darkMode:"class",theme:{extend:{colors:{"accent-cyan":"#38BDF8"
       </div>
     </div>
 
-    <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center pt-16">
+    <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center pt-20">
       <div>
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono mb-5">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
           EXECUTIVE DATA & BI ARCHITECT • Available
         </div>
-        <h1 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight mb-4">
+        <h1 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight mb-3">
           HELLO! I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">Dan Babu Boddu</span>
         </h1>
-        <div class="h-8 mb-6">
-          <span id="typing-text" class="font-mono text-cyan-300 text-lg"></span>
+        <div class="h-8 mb-5">
+          <span id="typing-text" class="font-mono text-cyan-300 text-lg"></span><span class="animate-pulse text-cyan-400">|</span>
         </div>
-        <p class="text-text-secondary text-lg leading-relaxed mb-8 max-w-xl">
+        <p class="text-text-secondary text-lg leading-relaxed mb-7 max-w-xl">
           15+ years of battle-tested business and commercial operations leadership, now engineered with modern enterprise BI: architecting high-performance Power BI models, scalable SQL data pipelines, and Python automation.
         </p>
-        <div class="flex flex-wrap gap-3 mb-10">
+        <div class="flex flex-wrap gap-2 mb-8">
           <span class="px-3 py-1.5 rounded-full bg-surface-card border border-white/10 text-sm">Power BI Architect</span>
           <span class="px-3 py-1.5 rounded-full bg-surface-card border border-white/10 text-sm">DAX & Star Schema</span>
           <span class="px-3 py-1.5 rounded-full bg-surface-card border border-white/10 text-sm">SQL Data Pipelines</span>
@@ -178,162 +185,127 @@ tailwind.config={darkMode:"class",theme:{extend:{colors:{"accent-cyan":"#38BDF8"
           <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 font-bold text-surface-base">
             Explore BI Case Studies <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
           </a>
-          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 hover:border-cyan-400/50">
-            Executive Connect
-          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 hover:border-cyan-400/50">Executive Connect</a>
         </div>
       </div>
 
-      <!-- Hero Photo with 3D tilt -->
+      <!-- Hero Photo 3D -->
       <div class="perspective-1000 flex justify-center">
         <div id="hero-interactive-card" class="tilt-card relative w-full max-w-md rounded-3xl overflow-hidden border border-cyan-400/30 shadow-[0_0_40px_rgba(56,189,248,0.15)]">
           <img src="profile.jpg" alt="Dan Babu Boddu" class="w-full h-auto object-cover" onerror="this.src='https://via.placeholder.com/400x480/0B0F19/38BDF8?text=Dan+Babu'"/>
           <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-            <div class="px-3 py-1.5 rounded-full bg-surface-base/80 backdrop-blur text-xs font-mono border border-white/10">
-              DATA DRIVES BETTER DECISIONS
-            </div>
-            <div class="px-3 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-mono border border-cyan-400/30">
-              12ms Latency
-            </div>
+            <div class="px-3 py-1.5 rounded-full bg-surface-base/80 backdrop-blur text-xs font-mono border border-white/10">DATA DRIVES BETTER DECISIONS</div>
+            <div class="px-3 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-mono border border-cyan-400/30">12ms Latency</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== PROJECTS with hover morphs ========== -->
+  <!-- ========== PROJECTS (exact hover from code.html) ========== -->
   <section id="projects" class="py-20 px-4">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-14">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-indigo-300 text-xs font-mono mb-4">
-          EXECUTIVE CASE STUDIES
-        </div>
-        <h2 class="font-display font-bold text-3xl lg:text-4xl mb-3">Interactive Production Analytics Engines</h2>
-        <p class="text-text-secondary max-w-2xl mx-auto">End-to-end architectures demonstrating active data filtering, live telemetry shocks, correlation models, and actionable BI.</p>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-indigo-300 text-xs font-mono mb-3">EXECUTIVE CASE STUDIES</div>
+        <h2 class="font-display font-bold text-3xl lg:text-4xl mb-2">Interactive Production Analytics Engines</h2>
+        <p class="text-text-secondary max-w-2xl mx-auto">Hover over the cards to see live DAX slicing and weather-to-telemetry shock transformations.</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8">
-        <!-- Sales Project Card -->
+        <!-- Sales Card -->
         <div class="project-card-sales rounded-3xl bg-surface-card border border-white/10 p-6 hover:border-cyan-400/40 transition-all">
-          <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center justify-between mb-3">
             <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-400/30">FLAGSHIP POWER BI APP</span>
-            <span class="text-xs text-text-muted">4 Multi-Pages</span>
+            <span class="text-xs text-text-muted">Hover for Live Slicing</span>
           </div>
           <h3 class="font-display font-bold text-xl mb-2">Sales Analytics Interactive Dashboard</h3>
-          <p class="text-text-secondary text-sm mb-6">Multi-page interactive Power BI suite tracking Executive performance, Product distribution, Outlet profitability with custom DAX YoY metrics and star-schema relationships.</p>
+          <p class="text-text-secondary text-sm mb-5">Multi-page Power BI suite with custom DAX YoY metrics and star-schema relationships.</p>
 
-          <!-- Interactive bars -->
           <div class="bg-surface-elevated rounded-2xl p-4 mb-5">
             <div class="flex gap-2 mb-4">
-              <button class="pbi-tab active px-3 py-1 rounded-lg bg-cyan-500 text-surface-base text-xs font-bold" data-target="exec">Executive</button>
-              <button class="pbi-tab px-3 py-1 rounded-lg bg-surface-card text-text-muted text-xs" data-target="prod">Product</button>
-              <button class="pbi-tab px-3 py-1 rounded-lg bg-surface-card text-text-muted text-xs" data-target="outlet">Outlet</button>
+              <button class="pbi-tab active px-3 py-1 rounded-lg bg-cyan-500 text-surface-base text-xs font-bold">Executive</button>
+              <button class="pbi-tab px-3 py-1 rounded-lg bg-surface-card text-text-muted text-xs">Product</button>
+              <button class="pbi-tab px-3 py-1 rounded-lg bg-surface-card text-text-muted text-xs">Outlet</button>
             </div>
             <div class="grid grid-cols-3 gap-3 mb-4">
               <div class="bg-surface-base rounded-xl p-3 text-center">
                 <div class="text-[10px] text-text-muted uppercase">Gross Revenue</div>
-                <div id="pbi-kpi1" class="font-display font-bold text-lg text-cyan-300">$1,248,500</div>
+                <div class="font-display font-bold text-lg text-cyan-300">$1,248,500</div>
                 <div class="text-[10px] text-emerald-400">+28.4% YoY</div>
               </div>
               <div class="bg-surface-base rounded-xl p-3 text-center">
-                <div class="text-[10px] text-text-muted uppercase">Operating Margin</div>
-                <div id="pbi-kpi2" class="font-display font-bold text-lg">48.2%</div>
+                <div class="text-[10px] text-text-muted uppercase">Margin</div>
+                <div class="font-display font-bold text-lg">48.2%</div>
                 <div class="text-[10px] text-emerald-400">+3.8 pts</div>
               </div>
               <div class="bg-surface-base rounded-xl p-3 text-center">
-                <div class="text-[10px] text-text-muted uppercase">Order Volume</div>
-                <div id="pbi-kpi3" class="font-display font-bold text-lg">14,820</div>
-                <div class="text-[10px] text-emerald-400">+19.1% MoM</div>
+                <div class="text-[10px] text-text-muted uppercase">Volume</div>
+                <div class="font-display font-bold text-lg">14,820</div>
+                <div class="text-[10px] text-emerald-400">+19.1%</div>
               </div>
             </div>
             <div class="flex items-end justify-between h-28 gap-2 px-2">
-              <div class="flex-1 flex flex-col items-center gap-1">
-                <div class="sales-bar bar-q1 w-full rounded-t bg-indigo-400" style="height:55%"></div>
-                <span class="text-[10px] text-text-muted">Q1</span>
-              </div>
-              <div class="flex-1 flex flex-col items-center gap-1">
-                <div class="sales-bar bar-q2 w-full rounded-t bg-cyan-400" style="height:70%"></div>
-                <span class="text-[10px] text-text-muted">Q2</span>
-              </div>
-              <div class="flex-1 flex flex-col items-center gap-1">
-                <div class="sales-bar bar-q3 w-full rounded-t bg-violet-400" style="height:60%"></div>
-                <span class="text-[10px] text-text-muted">Q3</span>
-              </div>
-              <div class="flex-1 flex flex-col items-center gap-1">
-                <div class="sales-bar bar-q4 w-full rounded-t bg-emerald-400" style="height:85%"></div>
-                <span class="text-[10px] text-text-muted">Q4</span>
-              </div>
+              <div class="flex-1 flex flex-col items-center gap-1"><div class="sales-bar bar-q1 w-full rounded-t bg-indigo-400" style="height:55%"></div><span class="text-[10px] text-text-muted">Q1</span></div>
+              <div class="flex-1 flex flex-col items-center gap-1"><div class="sales-bar bar-q2 w-full rounded-t bg-cyan-400" style="height:70%"></div><span class="text-[10px] text-text-muted">Q2</span></div>
+              <div class="flex-1 flex flex-col items-center gap-1"><div class="sales-bar bar-q3 w-full rounded-t bg-violet-400" style="height:60%"></div><span class="text-[10px] text-text-muted">Q3</span></div>
+              <div class="flex-1 flex flex-col items-center gap-1"><div class="sales-bar bar-q4 w-full rounded-t bg-emerald-400" style="height:85%"></div><span class="text-[10px] text-text-muted">Q4</span></div>
             </div>
-          </div>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">Power BI</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">DAX Star Schema</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">DirectQuery</span>
           </div>
           <a href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" target="_blank" class="inline-flex items-center gap-2 text-sm text-cyan-400 hover:underline">
             View Repository <span class="material-symbols-outlined text-[16px]">open_in_new</span>
           </a>
         </div>
 
-        <!-- Air Quality Project Card with hover morph -->
+        <!-- Air Quality Card (exact sunny→storm from code.html) -->
         <div class="project-card-air rounded-3xl bg-surface-card border border-white/10 p-6 hover:border-indigo-400/40 transition-all relative overflow-hidden">
-          <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center justify-between mb-3">
             <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-xs font-mono border border-indigo-400/30">FULL-STACK TELEMETRY</span>
-            <span class="text-xs text-text-muted">MySQL + Python + BI</span>
+            <span class="text-xs text-text-muted">Hover for Shock</span>
           </div>
           <h3 class="font-display font-bold text-xl mb-2">Air Quality & Health Dashboard</h3>
-          <p class="text-text-secondary text-sm mb-6">End-to-end telemetry and epidemiological pipeline. Strong AQI–Hospitalization correlation (r = 0.82).</p>
+          <p class="text-text-secondary text-sm mb-5">Strong AQI–Hospitalization correlation (r = 0.82). Hover to simulate weather shift & telemetry shock.</p>
 
-          <div class="relative h-56 rounded-2xl bg-surface-elevated overflow-hidden mb-5">
-            <!-- Weather View (default) -->
+          <div class="relative h-56 rounded-2xl bg-surface-elevated overflow-hidden mb-5 border border-white/5">
+            <!-- Sunny (default) -->
             <div class="weather-view absolute inset-0 flex flex-col items-center justify-center p-4">
               <div class="relative">
-                <div class="w-20 h-20 rounded-full bg-amber-400 animate-sun-pulse flex items-center justify-center text-4xl">☀️</div>
-                <div class="absolute -top-2 -left-8 text-3xl opacity-70">☁️</div>
-                <div class="absolute -top-1 -right-10 text-2xl opacity-60">☁️</div>
+                <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-300 animate-sun-pulse flex items-center justify-center shadow-[0_0_40px_rgba(251,191,36,0.7)]">
+                  <div class="w-12 h-12 rounded-full bg-amber-300/80"></div>
+                </div>
+                <div class="absolute -top-3 -left-10 text-3xl text-sky-200/60 animate-float-cloud1">☁️</div>
+                <div class="absolute -top-1 -right-12 text-2xl text-sky-200/50 animate-float-cloud2">☁️</div>
               </div>
               <div class="mt-4 text-center">
                 <div class="text-sm font-medium">Clear Sunny Telemetry • AQI 42 (Good)</div>
-                <div class="text-xs text-text-muted mt-1">Hover to simulate weather shift & telemetry shock</div>
-              </div>
-              <div class="absolute bottom-3 left-3 right-3 flex justify-between text-[10px] text-text-muted">
-                <span>Delhi NCR • Mumbai • Bengaluru</span>
-                <span>PM2.5: 14 µg/m³</span>
+                <div class="text-xs text-text-muted mt-1">Hover to simulate weather shift</div>
               </div>
             </div>
 
-            <!-- Chart / Shock View (on hover) -->
-            <div class="chart-view absolute inset-0 flex flex-col p-4">
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-mono text-red-400">AQI 382 • Severe Hazardous</span>
-                <span class="text-xs text-red-300">r = 0.82 (Spike +68%)</span>
+            <!-- Storm / Chart (on hover) -->
+            <div class="chart-view absolute inset-0 flex flex-col p-4 bg-slate-950/90">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-red-400 font-bold">AQI 382 • Severe Hazardous</span>
+                <span class="text-xs text-red-300">r = 0.82 (+68%)</span>
               </div>
               <div class="flex-1 relative">
-                <svg viewBox="0 0 300 80" class="w-full h-full text-red-400">
-                  <path d="M0,60 Q40,55 80,45 T160,25 T240,10 T300,5" fill="none" stroke="currentColor" stroke-width="2.5"/>
-                  <path d="M0,60 Q40,55 80,45 T160,25 T240,10 T300,5 L300,80 L0,80 Z" fill="url(#grad)" opacity="0.3"/>
-                  <defs><linearGradient id="grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+                <svg viewBox="0 0 300 70" class="w-full h-full text-red-400">
+                  <path d="M0,55 Q40,48 80,40 T160,22 T240,10 T300,4" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                  <path d="M0,55 Q40,48 80,40 T160,22 T240,10 T300,4 L300,70 L0,70 Z" fill="url(#g)" opacity="0.25"/>
+                  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
                 </svg>
-                <!-- Rain drops -->
                 <div class="rain-layer absolute inset-0 opacity-0 transition-opacity duration-500">
-                  <div class="rain-drop" style="left:10%;animation-delay:0s"></div>
-                  <div class="rain-drop" style="left:25%;animation-delay:0.2s"></div>
-                  <div class="rain-drop" style="left:40%;animation-delay:0.4s"></div>
-                  <div class="rain-drop" style="left:55%;animation-delay:0.1s"></div>
-                  <div class="rain-drop" style="left:70%;animation-delay:0.3s"></div>
-                  <div class="rain-drop" style="left:85%;animation-delay:0.5s"></div>
+                  <div class="rain-drop" style="left:12%;animation-delay:0s"></div>
+                  <div class="rain-drop" style="left:28%;animation-delay:0.2s"></div>
+                  <div class="rain-drop" style="left:45%;animation-delay:0.4s"></div>
+                  <div class="rain-drop" style="left:62%;animation-delay:0.1s"></div>
+                  <div class="rain-drop" style="left:78%;animation-delay:0.3s"></div>
+                  <div class="rain-drop" style="left:90%;animation-delay:0.5s"></div>
                 </div>
               </div>
-              <div class="text-xs text-red-300 font-medium mt-2">CRITICAL: Hospital Inflow Alert Triggered (+68%)</div>
+              <div class="text-xs text-red-300 font-medium mt-1">CRITICAL: Hospital Inflow Alert (+68%)</div>
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">MySQL</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">Python Pandas</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">Power BI</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">r = 0.82</span>
-          </div>
           <a href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" target="_blank" class="inline-flex items-center gap-2 text-sm text-indigo-400 hover:underline">
             View Repository <span class="material-symbols-outlined text-[16px]">open_in_new</span>
           </a>
@@ -342,28 +314,46 @@ tailwind.config={darkMode:"class",theme:{extend:{colors:{"accent-cyan":"#38BDF8"
     </div>
   </section>
 
-  <!-- CONTACT (short) -->
-  <section id="contact" class="py-20 px-4 border-t border-white/5">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-display font-bold text-3xl mb-4">Let's Connect & Build Decisive Value</h2>
-      <p class="text-text-secondary mb-10">Discuss business intelligence transformations or enterprise data initiatives.</p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="p-5 rounded-2xl bg-surface-card border border-white/10">
+  <!-- ========== CONTACT with Night Mountains + Stars ========== -->
+  <section id="contact" class="relative py-24 px-4 overflow-hidden">
+    <!-- Mountains background -->
+    <div class="absolute inset-0 bg-cover bg-center -z-20" style="background-image:url('mountains.jpg')"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-base/80 to-surface-base/50 -z-10"></div>
+    <!-- Stars -->
+    <div class="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+      <div class="absolute top-1/5 left-1/6 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-twinkle shadow-[0_0_8px_#38BDF8]"></div>
+      <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-indigo-300 rounded-full animate-twinkle shadow-[0_0_10px_#818CF8]" style="animation-delay:1.1s"></div>
+      <div class="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay:2s"></div>
+      <div class="absolute top-1/6 left-2/3 w-2 h-2 bg-cyan-200 rounded-full animate-twinkle shadow-[0_0_8px_#7bd0ff]" style="animation-delay:0.7s"></div>
+      <div class="absolute top-2/5 left-1/3 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay:1.6s"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-card/80 backdrop-blur border border-cyan-400/30 text-cyan-300 text-xs font-mono mb-5">
+        <span class="material-symbols-outlined text-[16px]">nights_stay</span>
+        Under the Stars • Bengaluru / Global Remote
+      </div>
+      <h2 class="font-display font-bold text-3xl lg:text-4xl mb-3">Let's Connect & Build Decisive Value</h2>
+      <p class="text-text-secondary mb-12 max-w-lg mx-auto">Discuss business intelligence transformations, enterprise data contracts, or supply chain analytics initiatives.</p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur-xl border border-white/10 tilt-card">
           <div class="text-cyan-400 mb-2"><span class="material-symbols-outlined text-2xl">location_on</span></div>
           <div class="text-xs text-text-muted uppercase">Location</div>
           <div class="font-semibold">Bengaluru, India</div>
+          <div class="text-xs text-cyan-400 mt-1">Global Remote Ready</div>
         </div>
-        <a href="tel:+919949711466" class="p-5 rounded-2xl bg-surface-card border border-white/10 hover:border-cyan-400/40">
+        <a href="tel:+919949711466" class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur-xl border border-white/10 hover:border-indigo-400/50 tilt-card">
           <div class="text-indigo-400 mb-2"><span class="material-symbols-outlined text-2xl">phone_in_talk</span></div>
-          <div class="text-xs text-text-muted uppercase">Phone</div>
+          <div class="text-xs text-text-muted uppercase">Phone / WhatsApp</div>
           <div class="font-semibold">+91 99497 11466</div>
         </a>
-        <a href="mailto:b.danbabu1991@gmail.com" class="p-5 rounded-2xl bg-surface-card border border-white/10 hover:border-cyan-400/40">
+        <a href="mailto:b.danbabu1991@gmail.com" class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur-xl border border-white/10 hover:border-cyan-400/50 tilt-card">
           <div class="text-cyan-400 mb-2"><span class="material-symbols-outlined text-2xl">mail</span></div>
           <div class="text-xs text-text-muted uppercase">Email</div>
-          <div class="font-semibold text-sm">b.danbabu1991@gmail.com</div>
+          <div class="font-semibold text-sm truncate">b.danbabu1991@gmail.com</div>
         </a>
-        <a href="https://www.linkedin.com/in/dan_babu" target="_blank" class="p-5 rounded-2xl bg-surface-card border border-white/10 hover:border-cyan-400/40">
+        <a href="https://www.linkedin.com/in/dan_babu" target="_blank" class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur-xl border border-white/10 hover:border-indigo-400/50 tilt-card">
           <div class="text-indigo-400 mb-2"><span class="material-symbols-outlined text-2xl">groups</span></div>
           <div class="text-xs text-text-muted uppercase">LinkedIn</div>
           <div class="font-semibold">dan_babu</div>
@@ -379,54 +369,19 @@ tailwind.config={darkMode:"class",theme:{extend:{colors:{"accent-cyan":"#38BDF8"
 
 <script>
 (function(){
-  // Typing effect
-  const phrases = ["Data Analyst & Operations Specialist","Power BI Architect & DAX Modeler","SQL Query & Pipeline Engineer","15+ Years Driving Frontline Decisions"];
-  let i = 0, j = 0, isDeleting = false;
-  const el = document.getElementById("typing-text");
-  function type() {
-    if (!el) return;
-    const current = phrases[i];
-    if (isDeleting) {
-      el.textContent = current.substring(0, j - 1);
-      j--;
-    } else {
-      el.textContent = current.substring(0, j + 1);
-      j++;
-    }
-    let speed = isDeleting ? 40 : 70;
-    if (!isDeleting && j === current.length) { speed = 2000; isDeleting = true; }
-    else if (isDeleting && j === 0) { isDeleting = false; i = (i + 1) % phrases.length; speed = 400; }
-    setTimeout(type, speed);
-  }
+  // Typing
+  const phrases=["Data Analyst & Operations Specialist","Power BI Architect & DAX Modeler","SQL Query & Pipeline Engineer","15+ Years Driving Frontline Decisions"];
+  let i=0,j=0,del=false;
+  const el=document.getElementById("typing-text");
+  function type(){if(!el)return;const c=phrases[i];el.textContent=del?c.substring(0,j-1):c.substring(0,j+1);j=del?j-1:j+1;let s=del?35:70;if(!del&&j===c.length){s=2000;del=true}else if(del&&j===0){del=false;i=(i+1)%phrases.length;s=350}setTimeout(type,s)}
   type();
 
   // 3D Tilt
-  const card = document.getElementById("hero-interactive-card");
-  if (card) {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -8;
-      const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 8;
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02,1.02,1.02)`;
-    });
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)`;
-    });
-  }
+  const card=document.getElementById("hero-interactive-card");
+  if(card){card.addEventListener("mousemove",e=>{const r=card.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const rx=((y-r.height/2)/(r.height/2))*-8,ry=((x-r.width/2)/(r.width/2))*8;card.style.transform=`perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02,1.02,1.02)`});card.addEventListener("mouseleave",()=>{card.style.transform=`perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)`})}
 
-  // Power BI tabs
-  document.querySelectorAll(".pbi-tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-      document.querySelectorAll(".pbi-tab").forEach(t => {
-        t.classList.remove("active","bg-cyan-500","text-surface-base");
-        t.classList.add("bg-surface-card","text-text-muted");
-      });
-      tab.classList.add("active","bg-cyan-500","text-surface-base");
-      tab.classList.remove("bg-surface-card","text-text-muted");
-    });
-  });
+  // General tilt cards
+  document.querySelectorAll(".tilt-card:not(#hero-interactive-card)").forEach(c=>{c.addEventListener("mousemove",e=>{const r=c.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const rx=((y-r.height/2)/(r.height/2))*-5,ry=((x-r.width/2)/(r.width/2))*5;c.style.transform=`perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`});c.addEventListener("mouseleave",()=>{c.style.transform=`perspective(1000px) rotateX(0) rotateY(0)`})});
 })();
 </script>
 </body>
