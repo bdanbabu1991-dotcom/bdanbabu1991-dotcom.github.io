@@ -666,148 +666,388 @@ tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface":"#dfe2f1",
       </div>
     </section>
 
-    <!-- PROJECTS – best of both: interactive tabs/simulators from index 3 + rich hover morphs from code.html -->
-    <section class="w-full py-space-3xl px-container-padding-mobile lg:px-container-padding-tablet bg-surface-container-lowest/40 relative border-b border-white/5" id="projects">
-      <div class="max-w-7xl mx-auto flex flex-col">
-        <div class="flex flex-col items-center text-center mb-space-2xl">
-          <span class="font-mono text-label-md text-accent-cyan uppercase tracking-widest font-bold mb-space-3xs flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">devices_fold</span> EXECUTIVE CASE STUDIES</span>
-          <h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight">Interactive Production Analytics Engines</h2>
-          <p class="font-body-md text-body-md text-text-muted mt-space-2xs max-w-xl">
-            End-to-end architectures demonstrating active data filtering, live telemetry shocks, correlation models, and actionable BI.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl items-stretch perspective-1000">
-
-        <!-- ========== PROJECTS SECTION (FIXED) ========== -->
-<section id="projects" class="py-20 px-4 bg-surface-base">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-indigo-300 text-xs font-mono mb-3">
-        SELECTED WORK
-      </div>
-      <h2 class="font-display font-bold text-3xl lg:text-4xl mb-3">Enterprise Analytics Case Studies</h2>
-      <p class="text-text-secondary max-w-2xl mx-auto">Complete end-to-end applications demonstrating data ingestion, statistical modeling, and actionable UI.</p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      
-      <!-- ===== SALES PROJECT ===== -->
-      <div class="project-card-sales tilt-card rounded-3xl bg-surface-card border border-white/10 overflow-hidden hover:border-cyan-400/40 transition-all">
-        <div class="p-6">
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-400/30">FLAGSHIP POWER BI APP</span>
-            <span class="text-xs text-text-muted">4 Multi-Pages</span>
-          </div>
-          <h3 class="font-display font-bold text-xl mb-2">Sales Analytics Interactive Dashboard</h3>
-          <p class="text-text-secondary text-sm mb-5">Multi-page Power BI suite tracking Executive performance, Product distribution, Outlet profitability and Sales velocity with custom DAX YoY metrics and star-schema relationships.</p>
-
-          <!-- Visual area: Icons → Chart on hover -->
-          <div class="relative h-48 rounded-2xl bg-surface-elevated overflow-hidden mb-5 border border-white/5">
-            <!-- Default: Construction Icons -->
-            <div class="construction-view absolute inset-0 flex items-center justify-center gap-8 transition-all duration-500">
-              <div class="flex flex-col items-center gap-2">
-                <div class="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center text-2xl">🏗️</div>
-                <span class="text-xs text-text-muted">Cement</span>
-              </div>
-              <div class="flex flex-col items-center gap-2">
-                <div class="w-14 h-14 rounded-xl bg-cyan-500/20 flex items-center justify-center text-2xl">🔩</div>
-                <span class="text-xs text-text-muted">Steel</span>
-              </div>
-              <div class="flex flex-col items-center gap-2">
-                <div class="w-14 h-14 rounded-xl bg-violet-500/20 flex items-center justify-center text-2xl">🧱</div>
-                <span class="text-xs text-text-muted">Masonry</span>
-              </div>
-              <div class="flex flex-col items-center gap-2">
-                <div class="w-14 h-14 rounded-xl bg-emerald-500/20 flex items-center justify-center text-2xl">🚚</div>
-                <span class="text-xs text-text-muted">Fleet</span>
-              </div>
-            </div>
-            <!-- Hover: Bar Chart -->
-            <div class="chart-view absolute inset-0 flex items-end justify-center gap-4 px-8 pb-6 opacity-0 translate-y-4 transition-all duration-500">
-              <div class="flex flex-col items-center gap-1 flex-1">
-                <div class="w-full rounded-t bg-indigo-400" style="height:45%"></div>
-                <span class="text-[10px] text-text-muted">Q1</span>
-              </div>
-              <div class="flex flex-col items-center gap-1 flex-1">
-                <div class="w-full rounded-t bg-cyan-400" style="height:65%"></div>
-                <span class="text-[10px] text-text-muted">Q2</span>
-              </div>
-              <div class="flex flex-col items-center gap-1 flex-1">
-                <div class="w-full rounded-t bg-violet-400" style="height:75%"></div>
-                <span class="text-[10px] text-text-muted">Q3</span>
-              </div>
-              <div class="flex flex-col items-center gap-1 flex-1">
-                <div class="w-full rounded-t bg-emerald-400" style="height:95%"></div>
-                <span class="text-[10px] text-emerald-400 font-bold">Q4</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">Power BI</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">DAX</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">Star Schema</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">Business Intelligence</span>
-          </div>
-          <a href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" target="_blank" class="inline-flex items-center gap-2 text-sm text-cyan-400 hover:underline">
-            View on GitHub <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- ===== AIR QUALITY PROJECT ===== -->
-      <div class="project-card-air tilt-card rounded-3xl bg-surface-card border border-white/10 overflow-hidden hover:border-indigo-400/40 transition-all">
-        <div class="p-6">
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-xs font-mono border border-indigo-400/30">FULL-STACK DATA ENGINEERING</span>
-            <span class="text-xs text-text-muted">MySQL + Python + BI</span>
-          </div>
-          <h3 class="font-display font-bold text-xl mb-2">Air Quality & Health Dashboard</h3>
-          <p class="text-text-secondary text-sm mb-5">End-to-end telemetry pipeline analyzing air quality, weather patterns and public health records. Strong AQI–Hospitalization correlation (r = 0.82).</p>
-
-          <!-- Visual area: Sunny → Rain on hover -->
-          <div class="relative h-48 rounded-2xl bg-surface-elevated overflow-hidden mb-5 border border-white/5">
-            <!-- Default: Sunny -->
-            <div class="weather-view absolute inset-0 flex flex-col items-center justify-center transition-all duration-500">
-              <div class="relative mb-3">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-300 shadow-[0_0_30px_rgba(251,191,36,0.7)]"></div>
-                <div class="absolute -top-2 -left-8 text-2xl opacity-70">☁️</div>
-                <div class="absolute -top-1 -right-10 text-xl opacity-60">☁️</div>
-              </div>
-              <div class="text-sm font-medium">Clear Sunny Telemetry • AQI 48</div>
-              <div class="text-xs text-text-muted mt-1">Hover to simulate weather shift</div>
-            </div>
-            <!-- Hover: Rain / Shock -->
-            <div class="chart-view absolute inset-0 flex flex-col items-center justify-center bg-slate-950/95 opacity-0 transition-all duration-500">
-              <div class="text-xs font-mono text-red-400 font-bold mb-2">AQI 342 • Severe Hazardous</div>
-              <div class="relative w-full h-20">
-                <div class="absolute inset-0 overflow-hidden">
-                  <div class="rain-drop" style="left:15%;animation-delay:0s"></div>
-                  <div class="rain-drop" style="left:30%;animation-delay:0.2s"></div>
-                  <div class="rain-drop" style="left:50%;animation-delay:0.4s"></div>
-                  <div class="rain-drop" style="left:70%;animation-delay:0.1s"></div>
-                  <div class="rain-drop" style="left:85%;animation-delay:0.3s"></div>
+  
+              <!-- FEATURED PROJECTS SHOWCASE -->
+<section class="w-full py-space-3xl px-container-padding-mobile lg:px-container-padding-tablet bg-surface-container-lowest/40 relative" id="projects">
+<div class="max-w-7xl mx-auto flex flex-col">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center mb-space-2xl">
+<span class="font-label-md text-label-md text-accent-cyan uppercase tracking-widest font-semibold mb-space-3xs">Selected Work</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight">Enterprise Analytics Case Studies</h2>
+<p class="font-body-md text-body-md text-text-muted mt-space-2xs max-w-xl">
+          Complete end-to-end applications demonstrating data ingestion, statistical modeling, relational star schemas, and actionable UI.
+        </p>
+</div>
+<!-- Project Cards Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl items-stretch">
+<!-- CARD A: Sales Analytics Dashboard with Construction Inventory Morph to Bar Chart -->
+<div class="p-space-lg sm:p-space-xl rounded-3xl bg-surface-card shadow-2xl flex flex-col justify-between group hover:shadow-[0_0_35px_-5px_rgba(99,102,241,0.35)] transition-all duration-500 border border-white/5 hover:border-primary-container/40">
+<div class="flex flex-col">
+<!-- Top Tag and Meta Bar -->
+<div class="flex items-center justify-between gap-space-xs mb-space-md">
+<span class="px-space-sm py-space-3xs rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+                Flagship Power BI App
+              </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-text-muted">
+<span class="material-symbols-outlined text-[16px] text-accent-cyan">grid_view</span>
+                4 Multi-Pages
+              </span>
+</div>
+<!-- Title -->
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold group-hover:text-accent-cyan transition-colors">
+              Sales Analytics Interactive Dashboard
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary mt-space-xs leading-relaxed">
+              Engineered a multi-page interactive Power BI dashboard tracking Executive performance, Product distribution, Outlet profitability, and Overall sales velocity. Powered by a robust star-schema relational model with custom DAX measures for Year-over-Year (YoY) variances and real-time drill-down slicing.
+            </p>
+<!-- Rich Dynamic Interactive Visual Preview Area (Construction Inventory -> Bar Chart Morph) -->
+<div class="my-space-md p-space-md rounded-2xl bg-surface-elevated/90 border border-white/5 relative overflow-hidden h-52 flex flex-col justify-between shadow-inner">
+<!-- Top Bar inside Preview -->
+<div class="flex items-center justify-between z-20">
+<div class="flex items-center gap-space-2xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-kpi-accent"></span>
+<!-- State Labels -->
+<div class="relative h-4 overflow-hidden ml-2 w-48">
+<span class="absolute inset-0 font-label-sm text-[11px] text-text-muted transition-all duration-500 group-hover:-translate-y-5 group-hover:opacity-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-amber-400">precision_manufacturing</span> Supply &amp; Construction Inventory
+                  </span>
+<span class="absolute inset-0 font-label-sm text-[11px] text-accent-cyan font-semibold transition-all duration-500 translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-accent-cyan">analytics</span> Power BI Star-Schema Model
+                  </span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label-md font-bold transition-all duration-500 bg-amber-500/20 text-amber-300 group-hover:bg-primary-container/30 group-hover:text-accent-cyan">
+<span class="inline group-hover:hidden">4 Product Categories</span>
+<span class="hidden group-hover:inline">+28.4% YoY Growth</span>
+</span>
+</div>
+</div>
+<!-- Dynamic Container: Morph Layer -->
+<div class="relative flex-1 w-full flex items-end justify-between gap-3 px-2 pt-2 pb-1 z-10">
+<!-- Column 1: Cement Bags / Pallets -> Q1 Column -->
+<div class="flex-1 flex flex-col items-center justify-end h-full relative">
+<!-- Construction Item State (Default) -->
+<div class="absolute bottom-6 flex flex-col items-center transition-all duration-500 transform group-hover:translate-y-8 group-hover:opacity-0 group-hover:scale-75">
+<div class="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.2)]">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<span class="text-[10px] font-label-sm text-amber-200/80 font-medium mt-1">Cement</span>
+<span class="text-[9px] font-mono text-text-muted">1.4k Units</span>
+</div>
+<!-- Bar Chart State (On Hover) -->
+<div class="w-full flex flex-col items-center justify-end h-full transition-all duration-500 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+<span class="text-[10px] font-mono text-primary font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity delay-100">$184K</span>
+<div class="w-full bg-gradient-to-t from-primary-container/40 via-primary-container/70 to-primary rounded-t-md h-16 shadow-[0_0_15px_rgba(128,131,255,0.3)]"></div>
+</div>
+<!-- Footnote Label -->
+<span class="font-label-sm text-[10px] text-text-muted mt-1.5 transition-colors group-hover:text-text-primary">Q1</span>
+</div>
+<!-- Column 2: Steel Beams / Rebar -> Q2 Column -->
+<div class="flex-1 flex flex-col items-center justify-end h-full relative">
+<!-- Construction Item State (Default) -->
+<div class="absolute bottom-6 flex flex-col items-center transition-all duration-500 delay-75 transform group-hover:translate-y-8 group-hover:opacity-0 group-hover:scale-75">
+<div class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-accent-cyan shadow-[0_0_12px_rgba(56,189,248,0.2)]">
+<span class="material-symbols-outlined text-[20px]">carpenter</span>
+</div>
+<span class="text-[10px] font-label-sm text-cyan-200/80 font-medium mt-1">Steel / Rebar</span>
+<span class="text-[9px] font-mono text-text-muted">860 Tons</span>
+</div>
+<!-- Bar Chart State (On Hover) -->
+<div class="w-full flex flex-col items-center justify-end h-full transition-all duration-500 delay-75 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+<span class="text-[10px] font-mono text-accent-cyan font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity delay-150">$242K</span>
+<div class="w-full bg-gradient-to-t from-accent-cyan/30 via-accent-cyan/60 to-accent-cyan rounded-t-md h-24 shadow-[0_0_18px_rgba(56,189,248,0.35)]"></div>
+</div>
+<!-- Footnote Label -->
+<span class="font-label-sm text-[10px] text-text-muted mt-1.5 transition-colors group-hover:text-text-primary">Q2</span>
+</div>
+<!-- Column 3: Masonry Bricks / Blocks -> Q3 Column -->
+<div class="flex-1 flex flex-col items-center justify-end h-full relative">
+<!-- Construction Item State (Default) -->
+<div class="absolute bottom-6 flex flex-col items-center transition-all duration-500 delay-100 transform group-hover:translate-y-8 group-hover:opacity-0 group-hover:scale-75">
+<div class="w-9 h-9 rounded-xl bg-violet-500/15 border border-violet-500/30 flex items-center justify-center text-accent-violet-light shadow-[0_0_12px_rgba(129,140,248,0.2)]">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<span class="text-[10px] font-label-sm text-violet-200/80 font-medium mt-1">Masonry</span>
+<span class="text-[9px] font-mono text-text-muted">420k Bricks</span>
+</div>
+<!-- Bar Chart State (On Hover) -->
+<div class="w-full flex flex-col items-center justify-end h-full transition-all duration-500 delay-100 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+<span class="text-[10px] font-mono text-accent-violet-light font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity delay-200">$310K</span>
+<div class="w-full bg-gradient-to-t from-accent-violet-light/30 via-accent-violet-light/60 to-tertiary rounded-t-md h-28 shadow-[0_0_20px_rgba(129,140,248,0.35)]"></div>
+</div>
+<!-- Footnote Label -->
+<span class="font-label-sm text-[10px] text-text-muted mt-1.5 transition-colors group-hover:text-text-primary">Q3</span>
+</div>
+<!-- Column 4: Fleet & Heavy Machinery -> Q4 Peak Column -->
+<div class="flex-1 flex flex-col items-center justify-end h-full relative">
+<!-- Construction Item State (Default) -->
+<div class="absolute bottom-6 flex flex-col items-center transition-all duration-500 delay-150 transform group-hover:translate-y-8 group-hover:opacity-0 group-hover:scale-75">
+<div class="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.2)]">
+<span class="material-symbols-outlined text-[20px]">forklift</span>
+</div>
+<span class="text-[10px] font-label-sm text-emerald-200/80 font-medium mt-1">Fleet / Plant</span>
+<span class="text-[9px] font-mono text-text-muted">38 Sites</span>
+</div>
+<!-- Bar Chart State (On Hover) -->
+<div class="w-full flex flex-col items-center justify-end h-full transition-all duration-500 delay-150 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+<span class="text-[10px] font-mono text-kpi-accent font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity delay-250">$492K</span>
+<div class="w-full bg-gradient-to-t from-kpi-accent/40 via-kpi-accent to-secondary rounded-t-md h-36 shadow-[0_0_24px_rgba(34,211,238,0.5)]"></div>
+</div>
+<!-- Footnote Label -->
+<span class="font-label-sm text-[10px] font-bold text-text-muted mt-1.5 transition-colors group-hover:text-kpi-accent">Q4 Peak</span>
+</div>
+</div>
+<!-- Background Graph Grid lines -->
+<div class="absolute inset-0 pointer-events-none opacity-20 flex flex-col justify-between p-4 z-0">
+<div class="border-b border-dashed border-white/40 w-full"></div>
+<div class="border-b border-dashed border-white/40 w-full"></div>
+<div class="border-b border-dashed border-white/40 w-full"></div>
+</div>
+</div>
+<!-- Tech Tags -->
+<div class="flex flex-wrap gap-space-2xs my-space-xs">
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-cyan font-label-sm text-label-sm">Power BI</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-violet-light font-label-sm text-label-sm">DAX Calculations</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-secondary-fixed-dim font-label-sm text-label-sm">Star Schema</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm">Business Intelligence</span>
+</div>
+</div>
+<!-- Bottom Action -->
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-xs rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md hover:brightness-110 transition-all group-hover:gap-space-sm" href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" rel="noopener noreferrer" target="_blank">
+<span>View on GitHub</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<span class="font-label-sm text-label-sm text-text-muted">Ready for Deployment</span>
+</div>
+</div>
+              <!-- Interactive Multi-Tab Simulator (from index 3) -->
+              <div class="my-space-md p-space-md rounded-2xl bg-surface-elevated/90 border border-accent-cyan/30 relative overflow-hidden shadow-2xl">
+                <div class="flex items-center justify-between border-b border-white/10 pb-2 mb-3">
+                  <div class="flex items-center gap-1" id="pbi-tabs">
+                    <button class="pbi-tab active px-2.5 py-1 rounded-lg font-mono text-[11px] font-bold bg-accent-cyan text-surface-base transition-all" data-target="exec">Executive</button>
+                    <button class="pbi-tab px-2.5 py-1 rounded-lg font-mono text-[11px] font-bold bg-surface-card text-text-muted hover:text-text-primary transition-all" data-target="prod">Product</button>
+                    <button class="pbi-tab px-2.5 py-1 rounded-lg font-mono text-[11px] font-bold bg-surface-card text-text-muted hover:text-text-primary transition-all" data-target="outlet">Outlet</button>
+                  </div>
+                  <div class="flex items-center gap-2 font-mono text-[10px] text-accent-cyan">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Live DAX Slicer Active
+                  </div>
+                </div>
+                <div class="grid grid-cols-3 gap-2 mb-3">
+                  <div class="p-2 rounded-xl bg-surface-card border border-white/5 flex flex-col">
+                    <span class="font-mono text-[10px] text-text-muted" id="pbi-kpi1-label">Gross Revenue</span>
+                    <span class="font-mono text-sm sm:text-base font-bold text-text-primary" id="pbi-kpi1-val">$1,248,500</span>
+                    <span class="font-mono text-[10px] text-emerald-400 font-bold" id="pbi-kpi1-change">+28.4% YoY</span>
+                  </div>
+                  <div class="p-2 rounded-xl bg-surface-card border border-white/5 flex flex-col">
+                    <span class="font-mono text-[10px] text-text-muted" id="pbi-kpi2-label">Operating Margin</span>
+                    <span class="font-mono text-sm sm:text-base font-bold text-accent-cyan" id="pbi-kpi2-val">48.2%</span>
+                    <span class="font-mono text-[10px] text-accent-cyan font-bold" id="pbi-kpi2-change">+3.8 pts</span>
+                  </div>
+                  <div class="p-2 rounded-xl bg-surface-card border border-white/5 flex flex-col">
+                    <span class="font-mono text-[10px] text-text-muted" id="pbi-kpi3-label">Order Volume</span>
+                    <span class="font-mono text-sm sm:text-base font-bold text-accent-violet-light" id="pbi-kpi3-val">14,820 Units</span>
+                    <span class="font-mono text-[10px] text-emerald-400 font-bold" id="pbi-kpi3-change">+19.1% MoM</span>
+                  </div>
+                </div>
+                <div class="h-28 w-full flex items-end justify-between gap-3 px-2 pt-2 border-t border-dashed border-white/10" id="pbi-chart-bars">
+                  <div class="flex-1 flex flex-col items-center justify-end h-full">
+                    <span class="font-mono text-[9px] text-text-muted mb-1" id="pbi-val-1">$220k</span>
+                    <div class="w-full bg-gradient-to-t from-primary-container/30 to-primary-container rounded-t-md transition-all duration-500 shadow-[0_0_12px_rgba(128,131,255,0.4)]" id="pbi-bar-1" style="height: 55%;"></div>
+                    <span class="font-mono text-[10px] text-text-secondary mt-1" id="pbi-lbl-1">Q1</span>
+                  </div>
+                  <div class="flex-1 flex flex-col items-center justify-end h-full">
+                    <span class="font-mono text-[9px] text-text-muted mb-1" id="pbi-val-2">$290k</span>
+                    <div class="w-full bg-gradient-to-t from-accent-cyan/30 to-accent-cyan rounded-t-md transition-all duration-500 shadow-[0_0_15px_rgba(56,189,248,0.4)]" id="pbi-bar-2" style="height: 70%;"></div>
+                    <span class="font-mono text-[10px] text-text-secondary mt-1" id="pbi-lbl-2">Q2</span>
+                  </div>
+                  <div class="flex-1 flex flex-col items-center justify-end h-full">
+                    <span class="font-mono text-[9px] text-text-muted mb-1" id="pbi-val-3">$340k</span>
+                    <div class="w-full bg-gradient-to-t from-accent-violet-light/30 to-accent-violet-light rounded-t-md transition-all duration-500 shadow-[0_0_15px_rgba(129,140,248,0.4)]" id="pbi-bar-3" style="height: 85%;"></div>
+                    <span class="font-mono text-[10px] text-text-secondary mt-1" id="pbi-lbl-3">Q3</span>
+                  </div>
+                  <div class="flex-1 flex flex-col items-center justify-end h-full">
+                    <span class="font-mono text-[9px] text-emerald-300 font-bold mb-1" id="pbi-val-4">$410k</span>
+                    <div class="w-full bg-gradient-to-t from-emerald-500/40 to-emerald-400 rounded-t-md transition-all duration-500 shadow-[0_0_18px_rgba(52,211,153,0.5)]" id="pbi-bar-4" style="height: 100%;"></div>
+                    <span class="font-mono text-[10px] text-emerald-400 font-bold mt-1" id="pbi-lbl-4">Q4 Peak</span>
+                  </div>
                 </div>
               </div>
-              <div class="text-xs text-red-300 font-medium">Hospital Inflow +68%</div>
+              <div class="flex flex-wrap gap-space-2xs my-space-xs">
+                <span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-cyan font-mono text-xs">Power BI</span>
+                <span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-violet-light font-mono text-xs">DAX Star Schema</span>
+                <span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-secondary font-mono text-xs">DirectQuery</span>
+                <span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-emerald-400 font-mono text-xs">+28.4% YoY</span>
+              </div>
+            </div>
+            <div class="pt-space-md mt-space-sm flex items-center justify-between border-t border-white/5">
+              <a class="inline-flex items-center gap-space-xs px-space-lg py-space-xs rounded-full bg-gradient-to-r from-accent-cyan to-primary text-surface-base font-mono text-xs font-bold hover:brightness-110 shadow-[0_0_20px_rgba(56,189,248,0.4)] hover:shadow-[0_0_30px_rgba(56,189,248,0.7)] transition-all group-hover:gap-space-sm" href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" rel="noopener noreferrer" target="_blank">
+                <span>View Repository</span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </a>
+              <span class="font-mono text-[11px] text-text-muted">Multi-Page Production App</span>
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">MySQL</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">Python (Pandas)</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">Power BI</span>
-            <span class="px-2 py-1 rounded bg-surface-elevated text-[11px]">r = 0.82</span>
-          </div>
-          <a href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" target="_blank" class="inline-flex items-center gap-2 text-sm text-indigo-400 hover:underline">
-            View on GitHub <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+          <!-- PROJECT 2: AQI (interactive simulator from index 3 + sunny→stormy style from code) -->
+          <div class="p-space-lg sm:p-space-xl rounded-3xl bg-surface-card shadow-2xl flex flex-col justify-between group tilt-card hover:-translate-y-2 transition-all duration-500 border border-white/10 hover:border-accent-violet-light/60 hover:shadow-[0_20px_45px_-10px_rgba(129,140,248,0.35)]" id="aqi-project-card">
+            <div class="flex flex-col">
+              <div class="flex items-center justify-between gap-space-xs mb-space-md">
+                <span class="px-space-sm py-space-3xs rounded-full bg-accent-violet-light/20 text-accent-violet-light font-mono text-xs font-bold uppercase tracking-wider border border-accent-violet-light/30 flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-accent-violet-light animate-ping"></span> Full-Stack Telemetry
+                </span>
+                <span class="flex items-center gap-1 font-mono text-xs text-text-muted">
+                  <span class="material-symbols-outlined text-[16px] text-accent-cyan">dataset</span> MySQL + Python + BI
+                </span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-text-primary font-bold group-hover:text-accent-violet-light transition-colors">Air Quality &amp; Health Dashboard</h3>
+              <p class="font-body-md text-body-md text-text-secondary mt-space-xs leading-relaxed">
+                Real-time atmospheric telemetry and epidemiological risk pipeline. Uncovered high-impact public health finding: <span class="text-accent-cyan font-bold">Strong AQI-to-Hospitalization correlation (Pearson r = 0.82)</span> across metro hubs.
+              </p>
+<!-- CARD B: Air Quality & Health Dashboard with Sunny -> Stormy Rainfall Hover Transition -->
+<div class="p-space-lg sm:p-space-xl rounded-3xl bg-surface-card shadow-2xl flex flex-col justify-between group hover:shadow-[0_0_35px_-5px_rgba(56,189,248,0.35)] transition-all duration-500 border border-white/5 hover:border-secondary-container/40">
+<div class="flex flex-col">
+<!-- Top Tag and Meta Bar -->
+<div class="flex items-center justify-between gap-space-xs mb-space-md">
+<span class="px-space-sm py-space-3xs rounded-full bg-secondary-container/20 text-accent-cyan font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+                Full-Stack Data Engineering
+              </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-text-muted">
+<span class="material-symbols-outlined text-[16px] text-accent-violet-light">dataset</span>
+                MySQL + Python + BI
+              </span>
+</div>
+<!-- Title -->
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold group-hover:text-accent-cyan transition-colors">
+              Air Quality &amp; Health Dashboard
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary mt-space-xs leading-relaxed">
+              End-to-end telemetry and epidemiological pipeline analyzing air quality indices, weather patterns, and public health records across major Indian metropolitan centers. Proven high correlation finding: <span class="text-accent-cyan font-semibold">Strong AQI–Health Risk association (r = 0.82)</span>.
+            </p>
+<!-- Rich Weather Simulation Preview: Sunny Sky to Stormy Rainy Transition on Hover -->
+<div class="my-space-md p-space-md rounded-2xl relative overflow-hidden h-52 flex flex-col justify-between shadow-inner border border-white/5 transition-colors duration-700 bg-gradient-to-b from-sky-900/60 via-surface-elevated to-surface-card group-hover:from-slate-900 group-hover:via-slate-950 group-hover:to-surface-container-lowest">
+<!-- Ambient Sky Glow Layer -->
+<div class="absolute inset-0 bg-gradient-to-br from-amber-500/20 via-sky-500/10 to-transparent transition-opacity duration-700 opacity-100 group-hover:opacity-0 pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-indigo-950/60 to-slate-950 transition-opacity duration-700 opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+<!-- Top Status Row -->
+<div class="flex items-center justify-between z-20 relative">
+<div class="flex items-center gap-space-2xs">
+<div class="w-6 h-6 rounded-lg bg-surface-card/60 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-amber-400 group-hover:hidden transition-all">wb_sunny</span>
+<span class="material-symbols-outlined text-[18px] text-accent-cyan hidden group-hover:inline transition-all animate-bounce">thunderstorm</span>
+</div>
+<span class="font-label-sm text-[11px] text-text-muted transition-colors group-hover:text-accent-cyan">
+<span class="group-hover:hidden">Clear Sunny Telemetry • AQI 48 (Good)</span>
+<span class="hidden group-hover:inline font-semibold text-accent-cyan">Severe Overcast Downpour • AQI 342 (Hazardous)</span>
+</span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-sm font-bold tracking-wide transition-all bg-emerald-500/20 text-emerald-400 group-hover:bg-error/20 group-hover:text-error">
+<span class="group-hover:hidden">Optimal</span>
+<span class="hidden group-hover:inline">r = 0.82 Risk</span>
+</span>
+</div>
+<!-- Interactive Weather Scene Visualization Area -->
+<div class="relative flex-1 w-full flex items-center justify-center overflow-hidden z-10">
+<!-- 1. SUNNY STATE (Default, sets downwards on hover) -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-700 ease-in-out transform group-hover:translate-y-24 group-hover:opacity-0 group-hover:scale-75">
+<!-- Floating Soft Sunny Clouds -->
+<div class="absolute top-2 left-8 text-sky-200/50 animate-float-cloud1">
+<span class="material-symbols-outlined text-[38px]">cloud</span>
+</div>
+<div class="absolute top-5 right-12 text-sky-200/40 animate-float-cloud2">
+<span class="material-symbols-outlined text-[32px]">cloud</span>
+</div>
+<!-- Radiant Glowing Sun -->
+<div class="relative flex items-center justify-center animate-sun-pulse">
+<div class="w-20 h-20 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-300 shadow-[0_0_50px_rgba(251,191,36,0.85)] flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-amber-300/80 blur-[2px]"></div>
+</div>
+<!-- Sun Ray Flares -->
+<div class="absolute -inset-3 border-2 border-dashed border-amber-300/40 rounded-full animate-spin" style="animation-duration: 25s;"></div>
+</div>
+<div class="absolute bottom-1 text-[11px] font-label-md text-amber-200/80 bg-amber-950/40 px-3 py-0.5 rounded-full backdrop-blur-sm">
+                  Hover to simulate weather shift &amp; telemetry shock
+                </div>
+</div>
+<!-- 2. STORMY / RAIN STATE (Hover trigger) -->
+<div class="absolute inset-0 flex flex-col items-center justify-start pointer-events-none transition-all duration-700 ease-in-out transform -translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+<!-- Gathered Dark Storm Clouds -->
+<div class="relative w-full flex justify-center items-center gap-1 pt-1 z-20">
+<span class="material-symbols-outlined text-[44px] text-slate-500 drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] animate-pulse">cloud</span>
+<span class="material-symbols-outlined text-[54px] text-slate-600 drop-shadow-[0_4px_20px_rgba(15,23,42,0.9)] -ml-4">thunderstorm</span>
+<span class="material-symbols-outlined text-[42px] text-slate-500 drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] -ml-4 animate-pulse">cloud</span>
+</div>
+<!-- Continuous Animated Rainfall Drops -->
+<div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-10">
+<div class="rain-drop" style="left: 10%; animation-delay: 0.1s; animation-duration: 0.65s;"></div>
+<div class="rain-drop" style="left: 18%; animation-delay: 0.35s; animation-duration: 0.8s;"></div>
+<div class="rain-drop" style="left: 26%; animation-delay: 0.15s; animation-duration: 0.7s;"></div>
+<div class="rain-drop" style="left: 35%; animation-delay: 0.5s; animation-duration: 0.6s;"></div>
+<div class="rain-drop" style="left: 44%; animation-delay: 0.25s; animation-duration: 0.75s;"></div>
+<div class="rain-drop" style="left: 53%; animation-delay: 0.4s; animation-duration: 0.65s;"></div>
+<div class="rain-drop" style="left: 62%; animation-delay: 0.05s; animation-duration: 0.85s;"></div>
+<div class="rain-drop" style="left: 71%; animation-delay: 0.3s; animation-duration: 0.65s;"></div>
+<div class="rain-drop" style="left: 80%; animation-delay: 0.45s; animation-duration: 0.7s;"></div>
+<div class="rain-drop" style="left: 89%; animation-delay: 0.2s; animation-duration: 0.8s;"></div>
+</div>
+<!-- Health Correlation Spike Overlay Graph Curve (Fades into rain) -->
+<div class="w-full px-2 mt-auto pb-1 z-20">
+<div class="flex items-center justify-between text-[10px] font-mono text-accent-cyan pb-0.5">
+<span>AQI Surge 320+</span>
+<span class="text-error font-bold">Admissions +68%</span>
+</div>
+<div class="w-full h-8 flex items-center justify-center relative">
+<svg class="w-full h-full text-accent-cyan" fill="none" viewbox="0 0 300 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,35 Q40,30 80,28 T160,20 T220,12 T300,4" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0,35 Q40,30 80,28 T160,20 T220,12 T300,4 L300,40 L0,40 Z" fill="currentColor" fill-opacity="0.2"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Weather Telemetry Readout -->
+<div class="flex items-center justify-between pt-1 border-t border-white/10 z-20">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-ping"></span>
+<span class="font-label-sm text-[10px] text-text-muted">Telemetry: Delhi NCR • Mumbai • Bengaluru</span>
+</div>
+<span class="font-mono text-[10px] text-accent-cyan group-hover:text-error transition-colors">
+<span class="group-hover:hidden">PM2.5: 14 µg/m³</span>
+<span class="hidden group-hover:inline font-bold">PM2.5: 182 µg/m³ ⚠️</span>
+</span>
+</div>
+</div>
+<!-- Tech Tags -->
+<div class="flex flex-wrap gap-space-2xs my-space-xs">
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-cyan font-label-sm text-label-sm">MySQL</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-violet-light font-label-sm text-label-sm">Python (Pandas)</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-secondary-fixed-dim font-label-sm text-label-sm">Power BI</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm">Correlation (r=0.82)</span>
+</div>
+</div>
+<!-- Bottom Action -->
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-xs rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:brightness-110 transition-all group-hover:gap-space-sm" href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" rel="noopener noreferrer" target="_blank">
+<span>View on GitHub</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<span class="font-label-sm text-label-sm text-text-muted">Multi-City Telemetry</span>
+</div>
+</div>
+</div>
+<!-- Center GitHub Hub Link Button -->
+<div class="flex justify-center mt-space-2xl">
+<a class="inline-flex items-center gap-space-sm px-space-xl py-space-sm rounded-full bg-surface-elevated text-on-surface hover:text-text-primary hover:bg-surface-container-high shadow-lg transition-all border border-white/5" href="https://github.com/bdanbabu1991-dotcom" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-accent-cyan">code</span>
+<span class="font-label-md text-label-md font-semibold">Explore All Repositories on GitHub</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+             
 
     <!-- CONTACT (index 3 style + mountains background) -->
     <section class="w-full relative overflow-hidden py-space-3xl px-container-padding-mobile lg:px-container-padding-tablet" id="contact">
