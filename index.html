@@ -1,548 +1,811 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dan Babu Boddu | Executive Data Portfolio</title>
-<meta content="Portfolio of Dan Babu Boddu - 15+ Yrs Operations Acumen transforming into modern Power BI, SQL, and Python Analytics." name="description"/>
-<!-- Google Fonts: Plus Jakarta Sans -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<!-- Font Awesome Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-            }
-          }
-        }
-      }
-    }
-  </script>
-<style>
-    /* Global Styles */
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #0a0e18;
-      color: #e2e8f0;
-      overflow-x: hidden;
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0a0e18;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #6366f1;
-    }
-
-    /* Ambient Background Orbs */
-    .bg-orb-1 {
-      position: absolute;
-      top: -15%;
-      left: -10%;
-      width: 60vw;
-      height: 60vw;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-      filter: blur(80px);
-      pointer-events: none;
-    }
-    .bg-orb-2 {
-      position: absolute;
-      top: 35%;
-      right: -10%;
-      width: 55vw;
-      height: 55vw;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
-      filter: blur(80px);
-      pointer-events: none;
-    }
-    .bg-orb-3 {
-      position: absolute;
-      bottom: 5%;
-      left: 20%;
-      width: 50vw;
-      height: 50vw;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
-      filter: blur(80px);
-      pointer-events: none;
-    }
-    .grid-pattern {
-      background-size: 40px 40px;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    }
-  </style>
-</link></head>
-<body class="bg-[#0a0e18] text-[#e2e8f0] relative min-h-screen">
-<!-- Ambient Dynamic Background -->
-<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-<div class="bg-orb-1"></div>
-<div class="bg-orb-2"></div>
-<div class="bg-orb-3"></div>
-<div class="absolute inset-0 grid-pattern opacity-40"></div>
-</div>
-<!-- Sticky Executive Navbar -->
-<header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0a0e18]/85 border-b border-slate-800/80 transition-all">
-<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-<a class="flex items-center gap-3.5 group" href="#home">
-<div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 ring-1 ring-white/20 group-hover:scale-105 transition-transform">
-<i class="fa-solid fa-chart-pie text-white text-lg"></i>
-</div>
-<div>
-<div class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
-            Dan Babu Boddu
-            <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-ping"></span>
-</div>
-<p class="text-xs font-semibold uppercase tracking-widest text-indigo-400">Data &amp; Operations Executive</p>
-</div>
-</a>
-<!-- Desktop Nav -->
-<nav class="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 shadow-inner">
-<a class="px-5 py-2 text-sm font-medium rounded-full text-white hover:text-indigo-400 transition-colors" href="#home">Home</a>
-<a class="px-5 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-colors" href="#about">About</a>
-<a class="px-5 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-colors" href="#skills">Skills</a>
-<a class="px-5 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-colors" href="#projects">Projects</a>
-<a class="px-5 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-colors" href="#contact">Contact</a>
-</nav>
-<div class="hidden md:flex items-center gap-4">
-<a class="w-10 h-10 rounded-xl bg-slate-800/80 hover:bg-indigo-600 flex items-center justify-center text-slate-300 hover:text-white border border-slate-700/60 transition-all" href="https://www.linkedin.com/in/dan_babu" target="_blank">
-<i class="fa-brands fa-linkedin-in"></i>
-</a>
-<a class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold shadow-lg shadow-indigo-600/30 transition-all hover:shadow-indigo-600/50 hover:-translate-y-0.5" href="#contact">
-          Get In Touch
-        </a>
-</div>
-</div>
-</header>
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+/* Custom keyframes for project interactive animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes sunGlow {
+  0%, 100% { filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.7)); }
+  50% { filter: drop-shadow(0 0 28px rgba(245, 158, 11, 0.95)); }
+}
+@keyframes rainStream {
+  0% { transform: translateY(-30px); opacity: 0; }
+  35% { opacity: 0.85; }
+  85% { opacity: 0.85; }
+  100% { transform: translateY(115px); opacity: 0; }
+}
+@keyframes cloudDrift1 {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
+}
+@keyframes cloudDrift2 {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-6px); }
+}
+.animate-float-cloud1 { animation: cloudDrift1 6s ease-in-out infinite; }
+.animate-float-cloud2 { animation: cloudDrift2 7s ease-in-out infinite; }
+.animate-sun-pulse { animation: sunGlow 3.5s ease-in-out infinite; }
+.rain-drop {
+  position: absolute;
+  top: 15px;
+  width: 1.5px;
+  height: 18px;
+  background: linear-gradient(to bottom, rgba(56, 189, 248, 0.1), rgba(125, 208, 255, 0.95));
+  border-radius: 9999px;
+  opacity: 0;
+  animation: rainStream 0.75s linear infinite;
+}
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface":"#dfe2f1","surface-elevated":"#1E293B","on-primary-container":"#0d0096","error":"#ffb4ab","background":"#0f131d","secondary":"#7bd0ff","on-surface-variant":"#c7c4d7","text-secondary":"#94A3B8","on-background":"#dfe2f1","on-error":"#690005","surface-container-lowest":"#0a0e18","inverse-primary":"#494bd6","secondary-fixed-dim":"#7bd0ff","kpi-accent":"#22D3EE","text-muted":"#64748B","secondary-fixed":"#c4e7ff","tertiary-fixed-dim":"#d0bcff","on-secondary-container":"#00374d","secondary-container":"#00a6e0","on-tertiary-fixed-variant":"#5516be","border-glow":"rgba(99, 102, 241, 0.35)","on-primary-fixed-variant":"#2f2ebe","primary-fixed-dim":"#c0c1ff","on-primary":"#1000a9","surface-container-low":"#171b26","tertiary-container":"#a078ff","surface-dim":"#0f131d","surface-bright":"#353944","on-tertiary-fixed":"#23005c","surface-card":"#111827","error-container":"#93000a","surface-variant":"#313540","tertiary-fixed":"#e9ddff","primary-container":"#8083ff","outline-variant":"#464554","accent-violet-light":"#818CF8","surface-container":"#1c1f2a","surface":"#0f131d","surface-container-high":"#262a35","surface-glass":"rgba(17, 24, 39, 0.72)","on-primary-fixed":"#07006c","on-tertiary-container":"#340080","on-tertiary":"#3c0091","surface-tint":"#c0c1ff","surface-container-highest":"#313540","inverse-surface":"#dfe2f1","on-secondary-fixed-variant":"#004c69","accent-cyan":"#38BDF8","primary-fixed":"#e1e0ff","primary":"#c0c1ff","border-subtle":"rgba(255, 255, 255, 0.08)","surface-base":"#0B0F19","tertiary":"#d0bcff","text-primary":"#F8FAFC","on-error-container":"#ffdad6","inverse-on-surface":"#2c303b","outline":"#908fa0","on-secondary":"#00354a","on-secondary-fixed":"#001e2c"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-md":"1rem","space-3xs":"0.125rem","space-2xl":"3rem","container-padding-tablet":"2rem","space-sm":"0.75rem","space-2xs":"0.25rem","space-3xl":"4rem","space-xl":"2rem","gutter-desktop":"1.5rem","space-lg":"1.5rem","container-padding-mobile":"1.25rem","gutter-mobile":"0.75rem","space-xs":"0.5rem"},fontFamily:{"label-md":["Inter"],"display-hero":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-sm":["Plus Jakarta Sans"],"body-md":["Inter"],"headline-md":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"stat-metric-mobile":["Plus Jakarta Sans"],"body-sm":["Inter"],"stat-metric":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-lg":["Plus Jakarta Sans"]},fontSize:{"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"display-hero":["40px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"800"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"700"}],"display-hero-mobile":["32px",{"lineHeight":"38px","letterSpacing":"-0.025em","fontWeight":"800"}],"stat-metric-mobile":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"800"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"stat-metric":["36px",{"lineHeight":"40px","letterSpacing":"-0.03em","fontWeight":"800"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"34px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script></head><body class="bg-surface-base text-on-surface font-body-md text-body-md min-h-screen flex flex-col"><header class="fixed top-0 left-0 w-full z-50 bg-surface-glass backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)]"><div class="h-16 w-full max-w-7xl mx-auto px-container-padding-mobile lg:px-container-padding-tablet flex items-center justify-between"><a class="flex items-center gap-space-sm group" data-path="home" href="#"><div class="w-9 h-9 rounded-xl bg-surface-elevated flex items-center justify-center text-accent-cyan font-headline-sm text-headline-sm shadow-[0_0_16px_-2px_rgba(56,189,248,0.3)] group-hover:scale-105 transition-transform"><span class="material-symbols-outlined text-[20px]">query_stats</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-text-primary tracking-tight leading-none group-hover:text-accent-cyan transition-colors">Dan Babu Boddu</span><span class="font-label-sm text-label-sm text-text-muted uppercase tracking-widest mt-space-3xs">Data &amp; Operations</span></div></a><nav class="hidden md:flex items-center gap-space-xs p-space-3xs bg-surface-card rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-label-md"><a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all bg-primary-container text-on-primary-container font-label-md" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="about" href="#about">About</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="skills" href="#skills">Skills</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="projects" href="#projects">Projects</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="contact" href="#contact">Contact</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-xs rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md shadow-[0_0_20px_-4px_rgba(99,102,241,0.4)] hover:brightness-110 transition-all" data-path="contact" href="#contact">Get in Touch</a><div class="flex items-center p-space-3xs rounded-full bg-surface-elevated"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_GelH85nNVioSoQETeK3JbT4TDA-lzdCz5kSne4OQECLpjHzjjqS0nWIN4vtlLMrNuctBgPUXSQu0zRZWRSmHfAvQQGXgp-IzhfJLtWGmU6q9-L2JUONZi6S1CEj1H0u8OwokNPQILSwGD7xHA4gbCaGGio-p8emdjpMnoRs2zLHPe-_4nfKxrhBQVva-kR_JDJGFzun-smNovLCuxhAGKUUA5VRikkN6jBxeqys7kvjN0yZ58kDd0IV-v2blGIbwbQ"/></div></div></div></header><main class="w-full pt-16 flex-1 bg-surface-base"><div class="flex flex-col w-full">
 <!-- HERO SECTION -->
-<section class="relative z-10 pt-16 pb-24 lg:pt-24 lg:pb-32 max-w-7xl mx-auto px-6" id="home">
-<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-<!-- Text Area -->
-<div class="lg:col-span-7 space-y-7">
-<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-indigo-950/60 border border-indigo-500/30 text-indigo-300 text-xs font-semibold tracking-wide">
-<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          AVAILABLE FOR ROLES &amp; CONSULTING
-        </div>
-<div class="space-y-3">
-<p class="text-sm font-bold uppercase tracking-widest text-slate-400">Executive Data Portfolio</p>
-<h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            HELLO! I'm <span class="bg-gradient-to-r from-indigo-400 via-sky-400 to-indigo-300 bg-clip-text text-transparent">Dan Babu Boddu</span>
+<section class="relative w-full overflow-hidden py-space-2xl lg:py-space-3xl px-container-padding-mobile lg:px-container-padding-tablet" id="hero">
+<!-- Ambient Radial Glows -->
+<div class="absolute -top-32 left-1/4 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/3 -right-24 w-80 h-80 bg-secondary/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative z-10">
+<!-- Left Column: Executive Intro -->
+<div class="lg:col-span-7 flex flex-col items-start gap-space-md">
+<!-- Availability Badge -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-2xs rounded-full bg-surface-elevated text-accent-cyan shadow-[0_0_20px_-4px_rgba(56,189,248,0.25)]">
+<span class="w-2 h-2 rounded-full bg-accent-cyan animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold text-text-primary">Available for Roles &amp; Consulting</span>
+</div>
+<!-- Typography Heading -->
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-muted uppercase tracking-wider mb-space-3xs">Executive Data Portfolio</span>
+<h1 class="font-display-hero text-display-hero-mobile lg:text-display-hero text-text-primary tracking-tight">
+            HELLO! I'm <span class="bg-gradient-to-r from-primary-fixed-dim via-accent-cyan to-secondary bg-clip-text text-transparent">Dan Babu Boddu</span>
 </h1>
-<div class="h-10 flex items-center text-xl sm:text-2xl font-semibold text-indigo-300/90">
-<i class="fa-solid fa-chart-line mr-3 text-indigo-400"></i>
-<span id="typing">Power BI Specialist</span><span class="animate-pulse text-indigo-400">|</span>
 </div>
+<!-- Dynamic Typing Subtitle Area -->
+<div class="flex items-center gap-space-2xs h-8">
+<span class="material-symbols-outlined text-accent-cyan text-[20px]">terminal</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="typing-text"></span>
+<span class="inline-block w-2 h-5 bg-accent-cyan animate-pulse"></span>
 </div>
-<p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-          15+ years of real-world business and operations acumen, now leveraging 
-          <span class="text-white font-semibold">Power BI, SQL, Python &amp; Excel</span> 
-          to transform raw operational data into high-conviction insights, streamlined pipelines, and interactive executive dashboards.
+<!-- Role Badges Pill Rack -->
+<div class="flex flex-wrap gap-space-2xs my-space-3xs">
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-accent-cyan font-label-md text-label-md hover:bg-surface-elevated transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">query_stats</span> Power BI Enthusiast
+          </span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-accent-violet-light font-label-md text-label-md hover:bg-surface-elevated transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">insights</span> Insight Seeker
+          </span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-secondary-fixed-dim font-label-md text-label-md hover:bg-surface-elevated transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">dashboard</span> Dashboard Builder
+          </span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-elevated text-primary font-label-md text-label-md shadow-[0_0_12px_rgba(99,102,241,0.2)] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> 15+ Yrs Ops Experience
+          </span>
+</div>
+<!-- Executive Narrative Summary -->
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl">
+          15+ years of business and operations experience, now applying Power BI, SQL, Python &amp; Excel to transform complex enterprise data into high-conviction insights, streamlined reporting pipelines, and interactive executive dashboards.
         </p>
 <!-- CTAs -->
-<div class="flex flex-wrap items-center gap-4 pt-2">
-<a class="px-7 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold flex items-center gap-2.5 shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02]" href="#projects">
-            View Projects <i class="fa-solid fa-arrow-right text-xs"></i>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-space-sm rounded-full bg-gradient-to-r from-primary-container to-tertiary-container text-text-primary font-label-md text-label-md shadow-[0_0_24px_rgba(128,131,255,0.45)] hover:brightness-110 hover:gap-space-sm transition-all group" href="#projects">
+<span>View Projects</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
-<a class="px-7 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700/80 flex items-center gap-2 transition-all" href="#contact">
-            Contact Me
-          </a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-space-sm rounded-full bg-surface-elevated text-on-surface font-label-md text-label-md shadow-md hover:bg-surface-container-highest hover:text-text-primary transition-all" href="#contact">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Contact Me</span>
+</a>
 </div>
-<!-- Metric Badges -->
-<div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
-<div class="bg-slate-900/50 backdrop-blur-md p-4 rounded-2xl border border-slate-800/60">
-<div class="text-2xl sm:text-3xl font-extrabold text-indigo-400">16+</div>
-<div class="text-xs uppercase tracking-wider text-slate-400 font-medium mt-1">Years Ops Exp</div>
+<!-- KPI Metrics Grid Strip -->
+<div class="w-full grid grid-cols-3 gap-space-xs sm:gap-space-sm p-space-sm rounded-2xl bg-surface-glass backdrop-blur-xl shadow-xl mt-space-sm">
+<div class="flex flex-col items-center sm:items-start px-space-2xs">
+<span class="font-stat-metric text-stat-metric-mobile sm:text-stat-metric text-text-primary font-bold tracking-tight">16<span class="text-accent-cyan">+</span></span>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider text-center sm:text-left">Years Ops Exp</span>
 </div>
-<div class="bg-slate-900/50 backdrop-blur-md p-4 rounded-2xl border border-slate-800/60">
-<div class="text-2xl sm:text-3xl font-extrabold text-sky-400">2+</div>
-<div class="text-xs uppercase tracking-wider text-slate-400 font-medium mt-1">Flagship Apps</div>
+<div class="flex flex-col items-center sm:items-start px-space-2xs bg-surface-container-low/40 rounded-xl">
+<span class="font-stat-metric text-stat-metric-mobile sm:text-stat-metric text-accent-violet-light font-bold tracking-tight">2<span class="text-secondary">+</span></span>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider text-center sm:text-left">Live Flagship Apps</span>
 </div>
-<div class="bg-slate-900/50 backdrop-blur-md p-4 rounded-2xl border border-slate-800/60">
-<div class="text-2xl sm:text-3xl font-extrabold text-violet-400">1</div>
-<div class="text-xs uppercase tracking-wider text-slate-400 font-medium mt-1">Entri Elevate Cert</div>
-</div>
-</div>
-</div>
-<!-- Hero Photo Card with Interactive Tags -->
-<div class="lg:col-span-5 relative">
-<div class="relative mx-auto max-w-md rounded-3xl p-3 bg-gradient-to-b from-indigo-500/30 via-slate-800/40 to-transparent border border-indigo-500/30 shadow-2xl backdrop-blur-sm">
-<div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-slate-900">
-<img alt="Dan Babu Boddu" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&amp;auto=format&amp;fit=crop&amp;q=80';" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-[#0a0e18] via-transparent to-transparent opacity-80"></div>
-<!-- Float Badges -->
-<div class="absolute top-4 right-4 bg-[#0f172a]/90 backdrop-blur-md border border-indigo-500/30 px-3.5 py-2 rounded-xl flex items-center gap-2.5 shadow-lg">
-<i class="fa-solid fa-chart-column text-sky-400"></i>
-<div>
-<p class="text-[11px] font-bold text-white leading-tight">Power BI DAX</p>
-<p class="text-[9px] text-slate-400">Star-Schema Architecture</p>
+<div class="flex flex-col items-center sm:items-start px-space-2xs">
+<span class="font-stat-metric text-stat-metric-mobile sm:text-stat-metric text-text-primary font-bold tracking-tight">1</span>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider text-center sm:text-left">Entri Elevate Cert</span>
 </div>
 </div>
-<div class="absolute bottom-4 left-4 bg-[#0f172a]/90 backdrop-blur-md border border-slate-700/80 px-3.5 py-2 rounded-xl flex items-center gap-2.5 shadow-lg">
-<i class="fa-solid fa-database text-indigo-400"></i>
-<div>
-<p class="text-[11px] font-bold text-white leading-tight">SQL Queries &amp; ETL</p>
-<p class="text-[9px] text-slate-400">Clean Relational Pipelines</p>
 </div>
+<!-- Right Column: Hero Visual with Ambient Floating Cards -->
+<div class="lg:col-span-5 flex justify-center relative">
+<div class="relative w-full max-w-md">
+<!-- Ambient Indigo Halo -->
+<div class="absolute -inset-2 bg-gradient-to-tr from-primary-container via-accent-cyan to-secondary rounded-3xl opacity-30 blur-2xl -z-10"></div>
+<!-- Image Frame Glass Container -->
+<div class="relative rounded-3xl overflow-hidden shadow-2xl bg-surface-glass backdrop-blur-md p-space-2xs group">
+<img alt="Dan Babu Boddu working on enterprise analytics dashboard at desk" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-cnkbGDTdRmShsYPoEu8YhJ0ZUjv_mrtipN_IJyXJYX82BPCnYNRvuHcz47kuYpxAcHa82bAvAtRnd1WFiZfNZ4DzcmVrHAeZKvGuEsYao-KjC5bhotyjhqGb-G04pxXiL3knw2JaHo81Ju9tGHpk6H2FmD9YZ5AZ85duMRjlFpaiMBxl8xhntRh6b78d6v4TBMKHZ5QpAGQHO9k0r4azkxY4iGX37Bvh3gaVnoxczwVIvBoxPO02r9LIDkHwtFdncw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-40"></div>
+</div>
+<!-- Floating Badge 1: Top Right -->
+<div class="absolute -top-4 -right-4 hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-2xl bg-surface-card/90 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] transform hover:-translate-y-1 transition-transform">
+<div class="w-8 h-8 rounded-lg bg-surface-elevated flex items-center justify-center text-accent-cyan">
+<span class="material-symbols-outlined text-[18px]">schema</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary font-bold">Power BI DAX</span>
+<span class="font-label-sm text-[10px] text-text-muted">Star-Schema Architecture</span>
+</div>
+</div>
+<!-- Floating Badge 2: Bottom Left -->
+<div class="absolute -bottom-5 -left-4 hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-2xl bg-surface-card/90 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] transform hover:translate-y-1 transition-transform">
+<div class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">database</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-primary font-bold">SQL Queries &amp; ETL</span>
+<span class="font-label-sm text-[10px] text-accent-cyan">Clean Relational Pipelines</span>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- ABOUT SECTION -->
-<section class="relative z-10 py-24 bg-slate-950/60 border-y border-slate-800/80" id="about">
-<div class="max-w-7xl mx-auto px-6">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<p class="text-xs font-bold uppercase tracking-widest text-indigo-400">Background &amp; Expertise</p>
-<h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Bridging Field Operations &amp; Modern BI</h2>
+<!-- ABOUT ME SECTION -->
+<section class="w-full py-space-3xl px-container-padding-mobile lg:px-container-padding-tablet bg-surface-container-lowest/50 relative" id="about">
+<div class="max-w-7xl mx-auto">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center mb-space-2xl">
+<span class="font-label-md text-label-md text-accent-cyan uppercase tracking-widest font-semibold mb-space-3xs">Background &amp; Expertise</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight">Bridging Field Operations &amp; Modern BI</h2>
+<div class="w-16 h-1 bg-gradient-to-r from-accent-cyan to-primary-container rounded-full mt-space-xs"></div>
 </div>
-<div class="grid lg:grid-cols-12 gap-12 items-center max-w-6xl mx-auto">
-<div class="lg:col-span-5 flex justify-center">
-<div class="relative group">
-<div class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-sky-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition duration-700"></div>
-<img alt="Dan Babu Boddu Profile" class="relative rounded-2xl w-80 h-96 object-cover border border-slate-700/80 shadow-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&amp;auto=format&amp;fit=crop&amp;q=80';" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Left Column: Portrait & Credential Pill -->
+<div class="lg:col-span-5 flex flex-col items-center">
+<div class="relative w-72 sm:w-80 aspect-square">
+<div class="absolute -inset-3 bg-gradient-to-bl from-accent-cyan/30 to-tertiary-container/30 rounded-3xl blur-xl"></div>
+<div class="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-surface-card p-space-2xs">
+<img alt="Dan Babu Boddu executive profile portrait" class="w-full h-full object-cover rounded-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH8067qSwNduucKzWWrQo8sRlXvkWk3IShnKxUWOxWB9a4OASnIGHk-kEw8xBF8jHl9mPFwaSVCENZqUJeN84nejZDEVmN54REjLfISYgCBnp7GCS84ltAEx6lfdimxBdxXjBpK0VheQlgXOzMm-2k4AiX0pTBUfWim8YMEVcOB66NeVawMvK7UupWJNC-4RlqUHxTcm1dfFBGYeB-Xri5VHCTc4uUSlQW4FMnGYH3AwNa3DcS5UXnhKanlvK8k2mSgQ"/>
+</div>
+<!-- Bottom Corner Pill -->
+<div class="absolute -bottom-3 right-4 px-space-md py-space-2xs rounded-full bg-surface-elevated text-on-surface shadow-xl flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">sync_alt</span>
+<span class="font-label-sm text-label-sm font-semibold text-text-primary">Operations + Analytics</span>
 </div>
 </div>
-<div class="lg:col-span-7 space-y-6">
-<h3 class="text-2xl font-bold text-white leading-snug">
+</div>
+<!-- Right Column: Narrative Journey & Experience Detail -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-cyan font-label-sm text-label-sm font-semibold uppercase">Operational Heritage</span>
+<span class="text-text-muted font-body-sm text-body-sm">15+ Years Domain Real-World Acumen</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold">
             Ground-Truth Business Instincts Powered by Rigorous Quantitative Tools
           </h3>
-<p class="text-slate-300 leading-relaxed">
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
             With over 15 years spent driving operational success across sales, warehouse inventory management, and multi-tier distribution logistics, I understand how frontline decisions impact revenue. Having managed actual operational friction firsthand, my transition to Data Analytics brings an invaluable advantage: I don't just write queries or build charts—I construct models that solve pragmatic business problems.
           </p>
-<p class="text-slate-300 leading-relaxed">
-            Through rigorous ongoing specialization via the <strong class="text-indigo-300">Entri Elevate Data Analytics Program (Feb 2026 – Jul 2026)</strong>, I master modern analytics stacks: architecting star-schema data models in <strong class="text-white">Power BI</strong>, engineering complex <strong class="text-white">DAX measures</strong>, building robust relational joins in <strong class="text-white">SQL</strong>, and executing data wrangling with <strong class="text-white">Python (Pandas, NumPy, Matplotlib)</strong>.
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+            Through rigorous ongoing specialization via the <span class="text-accent-cyan font-semibold">Entri Elevate Data Analytics Program (Feb 2026 – Jul 2026)</span>, I master modern analytics stacks: architecting star-schema data models in <span class="text-text-primary font-medium">Power BI</span>, engineering complex <span class="text-text-primary font-medium">DAX measures</span>, building robust relational joins in <span class="text-text-primary font-medium">SQL</span>, and executing data wrangling with <span class="text-text-primary font-medium">Python (Pandas, NumPy, Matplotlib)</span>.
           </p>
-<div class="grid sm:grid-cols-2 gap-4 pt-4">
-<div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-<i class="fa-solid fa-boxes-stacked text-indigo-400 mb-2"></i>
-<h4 class="text-white font-semibold text-sm">Logistics &amp; Sales Ops</h4>
-<p class="text-xs text-slate-400 mt-1">Inventory throughput, supply chains, dynamic pricing, distribution KPIs.</p>
+<!-- Core Competencies Matrix Sub-cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-space-md rounded-xl bg-surface-card shadow-md flex items-start gap-space-sm">
+<div class="p-space-xs rounded-lg bg-surface-elevated text-accent-cyan">
+<span class="material-symbols-outlined text-[22px]">inventory_2</span>
 </div>
-<div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
-<i class="fa-solid fa-diagram-project text-sky-400 mb-2"></i>
-<h4 class="text-white font-semibold text-sm">Business Intelligence</h4>
-<p class="text-xs text-slate-400 mt-1">Star Schema design, Power Query ETL, Executive Dashboards, DAX calculations.</p>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[15px] text-text-primary font-bold">Logistics &amp; Sales Ops</span>
+<span class="font-body-sm text-body-sm text-text-muted">Inventory throughput, supply chains, dynamic pricing, distribution KPIs.</span>
 </div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-card shadow-md flex items-start gap-space-sm">
+<div class="p-space-xs rounded-lg bg-surface-elevated text-primary">
+<span class="material-symbols-outlined text-[22px]">analytics</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-[15px] text-text-primary font-bold">Business Intelligence</span>
+<span class="font-body-sm text-body-sm text-text-muted">Star Schema design, Power Query ETL, Executive Dashboards, DAX calculations.</span>
+</div>
+</div>
+</div>
+<!-- Quick Connect Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-xs rounded-full bg-surface-elevated text-text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="https://www.linkedin.com/in/dan_babu" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-accent-cyan">group</span>
+<span>Connect on LinkedIn</span>
+</a>
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-xs rounded-full bg-surface-elevated text-text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="mailto:b.danbabu1991@gmail.com">
+<span class="material-symbols-outlined text-[18px] text-accent-violet-light">mail</span>
+<span>Email Me</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE SKILLS GRID -->
+<section class="w-full py-space-3xl px-container-padding-mobile lg:px-container-padding-tablet relative" id="skills">
+<div class="max-w-7xl mx-auto flex flex-col items-center">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center mb-space-2xl">
+<span class="font-label-md text-label-md text-accent-violet-light uppercase tracking-widest font-semibold mb-space-3xs">Modern Analytics Stack</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight">Technical Tooling &amp; Data Capabilities</h2>
+<p class="font-body-md text-body-md text-text-muted mt-space-2xs max-w-xl">
+          An integrated pipeline from raw tabular ingestion and SQL data warehousing to dynamic DAX models and presentation-ready dashboards.
+        </p>
+</div>
+<!-- 10 Skills Bento Grid -->
+<div class="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-sm">
+<!-- Skill 1: Python -->
+<div class="group p-space-md rounded-2xl bg-surface-card/80 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-surface-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-accent-cyan mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Python</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-space-3xs">ETL, Automation &amp; Scripting pipelines.</p>
+</div>
+<div class="mt-space-md">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-accent-cyan to-primary-container h-full w-[88%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-[10px] text-accent-cyan font-bold block mt-space-3xs">Advanced Scripting</span>
+</div>
+</div>
+<!-- Skill 2: SQL -->
+<div class="group p-space-md rounded-2xl bg-surface-card/80 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-surface-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-accent-violet-light mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">database</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">SQL</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-space-3xs">Queries, Subqueries, Joins &amp; Window Functions.</p>
+</div>
+<div class="mt-space-md">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-accent-violet-light to-secondary h-full w-[92%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-[10px] text-accent-violet-light font-bold block mt-space-3xs">Relational Architecture</span>
+</div>
+</div>
+<!-- Skill 3: Power BI -->
+<div class="group p-space-md rounded-2xl bg-surface-card/80 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-surface-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">bar_chart</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Power BI</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-space-3xs">Architecture, Star-Schema &amp; DAX Modeling.</p>
+</div>
+<div class="mt-space-md">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-secondary to-accent-cyan h-full w-[95%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-[10px] text-secondary font-bold block mt-space-3xs">Specialist</span>
+</div>
+</div>
+<!-- Skill 4: Excel -->
+<div class="group p-space-md rounded-2xl bg-surface-card/80 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-surface-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">table_view</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Excel</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-space-3xs">Pivot Tables, VLOOKUP, Power Query &amp; Macros.</p>
+</div>
+<div class="mt-space-md">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary to-accent-violet-light h-full w-[96%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-[10px] text-primary font-bold block mt-space-3xs">Mastery (15+ Yrs)</span>
+</div>
+</div>
+<!-- Skill 5: Pandas -->
+<div class="group p-space-md rounded-2xl bg-surface-card/80 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-surface-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-accent-cyan mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">view_column</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Pandas</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-space-3xs">Data wrangling, imputation, reshaping &amp; merges.</p>
+</div>
+<div class="mt-space-md">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-accent-cyan to-secondary h-full w-[85%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-[10px] text-accent-cyan font-bold block mt-space-3xs">Data Wrangling</span>
+</div>
+</div>
+<!-- Skill 6: NumPy -->
+<div class="group p-space-md rounded-2xl bg-surface-card/80 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-surface-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-accent-violet-light mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">functions</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">NumPy</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-space-3xs">Vectorized operations &amp; numerical arrays.</p>
+</div>
+<div class="mt-space-md">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-accent-violet-light to-primary h-full w-[82%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-[10px] text-accent-violet-light font-bold block mt-space-3xs">Array Computing</span>
+</div>
+</div>
+<!-- Skill 7: Matplotlib -->
+<div class="group p-space-md rounded-2xl bg-surface-card/80 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-surface-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">monitoring</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Matplotlib</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-space-3xs">Statistical charts, subplots &amp; visualization.</p>
+</div>
+<div class="mt-space-md">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-secondary to-accent-cyan h-full w-[85%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-[10px] text-secondary font-bold block mt-space-3xs">Data Graphics</span>
+</div>
+</div>
+<!-- Skill 8: Seaborn -->
+<div class="group p-space-md rounded-2xl bg-surface-card/80 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-surface-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-accent-cyan mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">bubble_chart</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Seaborn</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-space-3xs">Distributions, regression &amp; correlation heatmaps.</p>
+</div>
+<div class="mt-space-md">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-accent-cyan to-primary h-full w-[84%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-[10px] text-accent-cyan font-bold block mt-space-3xs">Statistical Analysis</span>
+</div>
+</div>
+<!-- Skill 9: Jupyter -->
+<div class="group p-space-md rounded-2xl bg-surface-card/80 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-surface-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-fixed-dim mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">code_blocks</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Jupyter</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-space-3xs">Interactive data exploration &amp; markdown docs.</p>
+</div>
+<div class="mt-space-md">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary-fixed-dim to-accent-violet-light h-full w-[90%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-[10px] text-primary-fixed-dim font-bold block mt-space-3xs">Notebooks &amp; EDA</span>
+</div>
+</div>
+<!-- Skill 10: Business Analytics -->
+<div class="group p-space-md rounded-2xl bg-surface-card/80 backdrop-blur-sm shadow-md hover:shadow-xl hover:bg-surface-elevated hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary-fixed-dim mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">psychology</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-semibold">Domain Analytics</h3>
+<p class="font-body-sm text-body-sm text-text-muted mt-space-3xs">Executive KPI framing, root cause &amp; forecast models.</p>
+</div>
+<div class="mt-space-md">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-secondary-fixed-dim to-secondary h-full w-[98%] rounded-full"></div>
+</div>
+<span class="font-label-sm text-[10px] text-secondary-fixed-dim font-bold block mt-space-3xs">Domain Expert</span>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- SKILLS SECTION -->
-<section class="relative z-10 py-24 max-w-7xl mx-auto px-6" id="skills">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<p class="text-xs font-bold uppercase tracking-widest text-indigo-400">Modern Analytics Stack</p>
-<h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Technical Tooling &amp; Data Capabilities</h2>
-<p class="text-slate-400 text-sm mt-3">An integrated pipeline from raw tabular ingestion and SQL data warehousing to dynamic DAX models and presentation-ready dashboards.</p>
+<!-- FEATURED PROJECTS SHOWCASE -->
+<section class="w-full py-space-3xl px-container-padding-mobile lg:px-container-padding-tablet bg-surface-container-lowest/40 relative" id="projects">
+<div class="max-w-7xl mx-auto flex flex-col">
+<!-- Section Header -->
+<div class="flex flex-col items-center text-center mb-space-2xl">
+<span class="font-label-md text-label-md text-accent-cyan uppercase tracking-widest font-semibold mb-space-3xs">Selected Work</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight">Enterprise Analytics Case Studies</h2>
+<p class="font-body-md text-body-md text-text-muted mt-space-2xs max-w-xl">
+          Complete end-to-end applications demonstrating data ingestion, statistical modeling, relational star schemas, and actionable UI.
+        </p>
 </div>
-<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
-<i class="fa-brands fa-python text-3xl text-blue-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
-<h4 class="text-white font-bold text-sm">Python</h4>
-<p class="text-xs text-slate-400 mt-1">ETL, Automation &amp; Scripting pipelines.</p>
+<!-- Project Cards Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-xl items-stretch">
+<!-- CARD A: Sales Analytics Dashboard with Construction Inventory Morph to Bar Chart -->
+<div class="p-space-lg sm:p-space-xl rounded-3xl bg-surface-card shadow-2xl flex flex-col justify-between group hover:shadow-[0_0_35px_-5px_rgba(99,102,241,0.35)] transition-all duration-500 border border-white/5 hover:border-primary-container/40">
+<div class="flex flex-col">
+<!-- Top Tag and Meta Bar -->
+<div class="flex items-center justify-between gap-space-xs mb-space-md">
+<span class="px-space-sm py-space-3xs rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+                Flagship Power BI App
+              </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-text-muted">
+<span class="material-symbols-outlined text-[16px] text-accent-cyan">grid_view</span>
+                4 Multi-Pages
+              </span>
 </div>
-<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
-<i class="fa-solid fa-database text-3xl text-sky-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
-<h4 class="text-white font-bold text-sm">SQL</h4>
-<p class="text-xs text-slate-400 mt-1">Queries, Subqueries, Joins &amp; Window Functions.</p>
-</div>
-<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
-<i class="fa-solid fa-chart-column text-3xl text-amber-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
-<h4 class="text-white font-bold text-sm">Power BI</h4>
-<p class="text-xs text-slate-400 mt-1">Architecture, Star-Schema &amp; DAX Modeling.</p>
-</div>
-<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
-<i class="fa-regular fa-file-excel text-3xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
-<h4 class="text-white font-bold text-sm">Excel</h4>
-<p class="text-xs text-slate-400 mt-1">Pivot Tables, VLOOKUP, Power Query &amp; Macros.</p>
-</div>
-<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
-<i class="fa-solid fa-table text-3xl text-indigo-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
-<h4 class="text-white font-bold text-sm">Pandas</h4>
-<p class="text-xs text-slate-400 mt-1">Data wrangling, imputation, reshaping &amp; merges.</p>
-</div>
-<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
-<i class="fa-solid fa-square-root-variable text-3xl text-violet-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
-<h4 class="text-white font-bold text-sm">NumPy</h4>
-<p class="text-xs text-slate-400 mt-1">Vectorized operations &amp; numerical arrays.</p>
-</div>
-<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
-<i class="fa-solid fa-chart-line text-3xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
-<h4 class="text-white font-bold text-sm">Matplotlib</h4>
-<p class="text-xs text-slate-400 mt-1">Statistical charts, subplots &amp; visualization.</p>
-</div>
-<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
-<i class="fa-solid fa-chart-area text-3xl text-teal-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
-<h4 class="text-white font-bold text-sm">Seaborn</h4>
-<p class="text-xs text-slate-400 mt-1">Distributions, regression &amp; correlation heatmaps.</p>
-</div>
-<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
-<i class="fa-solid fa-book-open text-3xl text-orange-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
-<h4 class="text-white font-bold text-sm">Jupyter</h4>
-<p class="text-xs text-slate-400 mt-1">Interactive data exploration &amp; markdown docs.</p>
-</div>
-<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
-<i class="fa-solid fa-brain text-3xl text-pink-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
-<h4 class="text-white font-bold text-sm">Domain Analytics</h4>
-<p class="text-xs text-slate-400 mt-1">Executive KPI framing, root cause &amp; forecast models.</p>
+<!-- Title -->
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold group-hover:text-accent-cyan transition-colors">
+              Sales Analytics Interactive Dashboard
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary mt-space-xs leading-relaxed">
+              Engineered a multi-page interactive Power BI dashboard tracking Executive performance, Product distribution, Outlet profitability, and Overall sales velocity. Powered by a robust star-schema relational model with custom DAX measures for Year-over-Year (YoY) variances and real-time drill-down slicing.
+            </p>
+<!-- Rich Dynamic Interactive Visual Preview Area (Construction Inventory -> Bar Chart Morph) -->
+<div class="my-space-md p-space-md rounded-2xl bg-surface-elevated/90 border border-white/5 relative overflow-hidden h-52 flex flex-col justify-between shadow-inner">
+<!-- Top Bar inside Preview -->
+<div class="flex items-center justify-between z-20">
+<div class="flex items-center gap-space-2xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-kpi-accent"></span>
+<!-- State Labels -->
+<div class="relative h-4 overflow-hidden ml-2 w-48">
+<span class="absolute inset-0 font-label-sm text-[11px] text-text-muted transition-all duration-500 group-hover:-translate-y-5 group-hover:opacity-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-amber-400">precision_manufacturing</span> Supply &amp; Construction Inventory
+                  </span>
+<span class="absolute inset-0 font-label-sm text-[11px] text-accent-cyan font-semibold transition-all duration-500 translate-y-5 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-accent-cyan">analytics</span> Power BI Star-Schema Model
+                  </span>
 </div>
 </div>
-</section>
-<!-- PROJECTS SECTION (Hover Interactive Animated Cards) -->
-<section class="relative z-10 py-24 bg-slate-950/60 border-y border-slate-800/80" id="projects">
-<div class="max-w-7xl mx-auto px-6">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<p class="text-xs font-bold uppercase tracking-widest text-indigo-400">Selected Work</p>
-<h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Enterprise Analytics Case Studies</h2>
-<p class="text-slate-400 text-sm mt-3">Complete end-to-end applications demonstrating data ingestion, statistical modeling, relational schemas, and actionable UI.</p>
-</div>
-<div class="grid md:grid-cols-2 gap-8">
-<!-- Project 1: Sales Analytics -->
-<div class="group rounded-3xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10">
-<!-- Interactive Preview Area -->
-<div class="h-64 bg-slate-950 relative overflow-hidden border-b border-slate-800/80 p-6 flex flex-col justify-between">
-<div class="flex items-center justify-between text-xs font-mono text-slate-400 z-10">
-<span class="flex items-center gap-2"><i class="fa-solid fa-table-columns text-indigo-400"></i> Supply &amp; Construction Inventory</span>
-<span class="px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-indigo-300">4 Product Categories</span>
-</div>
-<!-- Interactive Bar Animation on Hover -->
-<div class="flex items-end justify-between gap-4 h-32 px-4 z-10">
-<div class="flex-1 flex flex-col items-center gap-2 group-hover:scale-105 transition-transform">
-<div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 rounded-t-lg transition-all duration-500 group-hover:h-28 h-16 shadow-lg shadow-indigo-500/20"></div>
-<span class="text-[10px] text-slate-400 font-medium">Cement</span>
-</div>
-<div class="flex-1 flex flex-col items-center gap-2 group-hover:scale-105 transition-transform">
-<div class="w-full bg-gradient-to-t from-sky-600 to-sky-400 rounded-t-lg transition-all duration-500 group-hover:h-24 h-12 shadow-lg shadow-sky-500/20"></div>
-<span class="text-[10px] text-slate-400 font-medium">Steel</span>
-</div>
-<div class="flex-1 flex flex-col items-center gap-2 group-hover:scale-105 transition-transform">
-<div class="w-full bg-gradient-to-t from-violet-600 to-violet-400 rounded-t-lg transition-all duration-500 group-hover:h-32 h-20 shadow-lg shadow-violet-500/20"></div>
-<span class="text-[10px] text-slate-400 font-medium">Masonry</span>
-</div>
-<div class="flex-1 flex flex-col items-center gap-2 group-hover:scale-105 transition-transform">
-<div class="w-full bg-gradient-to-t from-emerald-600 to-emerald-400 rounded-t-lg transition-all duration-500 group-hover:h-20 h-10 shadow-lg shadow-emerald-500/20"></div>
-<span class="text-[10px] text-slate-400 font-medium">Plant</span>
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-label-md font-bold transition-all duration-500 bg-amber-500/20 text-amber-300 group-hover:bg-primary-container/30 group-hover:text-accent-cyan">
+<span class="inline group-hover:hidden">4 Product Categories</span>
+<span class="hidden group-hover:inline">+28.4% YoY Growth</span>
+</span>
 </div>
 </div>
-<div class="text-[11px] text-slate-400 text-center font-medium z-10">
-              Hover to trigger live dynamic DAX slicing
-            </div>
+<!-- Dynamic Container: Morph Layer -->
+<div class="relative flex-1 w-full flex items-end justify-between gap-3 px-2 pt-2 pb-1 z-10">
+<!-- Column 1: Cement Bags / Pallets -> Q1 Column -->
+<div class="flex-1 flex flex-col items-center justify-end h-full relative">
+<!-- Construction Item State (Default) -->
+<div class="absolute bottom-6 flex flex-col items-center transition-all duration-500 transform group-hover:translate-y-8 group-hover:opacity-0 group-hover:scale-75">
+<div class="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.2)]">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
 </div>
-<div class="p-8 flex-1 flex flex-col justify-between space-y-6">
-<div class="space-y-3">
-<div class="flex items-center justify-between">
-<span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Flagship Power BI App</span>
-<span class="text-xs text-slate-400 font-medium">4 Multi-Pages</span>
+<span class="text-[10px] font-label-sm text-amber-200/80 font-medium mt-1">Cement</span>
+<span class="text-[9px] font-mono text-text-muted">1.4k Units</span>
 </div>
-<h3 class="text-xl font-bold text-white">Sales Analytics Interactive Dashboard</h3>
-<p class="text-sm text-slate-300 leading-relaxed">
-                Engineered a multi-page interactive Power BI dashboard tracking Executive performance, Product distribution, Outlet profitability, and Overall sales velocity. Powered by a robust star-schema relational model with custom DAX measures for Year-over-Year (YoY) variances and real-time drill-down slicing.
-              </p>
+<!-- Bar Chart State (On Hover) -->
+<div class="w-full flex flex-col items-center justify-end h-full transition-all duration-500 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+<span class="text-[10px] font-mono text-primary font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity delay-100">$184K</span>
+<div class="w-full bg-gradient-to-t from-primary-container/40 via-primary-container/70 to-primary rounded-t-md h-16 shadow-[0_0_15px_rgba(128,131,255,0.3)]"></div>
 </div>
-<div class="flex flex-wrap gap-2">
-<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Power BI</span>
-<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">DAX Calculations</span>
-<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Star Schema</span>
-<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Business Intelligence</span>
+<!-- Footnote Label -->
+<span class="font-label-sm text-[10px] text-text-muted mt-1.5 transition-colors group-hover:text-text-primary">Q1</span>
 </div>
-<a class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white border border-indigo-500/30 transition-all font-semibold text-sm" href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" target="_blank">
+<!-- Column 2: Steel Beams / Rebar -> Q2 Column -->
+<div class="flex-1 flex flex-col items-center justify-end h-full relative">
+<!-- Construction Item State (Default) -->
+<div class="absolute bottom-6 flex flex-col items-center transition-all duration-500 delay-75 transform group-hover:translate-y-8 group-hover:opacity-0 group-hover:scale-75">
+<div class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-accent-cyan shadow-[0_0_12px_rgba(56,189,248,0.2)]">
+<span class="material-symbols-outlined text-[20px]">carpenter</span>
+</div>
+<span class="text-[10px] font-label-sm text-cyan-200/80 font-medium mt-1">Steel / Rebar</span>
+<span class="text-[9px] font-mono text-text-muted">860 Tons</span>
+</div>
+<!-- Bar Chart State (On Hover) -->
+<div class="w-full flex flex-col items-center justify-end h-full transition-all duration-500 delay-75 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+<span class="text-[10px] font-mono text-accent-cyan font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity delay-150">$242K</span>
+<div class="w-full bg-gradient-to-t from-accent-cyan/30 via-accent-cyan/60 to-accent-cyan rounded-t-md h-24 shadow-[0_0_18px_rgba(56,189,248,0.35)]"></div>
+</div>
+<!-- Footnote Label -->
+<span class="font-label-sm text-[10px] text-text-muted mt-1.5 transition-colors group-hover:text-text-primary">Q2</span>
+</div>
+<!-- Column 3: Masonry Bricks / Blocks -> Q3 Column -->
+<div class="flex-1 flex flex-col items-center justify-end h-full relative">
+<!-- Construction Item State (Default) -->
+<div class="absolute bottom-6 flex flex-col items-center transition-all duration-500 delay-100 transform group-hover:translate-y-8 group-hover:opacity-0 group-hover:scale-75">
+<div class="w-9 h-9 rounded-xl bg-violet-500/15 border border-violet-500/30 flex items-center justify-center text-accent-violet-light shadow-[0_0_12px_rgba(129,140,248,0.2)]">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<span class="text-[10px] font-label-sm text-violet-200/80 font-medium mt-1">Masonry</span>
+<span class="text-[9px] font-mono text-text-muted">420k Bricks</span>
+</div>
+<!-- Bar Chart State (On Hover) -->
+<div class="w-full flex flex-col items-center justify-end h-full transition-all duration-500 delay-100 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+<span class="text-[10px] font-mono text-accent-violet-light font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity delay-200">$310K</span>
+<div class="w-full bg-gradient-to-t from-accent-violet-light/30 via-accent-violet-light/60 to-tertiary rounded-t-md h-28 shadow-[0_0_20px_rgba(129,140,248,0.35)]"></div>
+</div>
+<!-- Footnote Label -->
+<span class="font-label-sm text-[10px] text-text-muted mt-1.5 transition-colors group-hover:text-text-primary">Q3</span>
+</div>
+<!-- Column 4: Fleet & Heavy Machinery -> Q4 Peak Column -->
+<div class="flex-1 flex flex-col items-center justify-end h-full relative">
+<!-- Construction Item State (Default) -->
+<div class="absolute bottom-6 flex flex-col items-center transition-all duration-500 delay-150 transform group-hover:translate-y-8 group-hover:opacity-0 group-hover:scale-75">
+<div class="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.2)]">
+<span class="material-symbols-outlined text-[20px]">forklift</span>
+</div>
+<span class="text-[10px] font-label-sm text-emerald-200/80 font-medium mt-1">Fleet / Plant</span>
+<span class="text-[9px] font-mono text-text-muted">38 Sites</span>
+</div>
+<!-- Bar Chart State (On Hover) -->
+<div class="w-full flex flex-col items-center justify-end h-full transition-all duration-500 delay-150 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+<span class="text-[10px] font-mono text-kpi-accent font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity delay-250">$492K</span>
+<div class="w-full bg-gradient-to-t from-kpi-accent/40 via-kpi-accent to-secondary rounded-t-md h-36 shadow-[0_0_24px_rgba(34,211,238,0.5)]"></div>
+</div>
+<!-- Footnote Label -->
+<span class="font-label-sm text-[10px] font-bold text-text-muted mt-1.5 transition-colors group-hover:text-kpi-accent">Q4 Peak</span>
+</div>
+</div>
+<!-- Background Graph Grid lines -->
+<div class="absolute inset-0 pointer-events-none opacity-20 flex flex-col justify-between p-4 z-0">
+<div class="border-b border-dashed border-white/40 w-full"></div>
+<div class="border-b border-dashed border-white/40 w-full"></div>
+<div class="border-b border-dashed border-white/40 w-full"></div>
+</div>
+</div>
+<!-- Tech Tags -->
+<div class="flex flex-wrap gap-space-2xs my-space-xs">
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-cyan font-label-sm text-label-sm">Power BI</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-violet-light font-label-sm text-label-sm">DAX Calculations</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-secondary-fixed-dim font-label-sm text-label-sm">Star Schema</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm">Business Intelligence</span>
+</div>
+</div>
+<!-- Bottom Action -->
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-xs rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md hover:brightness-110 transition-all group-hover:gap-space-sm" href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" rel="noopener noreferrer" target="_blank">
 <span>View on GitHub</span>
-<i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
 </a>
+<span class="font-label-sm text-label-sm text-text-muted">Ready for Deployment</span>
 </div>
 </div>
-<!-- Project 2: Air Quality & Health Dashboard -->
-<div class="group rounded-3xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10">
-<!-- Weather to Bar Chart Transformation on Hover -->
-<div class="h-64 bg-slate-950 relative overflow-hidden border-b border-slate-800/80 p-6 flex flex-col justify-between">
-<div class="flex items-center justify-between text-xs font-mono text-slate-400 z-10">
-<span class="flex items-center gap-2"><i class="fa-solid fa-cloud-sun text-amber-400"></i> Clear Sunny Telemetry • AQI 48 (Good)</span>
-<span class="px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400">Optimal</span>
+<!-- CARD B: Air Quality & Health Dashboard with Sunny -> Stormy Rainfall Hover Transition -->
+<div class="p-space-lg sm:p-space-xl rounded-3xl bg-surface-card shadow-2xl flex flex-col justify-between group hover:shadow-[0_0_35px_-5px_rgba(56,189,248,0.35)] transition-all duration-500 border border-white/5 hover:border-secondary-container/40">
+<div class="flex flex-col">
+<!-- Top Tag and Meta Bar -->
+<div class="flex items-center justify-between gap-space-xs mb-space-md">
+<span class="px-space-sm py-space-3xs rounded-full bg-secondary-container/20 text-accent-cyan font-label-sm text-label-sm font-semibold uppercase tracking-wider">
+                Full-Stack Data Engineering
+              </span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-text-muted">
+<span class="material-symbols-outlined text-[16px] text-accent-violet-light">dataset</span>
+                MySQL + Python + BI
+              </span>
 </div>
-<!-- Weather Scene (transforms to statistical bars on hover) -->
-<div class="relative h-32 flex items-center justify-center z-10">
-<div class="group-hover:opacity-0 group-hover:scale-75 transition-all duration-500 flex items-center gap-6">
-<i class="fa-solid fa-cloud text-slate-500 text-4xl"></i>
-<div class="w-16 h-16 rounded-full bg-amber-400 shadow-xl shadow-amber-400/40 animate-pulse flex items-center justify-center text-slate-900">
-<i class="fa-solid fa-sun text-2xl"></i>
+<!-- Title -->
+<h3 class="font-headline-md text-headline-md text-text-primary font-bold group-hover:text-accent-cyan transition-colors">
+              Air Quality &amp; Health Dashboard
+            </h3>
+<p class="font-body-md text-body-md text-text-secondary mt-space-xs leading-relaxed">
+              End-to-end telemetry and epidemiological pipeline analyzing air quality indices, weather patterns, and public health records across major Indian metropolitan centers. Proven high correlation finding: <span class="text-accent-cyan font-semibold">Strong AQI–Health Risk association (r = 0.82)</span>.
+            </p>
+<!-- Rich Weather Simulation Preview: Sunny Sky to Stormy Rainy Transition on Hover -->
+<div class="my-space-md p-space-md rounded-2xl relative overflow-hidden h-52 flex flex-col justify-between shadow-inner border border-white/5 transition-colors duration-700 bg-gradient-to-b from-sky-900/60 via-surface-elevated to-surface-card group-hover:from-slate-900 group-hover:via-slate-950 group-hover:to-surface-container-lowest">
+<!-- Ambient Sky Glow Layer -->
+<div class="absolute inset-0 bg-gradient-to-br from-amber-500/20 via-sky-500/10 to-transparent transition-opacity duration-700 opacity-100 group-hover:opacity-0 pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-indigo-950/60 to-slate-950 transition-opacity duration-700 opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+<!-- Top Status Row -->
+<div class="flex items-center justify-between z-20 relative">
+<div class="flex items-center gap-space-2xs">
+<div class="w-6 h-6 rounded-lg bg-surface-card/60 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-amber-400 group-hover:hidden transition-all">wb_sunny</span>
+<span class="material-symbols-outlined text-[18px] text-accent-cyan hidden group-hover:inline transition-all animate-bounce">thunderstorm</span>
 </div>
-<i class="fa-solid fa-cloud text-slate-500 text-3xl"></i>
+<span class="font-label-sm text-[11px] text-text-muted transition-colors group-hover:text-accent-cyan">
+<span class="group-hover:hidden">Clear Sunny Telemetry • AQI 48 (Good)</span>
+<span class="hidden group-hover:inline font-semibold text-accent-cyan">Severe Overcast Downpour • AQI 342 (Hazardous)</span>
+</span>
 </div>
-<!-- Bar Chart reveals on hover -->
-<div class="absolute inset-0 flex items-end justify-between gap-4 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-<div class="flex-1 bg-sky-500 rounded-t h-16"></div>
-<div class="flex-1 bg-amber-500 rounded-t h-28"></div>
-<div class="flex-1 bg-red-500 rounded-t h-24"></div>
-<div class="flex-1 bg-emerald-500 rounded-t h-12"></div>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-sm font-bold tracking-wide transition-all bg-emerald-500/20 text-emerald-400 group-hover:bg-error/20 group-hover:text-error">
+<span class="group-hover:hidden">Optimal</span>
+<span class="hidden group-hover:inline">r = 0.82 Risk</span>
+</span>
 </div>
+<!-- Interactive Weather Scene Visualization Area -->
+<div class="relative flex-1 w-full flex items-center justify-center overflow-hidden z-10">
+<!-- 1. SUNNY STATE (Default, sets downwards on hover) -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none transition-all duration-700 ease-in-out transform group-hover:translate-y-24 group-hover:opacity-0 group-hover:scale-75">
+<!-- Floating Soft Sunny Clouds -->
+<div class="absolute top-2 left-8 text-sky-200/50 animate-float-cloud1">
+<span class="material-symbols-outlined text-[38px]">cloud</span>
 </div>
-<div class="text-[11px] text-slate-400 text-center font-medium z-10">
-              Hover to simulate weather shift &amp; telemetry shock
-            </div>
+<div class="absolute top-5 right-12 text-sky-200/40 animate-float-cloud2">
+<span class="material-symbols-outlined text-[32px]">cloud</span>
 </div>
-<div class="p-8 flex-1 flex flex-col justify-between space-y-6">
-<div class="space-y-3">
-<div class="flex items-center justify-between">
-<span class="text-xs font-bold uppercase tracking-wider text-sky-400">Full-Stack Data Engineering</span>
-<span class="text-xs text-slate-400 font-medium">MySQL + Python + BI</span>
+<!-- Radiant Glowing Sun -->
+<div class="relative flex items-center justify-center animate-sun-pulse">
+<div class="w-20 h-20 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-300 shadow-[0_0_50px_rgba(251,191,36,0.85)] flex items-center justify-center">
+<div class="w-14 h-14 rounded-full bg-amber-300/80 blur-[2px]"></div>
 </div>
-<h3 class="text-xl font-bold text-white">Air Quality &amp; Health Dashboard</h3>
-<p class="text-sm text-slate-300 leading-relaxed">
-                End-to-end telemetry and epidemiological pipeline analyzing air quality indices, weather patterns, and public health records across major Indian metropolitan centers. Proven high correlation finding: <strong class="text-sky-300">Strong AQI-Health Risk association (r = 0.82)</strong>.
-              </p>
+<!-- Sun Ray Flares -->
+<div class="absolute -inset-3 border-2 border-dashed border-amber-300/40 rounded-full animate-spin" style="animation-duration: 25s;"></div>
 </div>
-<div class="flex flex-wrap gap-2">
-<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">MySQL</span>
-<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Python (Pandas)</span>
-<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Power BI</span>
-<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Correlation (r=0.82)</span>
+<div class="absolute bottom-1 text-[11px] font-label-md text-amber-200/80 bg-amber-950/40 px-3 py-0.5 rounded-full backdrop-blur-sm">
+                  Hover to simulate weather shift &amp; telemetry shock
+                </div>
 </div>
-<a class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-sky-600/20 hover:bg-sky-600 text-sky-300 hover:text-white border border-sky-500/30 transition-all font-semibold text-sm" href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" target="_blank">
-<span>View on GitHub</span>
-<i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-</a>
+<!-- 2. STORMY / RAIN STATE (Hover trigger) -->
+<div class="absolute inset-0 flex flex-col items-center justify-start pointer-events-none transition-all duration-700 ease-in-out transform -translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+<!-- Gathered Dark Storm Clouds -->
+<div class="relative w-full flex justify-center items-center gap-1 pt-1 z-20">
+<span class="material-symbols-outlined text-[44px] text-slate-500 drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] animate-pulse">cloud</span>
+<span class="material-symbols-outlined text-[54px] text-slate-600 drop-shadow-[0_4px_20px_rgba(15,23,42,0.9)] -ml-4">thunderstorm</span>
+<span class="material-symbols-outlined text-[42px] text-slate-500 drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] -ml-4 animate-pulse">cloud</span>
 </div>
+<!-- Continuous Animated Rainfall Drops -->
+<div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-10">
+<div class="rain-drop" style="left: 10%; animation-delay: 0.1s; animation-duration: 0.65s;"></div>
+<div class="rain-drop" style="left: 18%; animation-delay: 0.35s; animation-duration: 0.8s;"></div>
+<div class="rain-drop" style="left: 26%; animation-delay: 0.15s; animation-duration: 0.7s;"></div>
+<div class="rain-drop" style="left: 35%; animation-delay: 0.5s; animation-duration: 0.6s;"></div>
+<div class="rain-drop" style="left: 44%; animation-delay: 0.25s; animation-duration: 0.75s;"></div>
+<div class="rain-drop" style="left: 53%; animation-delay: 0.4s; animation-duration: 0.65s;"></div>
+<div class="rain-drop" style="left: 62%; animation-delay: 0.05s; animation-duration: 0.85s;"></div>
+<div class="rain-drop" style="left: 71%; animation-delay: 0.3s; animation-duration: 0.65s;"></div>
+<div class="rain-drop" style="left: 80%; animation-delay: 0.45s; animation-duration: 0.7s;"></div>
+<div class="rain-drop" style="left: 89%; animation-delay: 0.2s; animation-duration: 0.8s;"></div>
 </div>
+<!-- Health Correlation Spike Overlay Graph Curve (Fades into rain) -->
+<div class="w-full px-2 mt-auto pb-1 z-20">
+<div class="flex items-center justify-between text-[10px] font-mono text-accent-cyan pb-0.5">
+<span>AQI Surge 320+</span>
+<span class="text-error font-bold">Admissions +68%</span>
 </div>
-<div class="text-center mt-12">
-<a class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 font-medium text-sm transition-all" href="https://github.com/bdanbabu1991-dotcom" target="_blank">
-<i class="fa-brands fa-github text-base"></i>
-<span>Explore All Repositories on GitHub</span>
-</a>
-</div>
-</div>
-</section>
-<!-- CONTACT SECTION (Under The Stars) -->
-<section class="relative z-10 py-24 max-w-7xl mx-auto px-6" id="contact">
-<div class="text-center max-w-3xl mx-auto mb-16">
-<p class="text-xs font-bold uppercase tracking-widest text-indigo-400">Under The Stars</p>
-<h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Let's Connect &amp; Build</h2>
-<p class="text-slate-400 text-sm mt-3">Feel free to reach out — let's discuss business intelligence initiatives, analytics contracts, or operational pipelines.</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-center hover:border-indigo-500/50 transition-all">
-<div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mx-auto mb-4">
-<i class="fa-solid fa-location-dot text-lg"></i>
-</div>
-<p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Location</p>
-<p class="text-white font-bold text-base mt-1">Bengaluru, India</p>
-<p class="text-xs text-slate-400 mt-0.5">Open to Global Remote</p>
-</div>
-<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-center hover:border-indigo-500/50 transition-all">
-<div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mx-auto mb-4">
-<i class="fa-solid fa-phone text-lg"></i>
-</div>
-<p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Direct Call / WhatsApp</p>
-<a class="text-white font-bold text-base mt-1 block hover:text-indigo-400" href="tel:+919949711466">+91 99497 11466</a>
-<p class="text-xs text-slate-400 mt-0.5">Tap to Call</p>
-</div>
-<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-center hover:border-indigo-500/50 transition-all">
-<div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mx-auto mb-4">
-<i class="fa-solid fa-envelope text-lg"></i>
-</div>
-<p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Official Email</p>
-<a class="text-white font-bold text-sm mt-1 block hover:text-indigo-400 truncate" href="mailto:b.danbabu1991@gmail.com">b.danbabu1991@gmail.com</a>
-<p class="text-xs text-slate-400 mt-0.5">Tap to Compose</p>
-</div>
-<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-center hover:border-indigo-500/50 transition-all">
-<div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mx-auto mb-4">
-<i class="fa-brands fa-linkedin-in text-lg"></i>
-</div>
-<p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Professional Profile</p>
-<a class="text-white font-bold text-base mt-1 block hover:text-indigo-400" href="https://www.linkedin.com/in/dan_babu" target="_blank">dan_babu</a>
-<p class="text-xs text-slate-400 mt-0.5">View Network</p>
+<div class="w-full h-8 flex items-center justify-center relative">
+<svg class="w-full h-full text-accent-cyan" fill="none" viewbox="0 0 300 40" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,35 Q40,30 80,28 T160,20 T220,12 T300,4" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0,35 Q40,30 80,28 T160,20 T220,12 T300,4 L300,40 L0,40 Z" fill="currentColor" fill-opacity="0.2"></path>
+</svg>
 </div>
 </div>
-</section>
-<!-- FOOTER -->
-<footer class="relative z-10 py-8 border-t border-slate-800/80 bg-[#070a12]">
-<div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+</div>
+</div>
+<!-- Bottom Weather Telemetry Readout -->
+<div class="flex items-center justify-between pt-1 border-t border-white/10 z-20">
 <div class="flex items-center gap-2">
-<span class="text-sm font-bold text-white">Dan Babu Boddu</span>
-<span class="text-xs text-indigo-400">Data Specialist</span>
+<span class="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-ping"></span>
+<span class="font-label-sm text-[10px] text-text-muted">Telemetry: Delhi NCR • Mumbai • Bengaluru</span>
 </div>
-<p class="text-xs text-slate-400">© 2026 Dan Babu Boddu. All rights reserved.</p>
-<div class="flex items-center gap-4 text-slate-400">
-<a class="hover:text-white" href="https://github.com/bdanbabu1991-dotcom" target="_blank"><i class="fa-brands fa-github"></i></a>
-<a class="hover:text-white" href="https://www.linkedin.com/in/dan_babu" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-<a class="hover:text-white" href="mailto:b.danbabu1991@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+<span class="font-mono text-[10px] text-accent-cyan group-hover:text-error transition-colors">
+<span class="group-hover:hidden">PM2.5: 14 µg/m³</span>
+<span class="hidden group-hover:inline font-bold">PM2.5: 182 µg/m³ ⚠️</span>
+</span>
 </div>
 </div>
-</footer>
-<!-- EMBEDDED JAVASCRIPT -->
+<!-- Tech Tags -->
+<div class="flex flex-wrap gap-space-2xs my-space-xs">
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-cyan font-label-sm text-label-sm">MySQL</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-accent-violet-light font-label-sm text-label-sm">Python (Pandas)</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-secondary-fixed-dim font-label-sm text-label-sm">Power BI</span>
+<span class="px-space-sm py-space-3xs rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm">Correlation (r=0.82)</span>
+</div>
+</div>
+<!-- Bottom Action -->
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-space-xs rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:brightness-110 transition-all group-hover:gap-space-sm" href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" rel="noopener noreferrer" target="_blank">
+<span>View on GitHub</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<span class="font-label-sm text-label-sm text-text-muted">Multi-City Telemetry</span>
+</div>
+</div>
+</div>
+<!-- Center GitHub Hub Link Button -->
+<div class="flex justify-center mt-space-2xl">
+<a class="inline-flex items-center gap-space-sm px-space-xl py-space-sm rounded-full bg-surface-elevated text-on-surface hover:text-text-primary hover:bg-surface-container-high shadow-lg transition-all" href="https://github.com/bdanbabu1991-dotcom" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px] text-accent-cyan">code</span>
+<span class="font-label-md text-label-md font-semibold">Explore All Repositories on GitHub</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- CONTACT SECTION: STARRY NIGHT MOUNTAINS -->
+<section class="w-full relative overflow-hidden py-space-3xl px-container-padding-mobile lg:px-container-padding-tablet" id="contact">
+<!-- Starry Night Mountain Background Image with Scrim -->
+<div class="absolute inset-0 bg-cover bg-center -z-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOmJWumxtTKgojt7J49UEQekpXTnzUvs5QjKI0LSIp7H_Qofb-ABVy7wZbC1I609Um9T3KonWnllI1Rc8QVdj2t4smtYeUtAw9v2a7h-2oHN8_7t3Soqxa4065SP2_R61xSPxFFbLz9K6x_hjKfnwintshos-cM-JJdNCEJJTCvq41IgJQZiPLYHSxH2odaMbwd1_iGnMuAJFSqipHfxEqdvqwWZ70VxuxpYsGbwDq2BLW7dkEh6kqtaEuE9GN67queg')"></div>
+<div class="absolute inset-0 bg-surface-base/85 backdrop-blur-[2px] -z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-base/60 to-transparent -z-10"></div>
+<div class="max-w-7xl mx-auto flex flex-col items-center relative z-10">
+<!-- Headline & Subhead -->
+<div class="flex flex-col items-center text-center mb-space-2xl">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-3xs rounded-full bg-surface-card/70 backdrop-blur-md text-accent-cyan mb-space-sm">
+<span class="material-symbols-outlined text-[16px]">nights_stay</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold">Under the Stars</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary font-bold tracking-tight">Let's Connect &amp; Build</h2>
+<p class="font-body-lg text-body-lg text-text-secondary mt-space-2xs max-w-lg">
+          Feel free to reach out — let's discuss business intelligence initiatives, analytics contracts, or operational pipelines.
+        </p>
+</div>
+<!-- 4 Clean Glass Contact Cards -->
+<div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-2xl">
+<!-- Tile 1: Location -->
+<div class="p-space-lg rounded-2xl bg-surface-card/85 backdrop-blur-xl shadow-xl flex flex-col items-center text-center hover:bg-surface-elevated transition-all">
+<div class="w-12 h-12 rounded-xl bg-surface-elevated flex items-center justify-center text-accent-cyan mb-space-sm shadow-md">
+<span class="material-symbols-outlined text-[24px]">location_on</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Location</span>
+<span class="font-headline-sm text-[16px] text-text-primary font-semibold mt-space-3xs">Bengaluru, India</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-space-3xs">Open to Global Remote</span>
+</div>
+<!-- Tile 2: Phone -->
+<a class="p-space-lg rounded-2xl bg-surface-card/85 backdrop-blur-xl shadow-xl flex flex-col items-center text-center hover:bg-surface-elevated transition-all group" href="tel:+919949711466">
+<div class="w-12 h-12 rounded-xl bg-surface-elevated flex items-center justify-center text-accent-violet-light mb-space-sm shadow-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">phone_in_talk</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Direct Call / WhatsApp</span>
+<span class="font-headline-sm text-[16px] text-text-primary font-semibold mt-space-3xs group-hover:text-accent-violet-light transition-colors">+91 99497 11466</span>
+<span class="font-body-sm text-body-sm text-accent-cyan mt-space-3xs">Tap to Call</span>
+</a>
+<!-- Tile 3: Email -->
+<a class="p-space-lg rounded-2xl bg-surface-card/85 backdrop-blur-xl shadow-xl flex flex-col items-center text-center hover:bg-surface-elevated transition-all group" href="mailto:b.danbabu1991@gmail.com">
+<div class="w-12 h-12 rounded-xl bg-surface-elevated flex items-center justify-center text-secondary mb-space-sm shadow-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Official Email</span>
+<span class="font-headline-sm text-[15px] text-text-primary font-semibold mt-space-3xs truncate max-w-[200px] group-hover:text-secondary transition-colors">b.danbabu1991@gmail.com</span>
+<span class="font-body-sm text-body-sm text-accent-cyan mt-space-3xs">Tap to Compose</span>
+</a>
+<!-- Tile 4: LinkedIn -->
+<a class="p-space-lg rounded-2xl bg-surface-card/85 backdrop-blur-xl shadow-xl flex flex-col items-center text-center hover:bg-surface-elevated transition-all group" href="https://www.linkedin.com/in/dan_babu" rel="noopener noreferrer" target="_blank">
+<div class="w-12 h-12 rounded-xl bg-surface-elevated flex items-center justify-center text-primary mb-space-sm shadow-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted uppercase tracking-wider">Professional Profile</span>
+<span class="font-headline-sm text-[16px] text-text-primary font-semibold mt-space-3xs group-hover:text-primary transition-colors">dan_babu</span>
+<span class="font-body-sm text-body-sm text-accent-cyan mt-space-3xs">View Network</span>
+</a>
+</div>
+<!-- Quick Action Floating Bar -->
+<div class="p-space-md rounded-full bg-surface-elevated shadow-2xl flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm text-text-muted px-space-xs hidden sm:inline">Connect via Channels:</span>
+<a aria-label="GitHub Repository Profile" class="w-10 h-10 rounded-full bg-surface-card flex items-center justify-center text-on-surface hover:text-accent-cyan hover:bg-surface-container-high transition-all" href="https://github.com/bdanbabu1991-dotcom" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">code</span>
+</a>
+<a aria-label="LinkedIn Executive Profile" class="w-10 h-10 rounded-full bg-surface-card flex items-center justify-center text-on-surface hover:text-accent-cyan hover:bg-surface-container-high transition-all" href="https://www.linkedin.com/in/dan_babu" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</a>
+<a aria-label="Direct Email Link" class="w-10 h-10 rounded-full bg-surface-card flex items-center justify-center text-on-surface hover:text-accent-cyan hover:bg-surface-container-high transition-all" href="mailto:b.danbabu1991@gmail.com">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</a>
+</div>
+</div>
+</section>
+<!-- TYPING SCRIPT & INTERACTIVE BEHAVIORS -->
 <script>
-    // Typing Animation
-    const roles = [
-      "Power BI Specialist",
-      "SQL & Relational Modeler",
-      "Operations & Data Strategist",
-      "Interactive Dashboard Architect",
-      "Executive Insight Builder"
-    ];
+    (function() {
+      const phrases = [
+        "Data Analyst & Business Operations Specialist",
+        "Power BI Architect & DAX Modeler",
+        "15+ Years Commercial Operations Veteran",
+        "Translating Enterprise Data into Conviction"
+      ];
+      let phraseIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+      const el = document.getElementById("typing-text");
 
-    let roleIdx = 0;
-    let charIdx = 0;
-    let isDeleting = false;
-    const typingEl = document.getElementById('typing');
+      function type() {
+        if (!el) return;
+        const current = phrases[phraseIdx];
+        if (isDeleting) {
+          el.textContent = current.substring(0, charIdx - 1);
+          charIdx--;
+        } else {
+          el.textContent = current.substring(0, charIdx + 1);
+          charIdx++;
+        }
 
-    function typeEffect() {
-      if (!typingEl) return;
-      const current = roles[roleIdx];
-      if (isDeleting) {
-        typingEl.textContent = current.substring(0, charIdx - 1);
-        charIdx--;
-      } else {
-        typingEl.textContent = current.substring(0, charIdx + 1);
-        charIdx++;
+        let speed = isDeleting ? 40 : 80;
+
+        if (!isDeleting && charIdx === current.length) {
+          speed = 2000;
+          isDeleting = true;
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          phraseIdx = (phraseIdx + 1) % phrases.length;
+          speed = 400;
+        }
+
+        setTimeout(type, speed);
       }
 
-      let speed = isDeleting ? 35 : 85;
-      if (!isDeleting && charIdx === current.length) {
-        speed = 2000;
-        isDeleting = true;
-      } else if (isDeleting && charIdx === 0) {
-        isDeleting = false;
-        roleIdx = (roleIdx + 1) % roles.length;
-        speed = 400;
-      }
-      setTimeout(typeEffect, speed);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      typeEffect();
-    });
+      type();
+    })();
   </script>
-</body>
-</html>
+</div></main><footer class="w-full bg-surface-card mt-auto"><div class="max-w-7xl mx-auto px-container-padding-mobile lg:px-container-padding-tablet py-space-2xl flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex flex-col items-center md:items-start"><div class="flex items-center gap-space-xs mb-space-2xs"><span class="font-headline-sm text-headline-sm text-text-primary">Dan Babu Boddu</span><span class="font-label-sm text-label-sm text-accent-cyan">Specialist</span></div><p class="font-body-sm text-body-sm text-text-muted">Delivering high signal-to-noise quantitative analytics and automated operational architectures.</p></div><div class="flex items-center gap-space-md"><a aria-label="Data Insights" class="w-10 h-10 rounded-full bg-surface-elevated flex items-center justify-center text-on-surface-variant hover:text-accent-cyan hover:bg-surface-container-high transition-all" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span></a><a aria-label="Code Repositories" class="w-10 h-10 rounded-full bg-surface-elevated flex items-center justify-center text-on-surface-variant hover:text-accent-cyan hover:bg-surface-container-high transition-all" href="https://github.com/bdanbabu1991-dotcom" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-[20px]">code</span></a><a aria-label="Email Dan Babu Boddu" class="w-10 h-10 rounded-full bg-surface-elevated flex items-center justify-center text-on-surface-variant hover:text-accent-cyan hover:bg-surface-container-high transition-all" href="mailto:b.danbabu1991@gmail.com"><span class="material-symbols-outlined text-[20px]">mail</span></a></div><div class="font-label-sm text-label-sm text-text-muted text-center md:text-right">© 2024 Dan Babu Boddu. All rights reserved.</div></div></footer></body></html>
