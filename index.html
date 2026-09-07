@@ -1,287 +1,582 @@
 <!DOCTYPE html>
+
 <html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_20 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_20" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_20');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dan Babu Boddu | Data Analyst</title>
-  <meta name="description" content="Portfolio of Dan Babu Boddu - Data Analyst with 15+ years of business experience, recently upskilled in Power BI, SQL, Python and Excel." />
-  <link rel="stylesheet" href="style.css" />
+  <title>Dan Babu Boddu | Executive Data Portfolio</title>
+  <meta name="description" content="Portfolio of Dan Babu Boddu - 15+ Yrs Operations Acumen transforming into modern Power BI, SQL, and Python Analytics." />
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="#home" class="logo">Dan Babu Boddu</a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </nav>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Global Styles */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0a0e18;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <p class="hello">HELLO!</p>
-        <h1>I'm <span class="name-highlight">Dan Babu</span><br>Boddu</h1>
-        <h2 class="typing-text">
-          <span id="typing"></span><span class="cursor">|</span>
-        </h2>
-        <p class="hero-desc">
-          15+ years of business and operations experience, now applying Power BI, SQL, Python & Excel to transform data into clear insights and interactive dashboards.
-        </p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn primary">View Projects</a>
-          <a href="#contact" class="btn secondary">Contact Me</a>
-        </div>
-      </div>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0e18;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #6366f1;
+    }
 
-      <div class="hero-visual">
-        <div class="hero-photo-wrap">
-          <img src="hero.jpg" alt="Dan Babu Boddu - Data Analyst" class="hero-photo">
-          <div class="hero-photo-glow"></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    /* Ambient Background Orbs */
+    .bg-orb-1 {
+      position: absolute;
+      top: -15%;
+      left: -10%;
+      width: 60vw;
+      height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .bg-orb-2 {
+      position: absolute;
+      top: 35%;
+      right: -10%;
+      width: 55vw;
+      height: 55vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .bg-orb-3 {
+      position: absolute;
+      bottom: 5%;
+      left: 20%;
+      width: 50vw;
+      height: 50vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
 
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <div class="section-bg-text">ABOUT</div>
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-wrapper">
-        <div class="about-photo">
-          <img src="profile.jpg" alt="Dan Babu Boddu" class="profile-img">
-        </div>
-        <div class="about-text">
-          <p>
-            I bring <strong>15+ years of hands-on experience</strong> in sales, inventory, and distribution operations, and I've recently 
-            upskilled in <strong>Excel (Pivot Tables, VLOOKUP), SQL, Python, Power BI</strong>, attractive dashboards and DAX modeling to move into data analytics.
-          </p>
-          <p>
-            Passionate about uncovering trends and patterns through data. My years of ground-level business experience give me a practical edge — 
-            I don't just build reports, I understand what's happening behind the numbers.
-          </p>
-          <p>
-            Currently building expertise through <strong>Entri Elevate Data Analytics</strong> program (Feb 2026 – Jul 2026).
-          </p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num">2+</span>
-              <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">16+</span>
-              <span class="stat-label">Years Business Exp.</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">1</span>
-              <span class="stat-label">Certification</span>
-            </div>
-          </div>
-          <div class="about-btns">
-            <a href="https://www.linkedin.com/in/dan_babu" target="_blank" class="btn primary">LinkedIn</a>
-            <a href="mailto:b.danbabu1991@gmail.com" class="btn secondary">Email Me</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="skills">
-    <div class="section-bg-text">SKILLS</div>
-    <div class="container">
-      <h2 class="section-title">My Skills</h2>
-      <p class="section-subtitle">Tools I use to turn data into insights</p>
-      <div class="skills-grid">
-        <div class="skill-card" data-skill="python">
-          <div class="skill-icon-wrap python-bg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-img">
-          </div>
-          <h3>Python</h3>
-        </div>
-        <div class="skill-card" data-skill="sql">
-          <div class="skill-icon-wrap sql-bg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="skill-img">
-          </div>
-          <h3>SQL</h3>
-        </div>
-        <div class="skill-card" data-skill="powerbi">
-          <div class="skill-icon-wrap powerbi-bg">
-            <i class="fas fa-chart-bar skill-fa" style="color:#f2c811"></i>
-          </div>
-          <h3>Power BI</h3>
-        </div>
-        <div class="skill-card" data-skill="excel">
-          <div class="skill-icon-wrap excel-bg">
-            <i class="fas fa-file-excel skill-fa" style="color:#217346"></i>
-          </div>
-          <h3>Excel</h3>
-        </div>
-        <div class="skill-card" data-skill="pandas">
-          <div class="skill-icon-wrap pandas-bg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-img">
-          </div>
-          <h3>Pandas</h3>
-        </div>
-        <div class="skill-card" data-skill="numpy">
-          <div class="skill-icon-wrap numpy-bg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="skill-img">
-          </div>
-          <h3>NumPy</h3>
-        </div>
-        <div class="skill-card" data-skill="matplotlib">
-          <div class="skill-icon-wrap matplotlib-bg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" class="skill-img">
-          </div>
-          <h3>Matplotlib</h3>
-        </div>
-        <div class="skill-card" data-skill="seaborn">
-          <div class="skill-icon-wrap seaborn-bg">
-            <i class="fas fa-chart-area skill-fa" style="color:#4c72b0"></i>
-          </div>
-          <h3>Seaborn</h3>
-        </div>
-        <div class="skill-card" data-skill="jupyter">
-          <div class="skill-icon-wrap jupyter-bg">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" class="skill-img">
-          </div>
-          <h3>Jupyter</h3>
-        </div>
-        <div class="skill-card" data-skill="analytics">
-          <div class="skill-icon-wrap analytics-bg">
-            <i class="fas fa-lightbulb skill-fa" style="color:#a78bfa"></i>
-          </div>
-          <h3>Analytics</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="projects">
-    <div class="section-bg-text">PROJECTS</div>
-    <div class="container">
-      <h2 class="section-title">My Projects</h2>
-      <p class="section-subtitle">Data analytics projects built with Power BI, SQL, Python & visualization</p>
-      
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-img sales">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div class="project-body">
-            <h3>Sales Analytics Dashboard</h3>
-            <p>
-              Multi-page interactive Power BI dashboard covering Executive, Product, Outlet & Overall Sales. 
-              Advanced DAX measures, star schema modeling and interactive slicers.
-            </p>
-            <div class="project-tags">
-              <span>Power BI</span><span>DAX</span><span>Star Schema</span>
-            </div>
-            <a href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" target="_blank" class="project-link">
-              View Project <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img air">
-            <div class="weather-scene">
-              <div class="sun"></div>
-              <div class="cloud cloud1"></div>
-              <div class="cloud cloud2"></div>
-              <div class="rain" id="rain-container"></div>
-            </div>
-            <i class="fas fa-cloud-sun-rain" style="position:relative;z-index:2;font-size:2.8rem;opacity:0.9;"></i>
-          </div>
-          <div class="project-body">
-            <h3>Air Quality & Health Dashboard</h3>
-            <p>
-              End-to-end project (MySQL + Python + Power BI) analyzing air quality, weather & public health across Indian cities. 
-              Strong AQI–Health Risk correlation (r=0.82).
-            </p>
-            <div class="project-tags">
-              <span>MySQL</span><span>Python</span><span>Power BI</span><span>Pandas</span>
-            </div>
-            <a href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" target="_blank" class="project-link">
-              View Project <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="more-projects">
-        <a href="https://github.com/bdanbabu1991-dotcom" target="_blank" class="btn primary">
-          <i class="fab fa-github"></i> More on GitHub
+<body class="bg-[#0a0e18] text-[#e2e8f0] relative min-h-screen">
+<!-- Ambient Dynamic Background -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="bg-orb-1"></div>
+<div class="bg-orb-2"></div>
+<div class="bg-orb-3"></div>
+<div class="absolute inset-0 grid-pattern opacity-40"></div>
+</div>
+<!-- Sticky Executive Navbar -->
+<header class="sticky top-0 z-50 backdrop-blur-xl bg-[#0a0e18]/85 border-b border-slate-800/80 transition-all">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<a class="flex items-center gap-3.5 group" href="#home">
+<div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 ring-1 ring-white/20 group-hover:scale-105 transition-transform">
+<i class="fa-solid fa-chart-pie text-white text-lg"></i>
+</div>
+<div>
+<div class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+            Dan Babu Boddu
+            <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-ping"></span>
+</div>
+<p class="text-xs font-semibold uppercase tracking-widest text-indigo-400">Data &amp; Operations Executive</p>
+</div>
+</a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 shadow-inner">
+<a class="px-5 py-2 text-sm font-medium rounded-full text-white hover:text-indigo-400 transition-colors" href="#home">Home</a>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-colors" href="#about">About</a>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-colors" href="#skills">Skills</a>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-colors" href="#projects">Projects</a>
+<a class="px-5 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-colors" href="#contact">Contact</a>
+</nav>
+<div class="hidden md:flex items-center gap-4">
+<a class="w-10 h-10 rounded-xl bg-slate-800/80 hover:bg-indigo-600 flex items-center justify-center text-slate-300 hover:text-white border border-slate-700/60 transition-all" href="https://www.linkedin.com/in/dan_babu" target="_blank">
+<i class="fa-brands fa-linkedin-in"></i>
+</a>
+<a class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold shadow-lg shadow-indigo-600/30 transition-all hover:shadow-indigo-600/50 hover:-translate-y-0.5" href="#contact">
+          Get In Touch
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT - Night mountains + stars -->
-  <section id="contact" class="contact">
-    <div class="night-sky" id="stars"></div>
-    <div class="mountains">
-      <div class="mtn mtn-back"></div>
-      <div class="mtn mtn-mid"></div>
-      <div class="mtn mtn-front"></div>
-      <div class="snow-cap c1"></div>
-      <div class="snow-cap c2"></div>
-      <div class="snow-cap c3"></div>
-    </div>
-    <div class="section-bg-text contact-bg-text">CONTACT</div>
-    <div class="container contact-content">
-      <h2 class="section-title">Contact Me</h2>
-      <p class="section-subtitle">Feel free to reach out — let's connect under the stars</p>
-      
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <h3>Address</h3>
-          <p>Bengaluru, India</p>
+</div>
+</div>
+</header>
+<!-- HERO SECTION -->
+<section class="relative z-10 pt-16 pb-24 lg:pt-24 lg:pb-32 max-w-7xl mx-auto px-6" id="home">
+<div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+<!-- Text Area -->
+<div class="lg:col-span-7 space-y-7">
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-indigo-950/60 border border-indigo-500/30 text-indigo-300 text-xs font-semibold tracking-wide">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          AVAILABLE FOR ROLES &amp; CONSULTING
         </div>
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-          <h3>Phone</h3>
-          <p><a href="tel:+919949711466">+91 99497 11466</a></p>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <h3>Email</h3>
-          <p><a href="mailto:b.danbabu1991@gmail.com">b.danbabu1991@gmail.com</a></p>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-          <h3>LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/dan_babu" target="_blank">dan_babu</a></p>
-        </div>
-      </div>
+<div class="space-y-3">
+<p class="text-sm font-bold uppercase tracking-widest text-slate-400">Executive Data Portfolio</p>
+<h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            HELLO! I'm <span class="bg-gradient-to-r from-indigo-400 via-sky-400 to-indigo-300 bg-clip-text text-transparent">Dan Babu Boddu</span>
+</h1>
+<div class="h-10 flex items-center text-xl sm:text-2xl font-semibold text-indigo-300/90">
+<i class="fa-solid fa-chart-line mr-3 text-indigo-400"></i>
+<span id="typing">Power BI Specialist</span><span class="animate-pulse text-indigo-400">|</span>
+</div>
+</div>
+<p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+          15+ years of real-world business and operations acumen, now leveraging 
+          <span class="text-white font-semibold">Power BI, SQL, Python &amp; Excel</span> 
+          to transform raw operational data into high-conviction insights, streamlined pipelines, and interactive executive dashboards.
+        </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="px-7 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold flex items-center gap-2.5 shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02]" href="#projects">
+            View Projects <i class="fa-solid fa-arrow-right text-xs"></i>
+</a>
+<a class="px-7 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700/80 flex items-center gap-2 transition-all" href="#contact">
+            Contact Me
+          </a>
+</div>
+<!-- Metric Badges -->
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
+<div class="bg-slate-900/50 backdrop-blur-md p-4 rounded-2xl border border-slate-800/60">
+<div class="text-2xl sm:text-3xl font-extrabold text-indigo-400">16+</div>
+<div class="text-xs uppercase tracking-wider text-slate-400 font-medium mt-1">Years Ops Exp</div>
+</div>
+<div class="bg-slate-900/50 backdrop-blur-md p-4 rounded-2xl border border-slate-800/60">
+<div class="text-2xl sm:text-3xl font-extrabold text-sky-400">2+</div>
+<div class="text-xs uppercase tracking-wider text-slate-400 font-medium mt-1">Flagship Apps</div>
+</div>
+<div class="bg-slate-900/50 backdrop-blur-md p-4 rounded-2xl border border-slate-800/60">
+<div class="text-2xl sm:text-3xl font-extrabold text-violet-400">1</div>
+<div class="text-xs uppercase tracking-wider text-slate-400 font-medium mt-1">Entri Elevate Cert</div>
+</div>
+</div>
+</div>
+<!-- Hero Photo Card with Interactive Tags -->
+<div class="lg:col-span-5 relative">
+<div class="relative mx-auto max-w-md rounded-3xl p-3 bg-gradient-to-b from-indigo-500/30 via-slate-800/40 to-transparent border border-indigo-500/30 shadow-2xl backdrop-blur-sm">
+<div class="relative overflow-hidden rounded-2xl aspect-[4/3] bg-slate-900">
+<img alt="Dan Babu Boddu" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&amp;auto=format&amp;fit=crop&amp;q=80';" src="hero.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0a0e18] via-transparent to-transparent opacity-80"></div>
+<!-- Float Badges -->
+<div class="absolute top-4 right-4 bg-[#0f172a]/90 backdrop-blur-md border border-indigo-500/30 px-3.5 py-2 rounded-xl flex items-center gap-2.5 shadow-lg">
+<i class="fa-solid fa-chart-column text-sky-400"></i>
+<div>
+<p class="text-[11px] font-bold text-white leading-tight">Power BI DAX</p>
+<p class="text-[9px] text-slate-400">Star-Schema Architecture</p>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 bg-[#0f172a]/90 backdrop-blur-md border border-slate-700/80 px-3.5 py-2 rounded-xl flex items-center gap-2.5 shadow-lg">
+<i class="fa-solid fa-database text-indigo-400"></i>
+<div>
+<p class="text-[11px] font-bold text-white leading-tight">SQL Queries &amp; ETL</p>
+<p class="text-[9px] text-slate-400">Clean Relational Pipelines</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT SECTION -->
+<section class="relative z-10 py-24 bg-slate-950/60 border-y border-slate-800/80" id="about">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<p class="text-xs font-bold uppercase tracking-widest text-indigo-400">Background &amp; Expertise</p>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Bridging Field Operations &amp; Modern BI</h2>
+</div>
+<div class="grid lg:grid-cols-12 gap-12 items-center max-w-6xl mx-auto">
+<div class="lg:col-span-5 flex justify-center">
+<div class="relative group">
+<div class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-sky-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition duration-700"></div>
+<img alt="Dan Babu Boddu Profile" class="relative rounded-2xl w-80 h-96 object-cover border border-slate-700/80 shadow-2xl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&amp;auto=format&amp;fit=crop&amp;q=80';" src="profile.jpg"/>
+</div>
+</div>
+<div class="lg:col-span-7 space-y-6">
+<h3 class="text-2xl font-bold text-white leading-snug">
+            Ground-Truth Business Instincts Powered by Rigorous Quantitative Tools
+          </h3>
+<p class="text-slate-300 leading-relaxed">
+            With over 15 years spent driving operational success across sales, warehouse inventory management, and multi-tier distribution logistics, I understand how frontline decisions impact revenue. Having managed actual operational friction firsthand, my transition to Data Analytics brings an invaluable advantage: I don't just write queries or build charts—I construct models that solve pragmatic business problems.
+          </p>
+<p class="text-slate-300 leading-relaxed">
+            Through rigorous ongoing specialization via the <strong class="text-indigo-300">Entri Elevate Data Analytics Program (Feb 2026 – Jul 2026)</strong>, I master modern analytics stacks: architecting star-schema data models in <strong class="text-white">Power BI</strong>, engineering complex <strong class="text-white">DAX measures</strong>, building robust relational joins in <strong class="text-white">SQL</strong>, and executing data wrangling with <strong class="text-white">Python (Pandas, NumPy, Matplotlib)</strong>.
+          </p>
+<div class="grid sm:grid-cols-2 gap-4 pt-4">
+<div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+<i class="fa-solid fa-boxes-stacked text-indigo-400 mb-2"></i>
+<h4 class="text-white font-semibold text-sm">Logistics &amp; Sales Ops</h4>
+<p class="text-xs text-slate-400 mt-1">Inventory throughput, supply chains, dynamic pricing, distribution KPIs.</p>
+</div>
+<div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+<i class="fa-solid fa-diagram-project text-sky-400 mb-2"></i>
+<h4 class="text-white font-semibold text-sm">Business Intelligence</h4>
+<p class="text-xs text-slate-400 mt-1">Star Schema design, Power Query ETL, Executive Dashboards, DAX calculations.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SKILLS SECTION -->
+<section class="relative z-10 py-24 max-w-7xl mx-auto px-6" id="skills">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<p class="text-xs font-bold uppercase tracking-widest text-indigo-400">Modern Analytics Stack</p>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Technical Tooling &amp; Data Capabilities</h2>
+<p class="text-slate-400 text-sm mt-3">An integrated pipeline from raw tabular ingestion and SQL data warehousing to dynamic DAX models and presentation-ready dashboards.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
+<i class="fa-brands fa-python text-3xl text-blue-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+<h4 class="text-white font-bold text-sm">Python</h4>
+<p class="text-xs text-slate-400 mt-1">ETL, Automation &amp; Scripting pipelines.</p>
+</div>
+<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
+<i class="fa-solid fa-database text-3xl text-sky-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+<h4 class="text-white font-bold text-sm">SQL</h4>
+<p class="text-xs text-slate-400 mt-1">Queries, Subqueries, Joins &amp; Window Functions.</p>
+</div>
+<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
+<i class="fa-solid fa-chart-column text-3xl text-amber-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+<h4 class="text-white font-bold text-sm">Power BI</h4>
+<p class="text-xs text-slate-400 mt-1">Architecture, Star-Schema &amp; DAX Modeling.</p>
+</div>
+<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
+<i class="fa-regular fa-file-excel text-3xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+<h4 class="text-white font-bold text-sm">Excel</h4>
+<p class="text-xs text-slate-400 mt-1">Pivot Tables, VLOOKUP, Power Query &amp; Macros.</p>
+</div>
+<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
+<i class="fa-solid fa-table text-3xl text-indigo-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+<h4 class="text-white font-bold text-sm">Pandas</h4>
+<p class="text-xs text-slate-400 mt-1">Data wrangling, imputation, reshaping &amp; merges.</p>
+</div>
+<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
+<i class="fa-solid fa-square-root-variable text-3xl text-violet-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+<h4 class="text-white font-bold text-sm">NumPy</h4>
+<p class="text-xs text-slate-400 mt-1">Vectorized operations &amp; numerical arrays.</p>
+</div>
+<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
+<i class="fa-solid fa-chart-line text-3xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+<h4 class="text-white font-bold text-sm">Matplotlib</h4>
+<p class="text-xs text-slate-400 mt-1">Statistical charts, subplots &amp; visualization.</p>
+</div>
+<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
+<i class="fa-solid fa-chart-area text-3xl text-teal-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+<h4 class="text-white font-bold text-sm">Seaborn</h4>
+<p class="text-xs text-slate-400 mt-1">Distributions, regression &amp; correlation heatmaps.</p>
+</div>
+<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
+<i class="fa-solid fa-book-open text-3xl text-orange-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+<h4 class="text-white font-bold text-sm">Jupyter</h4>
+<p class="text-xs text-slate-400 mt-1">Interactive data exploration &amp; markdown docs.</p>
+</div>
+<div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 hover:-translate-y-1 transition-all group">
+<i class="fa-solid fa-brain text-3xl text-pink-400 mb-3 group-hover:scale-110 transition-transform inline-block"></i>
+<h4 class="text-white font-bold text-sm">Domain Analytics</h4>
+<p class="text-xs text-slate-400 mt-1">Executive KPI framing, root cause &amp; forecast models.</p>
+</div>
+</div>
+</section>
+<!-- PROJECTS SECTION (Hover Interactive Animated Cards) -->
+<section class="relative z-10 py-24 bg-slate-950/60 border-y border-slate-800/80" id="projects">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<p class="text-xs font-bold uppercase tracking-widest text-indigo-400">Selected Work</p>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Enterprise Analytics Case Studies</h2>
+<p class="text-slate-400 text-sm mt-3">Complete end-to-end applications demonstrating data ingestion, statistical modeling, relational schemas, and actionable UI.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<!-- Project 1: Sales Analytics -->
+<div class="group rounded-3xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10">
+<!-- Interactive Preview Area -->
+<div class="h-64 bg-slate-950 relative overflow-hidden border-b border-slate-800/80 p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between text-xs font-mono text-slate-400 z-10">
+<span class="flex items-center gap-2"><i class="fa-solid fa-table-columns text-indigo-400"></i> Supply &amp; Construction Inventory</span>
+<span class="px-2.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-indigo-300">4 Product Categories</span>
+</div>
+<!-- Interactive Bar Animation on Hover -->
+<div class="flex items-end justify-between gap-4 h-32 px-4 z-10">
+<div class="flex-1 flex flex-col items-center gap-2 group-hover:scale-105 transition-transform">
+<div class="w-full bg-gradient-to-t from-indigo-600 to-indigo-400 rounded-t-lg transition-all duration-500 group-hover:h-28 h-16 shadow-lg shadow-indigo-500/20"></div>
+<span class="text-[10px] text-slate-400 font-medium">Cement</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group-hover:scale-105 transition-transform">
+<div class="w-full bg-gradient-to-t from-sky-600 to-sky-400 rounded-t-lg transition-all duration-500 group-hover:h-24 h-12 shadow-lg shadow-sky-500/20"></div>
+<span class="text-[10px] text-slate-400 font-medium">Steel</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group-hover:scale-105 transition-transform">
+<div class="w-full bg-gradient-to-t from-violet-600 to-violet-400 rounded-t-lg transition-all duration-500 group-hover:h-32 h-20 shadow-lg shadow-violet-500/20"></div>
+<span class="text-[10px] text-slate-400 font-medium">Masonry</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 group-hover:scale-105 transition-transform">
+<div class="w-full bg-gradient-to-t from-emerald-600 to-emerald-400 rounded-t-lg transition-all duration-500 group-hover:h-20 h-10 shadow-lg shadow-emerald-500/20"></div>
+<span class="text-[10px] text-slate-400 font-medium">Plant</span>
+</div>
+</div>
+<div class="text-[11px] text-slate-400 text-center font-medium z-10">
+              Hover to trigger live dynamic DAX slicing
+            </div>
+</div>
+<div class="p-8 flex-1 flex flex-col justify-between space-y-6">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Flagship Power BI App</span>
+<span class="text-xs text-slate-400 font-medium">4 Multi-Pages</span>
+</div>
+<h3 class="text-xl font-bold text-white">Sales Analytics Interactive Dashboard</h3>
+<p class="text-sm text-slate-300 leading-relaxed">
+                Engineered a multi-page interactive Power BI dashboard tracking Executive performance, Product distribution, Outlet profitability, and Overall sales velocity. Powered by a robust star-schema relational model with custom DAX measures for Year-over-Year (YoY) variances and real-time drill-down slicing.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Power BI</span>
+<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">DAX Calculations</span>
+<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Star Schema</span>
+<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Business Intelligence</span>
+</div>
+<a class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white border border-indigo-500/30 transition-all font-semibold text-sm" href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" target="_blank">
+<span>View on GitHub</span>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+</a>
+</div>
+</div>
+<!-- Project 2: Air Quality & Health Dashboard -->
+<div class="group rounded-3xl bg-slate-900/70 border border-slate-800/80 hover:border-indigo-500/50 overflow-hidden flex flex-col transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10">
+<!-- Weather to Bar Chart Transformation on Hover -->
+<div class="h-64 bg-slate-950 relative overflow-hidden border-b border-slate-800/80 p-6 flex flex-col justify-between">
+<div class="flex items-center justify-between text-xs font-mono text-slate-400 z-10">
+<span class="flex items-center gap-2"><i class="fa-solid fa-cloud-sun text-amber-400"></i> Clear Sunny Telemetry • AQI 48 (Good)</span>
+<span class="px-2.5 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400">Optimal</span>
+</div>
+<!-- Weather Scene (transforms to statistical bars on hover) -->
+<div class="relative h-32 flex items-center justify-center z-10">
+<div class="group-hover:opacity-0 group-hover:scale-75 transition-all duration-500 flex items-center gap-6">
+<i class="fa-solid fa-cloud text-slate-500 text-4xl"></i>
+<div class="w-16 h-16 rounded-full bg-amber-400 shadow-xl shadow-amber-400/40 animate-pulse flex items-center justify-center text-slate-900">
+<i class="fa-solid fa-sun text-2xl"></i>
+</div>
+<i class="fa-solid fa-cloud text-slate-500 text-3xl"></i>
+</div>
+<!-- Bar Chart reveals on hover -->
+<div class="absolute inset-0 flex items-end justify-between gap-4 px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<div class="flex-1 bg-sky-500 rounded-t h-16"></div>
+<div class="flex-1 bg-amber-500 rounded-t h-28"></div>
+<div class="flex-1 bg-red-500 rounded-t h-24"></div>
+<div class="flex-1 bg-emerald-500 rounded-t h-12"></div>
+</div>
+</div>
+<div class="text-[11px] text-slate-400 text-center font-medium z-10">
+              Hover to simulate weather shift &amp; telemetry shock
+            </div>
+</div>
+<div class="p-8 flex-1 flex flex-col justify-between space-y-6">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold uppercase tracking-wider text-sky-400">Full-Stack Data Engineering</span>
+<span class="text-xs text-slate-400 font-medium">MySQL + Python + BI</span>
+</div>
+<h3 class="text-xl font-bold text-white">Air Quality &amp; Health Dashboard</h3>
+<p class="text-sm text-slate-300 leading-relaxed">
+                End-to-end telemetry and epidemiological pipeline analyzing air quality indices, weather patterns, and public health records across major Indian metropolitan centers. Proven high correlation finding: <strong class="text-sky-300">Strong AQI-Health Risk association (r = 0.82)</strong>.
+              </p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">MySQL</span>
+<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Python (Pandas)</span>
+<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Power BI</span>
+<span class="text-xs px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300">Correlation (r=0.82)</span>
+</div>
+<a class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-sky-600/20 hover:bg-sky-600 text-sky-300 hover:text-white border border-sky-500/30 transition-all font-semibold text-sm" href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" target="_blank">
+<span>View on GitHub</span>
+<i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700 font-medium text-sm transition-all" href="https://github.com/bdanbabu1991-dotcom" target="_blank">
+<i class="fa-brands fa-github text-base"></i>
+<span>Explore All Repositories on GitHub</span>
+</a>
+</div>
+</div>
+</section>
+<!-- CONTACT SECTION (Under The Stars) -->
+<section class="relative z-10 py-24 max-w-7xl mx-auto px-6" id="contact">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<p class="text-xs font-bold uppercase tracking-widest text-indigo-400">Under The Stars</p>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Let's Connect &amp; Build</h2>
+<p class="text-slate-400 text-sm mt-3">Feel free to reach out — let's discuss business intelligence initiatives, analytics contracts, or operational pipelines.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-center hover:border-indigo-500/50 transition-all">
+<div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mx-auto mb-4">
+<i class="fa-solid fa-location-dot text-lg"></i>
+</div>
+<p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Location</p>
+<p class="text-white font-bold text-base mt-1">Bengaluru, India</p>
+<p class="text-xs text-slate-400 mt-0.5">Open to Global Remote</p>
+</div>
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-center hover:border-indigo-500/50 transition-all">
+<div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mx-auto mb-4">
+<i class="fa-solid fa-phone text-lg"></i>
+</div>
+<p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Direct Call / WhatsApp</p>
+<a class="text-white font-bold text-base mt-1 block hover:text-indigo-400" href="tel:+919949711466">+91 99497 11466</a>
+<p class="text-xs text-slate-400 mt-0.5">Tap to Call</p>
+</div>
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-center hover:border-indigo-500/50 transition-all">
+<div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mx-auto mb-4">
+<i class="fa-solid fa-envelope text-lg"></i>
+</div>
+<p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Official Email</p>
+<a class="text-white font-bold text-sm mt-1 block hover:text-indigo-400 truncate" href="mailto:b.danbabu1991@gmail.com">b.danbabu1991@gmail.com</a>
+<p class="text-xs text-slate-400 mt-0.5">Tap to Compose</p>
+</div>
+<div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-center hover:border-indigo-500/50 transition-all">
+<div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mx-auto mb-4">
+<i class="fa-brands fa-linkedin-in text-lg"></i>
+</div>
+<p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Professional Profile</p>
+<a class="text-white font-bold text-base mt-1 block hover:text-indigo-400" href="https://www.linkedin.com/in/dan_babu" target="_blank">dan_babu</a>
+<p class="text-xs text-slate-400 mt-0.5">View Network</p>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="relative z-10 py-8 border-t border-slate-800/80 bg-[#070a12]">
+<div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-white">Dan Babu Boddu</span>
+<span class="text-xs text-indigo-400">Data Specialist</span>
+</div>
+<p class="text-xs text-slate-400">© 2026 Dan Babu Boddu. All rights reserved.</p>
+<div class="flex items-center gap-4 text-slate-400">
+<a class="hover:text-white" href="https://github.com/bdanbabu1991-dotcom" target="_blank"><i class="fa-brands fa-github"></i></a>
+<a class="hover:text-white" href="https://www.linkedin.com/in/dan_babu" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+<a class="hover:text-white" href="mailto:b.danbabu1991@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</footer>
+<!-- EMBEDDED JAVASCRIPT -->
+<script>
+    // Typing Animation
+    const roles = [
+      "Power BI Specialist",
+      "SQL & Relational Modeler",
+      "Operations & Data Strategist",
+      "Interactive Dashboard Architect",
+      "Executive Insight Builder"
+    ];
 
-      <div class="social-links">
-        <a href="https://github.com/bdanbabu1991-dotcom" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/dan_babu" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:b.danbabu1991@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-  </section>
+    let roleIdx = 0;
+    let charIdx = 0;
+    let isDeleting = false;
+    const typingEl = document.getElementById('typing');
 
-  <footer>
-    <div class="container">
-      <p>© 2026 Dan Babu Boddu. Built with passion for Data Analytics.</p>
-    </div>
-  </footer>
+    function typeEffect() {
+      if (!typingEl) return;
+      const current = roles[roleIdx];
+      if (isDeleting) {
+        typingEl.textContent = current.substring(0, charIdx - 1);
+        charIdx--;
+      } else {
+        typingEl.textContent = current.substring(0, charIdx + 1);
+        charIdx++;
+      }
 
-  <script src="script.js"></script>
+      let speed = isDeleting ? 35 : 85;
+      if (!isDeleting && charIdx === current.length) {
+        speed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        speed = 400;
+      }
+      setTimeout(typeEffect, speed);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      typeEffect();
+    });
+  </script>
+</body>
+
+})();
+
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_20 -->
 </body>
 </html>
