@@ -8,352 +8,264 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 <style>
 @layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}}
 ::-webkit-scrollbar{display:none;}
-.cyber-grid{background-image:linear-gradient(to right,rgba(56,189,248,0.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(99,102,241,0.05) 1px,transparent 1px);background-size:40px 40px;}
-@keyframes streamScrollLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes streamScrollRight{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
-@keyframes neonPulse{0%,100%{opacity:0.3}50%{opacity:0.65}}
-@keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes particleTwinkle{0%,100%{opacity:0.25;transform:scale(0.8)}50%{opacity:1;transform:scale(1.25)}}
-@keyframes rainStream{0%{transform:translateY(-25px);opacity:0}35%{opacity:0.9}100%{transform:translateY(140px);opacity:0}}
-@keyframes sunGlow{0%,100%{filter:drop-shadow(0 0 14px rgba(251,191,36,0.7))}50%{filter:drop-shadow(0 0 26px rgba(245,158,11,0.95))}}
+@keyframes streamLeft{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes streamRight{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+@keyframes sunGlow{0%,100%{filter:drop-shadow(0 0 16px rgba(251,191,36,0.7))}50%{filter:drop-shadow(0 0 28px rgba(245,158,11,0.95))}}
+@keyframes rainStream{0%{transform:translateY(-25px);opacity:0}40%{opacity:0.9}100%{transform:translateY(130px);opacity:0}}
 @keyframes cloudDrift1{0%,100%{transform:translateX(0)}50%{transform:translateX(8px)}}
 @keyframes cloudDrift2{0%,100%{transform:translateX(0)}50%{transform:translateX(-6px)}}
-.animate-stream-left{display:flex;width:max-content;animation:streamScrollLeft 32s linear infinite}
-.animate-stream-right{display:flex;width:max-content;animation:streamScrollRight 38s linear infinite}
-.animate-pulse-slow{animation:neonPulse 5s ease-in-out infinite}
-.animate-float-slow{animation:floatSlow 5s ease-in-out infinite}
-.animate-twinkle{animation:particleTwinkle 3s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0.25;transform:scale(0.8)}50%{opacity:1;transform:scale(1.3)}}
+.animate-stream-left{display:flex;width:max-content;animation:streamLeft 32s linear infinite}
+.animate-stream-right{display:flex;width:max-content;animation:streamRight 38s linear infinite}
 .animate-sun-pulse{animation:sunGlow 3.2s ease-in-out infinite}
 .animate-float-cloud1{animation:cloudDrift1 6s ease-in-out infinite}
 .animate-float-cloud2{animation:cloudDrift2 7s ease-in-out infinite}
-.rain-drop{position:absolute;top:8px;width:1.5px;height:20px;background:linear-gradient(to bottom,transparent,#38BDF8);border-radius:9999px;animation:rainStream 0.7s linear infinite}
+.animate-twinkle{animation:twinkle 3s ease-in-out infinite}
+.rain-drop{position:absolute;top:10px;width:1.5px;height:18px;background:linear-gradient(to bottom,transparent,#38BDF8);border-radius:9999px;animation:rainStream 0.7s linear infinite}
 .perspective-1000{perspective:1000px}
 .tilt-card{transition:transform 0.25s cubic-bezier(0.2,0.8,0.2,1);transform-style:preserve-3d;will-change:transform}
-/* Sales bars */
 .sales-bar{transition:height 0.5s ease,background-color 0.3s ease}
 .project-card-sales:hover .bar-q1{height:75%!important;background:#818CF8!important}
 .project-card-sales:hover .bar-q2{height:90%!important;background:#38BDF8!important}
 .project-card-sales:hover .bar-q3{height:60%!important;background:#A78BFA!important}
 .project-card-sales:hover .bar-q4{height:100%!important;background:#34D399!important}
-/* Air Quality morph */
 .weather-view,.chart-view{transition:opacity 0.4s ease,transform 0.4s ease}
-.project-card-air .chart-view{opacity:0;pointer-events:none;transform:translateY(14px)}
+.project-card-air .chart-view{opacity:0;pointer-events:none;transform:translateY(12px)}
 .project-card-air .weather-view{opacity:1;transform:translateY(0)}
-.project-card-air:hover .weather-view{opacity:0;pointer-events:none;transform:translateY(-14px)}
+.project-card-air:hover .weather-view{opacity:0;pointer-events:none;transform:translateY(-12px)}
 .project-card-air:hover .chart-view{opacity:1;pointer-events:auto;transform:translateY(0)}
 .project-card-air:hover .rain-layer{opacity:1!important}
 </style>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config={darkMode:"class",theme:{extend:{colors:{"accent-cyan":"#38BDF8","surface-base":"#0B0F19","surface-card":"#111827","surface-elevated":"#1E293B","text-primary":"#F8FAFC","text-secondary":"#94A3B8","text-muted":"#64748B","primary-container":"#8083ff","tertiary-container":"#a078ff"},fontFamily:{"display":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"mono":["JetBrains Mono","monospace"]}}}}
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"accent-cyan":"#38BDF8","surface-base":"#0B0F19","surface-card":"#111827","surface-elevated":"#1E293B","text-primary":"#F8FAFC","text-secondary":"#94A3B8","text-muted":"#64748B"},fontFamily:{"display":["Plus Jakarta Sans","sans-serif"],"body":["Inter","sans-serif"],"mono":["JetBrains Mono","monospace"]}}}}
 </script>
 </head>
-<body class="bg-surface-base text-text-primary font-body min-h-screen flex flex-col antialiased cyber-grid">
+<body class="bg-surface-base text-text-primary font-body min-h-screen flex flex-col antialiased">
 
 <!-- HEADER -->
-<header class="fixed top-0 left-0 w-full z-50 bg-surface-base/85 backdrop-blur-2xl border-b border-white/10">
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-base/90 backdrop-blur-xl border-b border-white/10">
   <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-3 group">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 border border-cyan-400/40 flex items-center justify-center text-cyan-400 group-hover:scale-105 transition">
-        <span class="material-symbols-outlined text-[22px]">terminal</span>
+    <a href="#" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center text-cyan-400">
+        <span class="material-symbols-outlined text-[22px]">query_stats</span>
       </div>
       <div>
-        <div class="font-display font-bold text-lg leading-none flex items-center gap-1.5">Dan Babu Boddu <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span></div>
-        <div class="text-[10px] text-cyan-400 uppercase tracking-widest mt-0.5">Data & BI Ops • Executive</div>
+        <div class="font-display font-bold text-lg leading-none">Dan Babu Boddu</div>
+        <div class="text-[10px] text-cyan-400 uppercase tracking-widest">Data & Operations</div>
       </div>
     </a>
-    <nav class="hidden md:flex items-center gap-1 bg-surface-card/90 rounded-full px-1 py-1 border border-white/10">
-      <a href="#" class="px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-sm font-semibold text-white">Home</a>
+    <nav class="hidden md:flex items-center gap-1 bg-surface-card rounded-full px-1 py-1 border border-white/10">
+      <a href="#" class="px-4 py-1.5 rounded-full bg-indigo-500 text-sm font-semibold text-white">Home</a>
       <a href="#about" class="px-4 py-1.5 rounded-full text-sm text-text-secondary hover:text-white">About</a>
-      <a href="#skills" class="px-4 py-1.5 rounded-full text-sm text-text-secondary hover:text-white">Matrix & Tech</a>
-      <a href="#projects" class="px-4 py-1.5 rounded-full text-sm text-text-secondary hover:text-white">BI Projects</a>
+      <a href="#skills" class="px-4 py-1.5 rounded-full text-sm text-text-secondary hover:text-white">Skills</a>
+      <a href="#projects" class="px-4 py-1.5 rounded-full text-sm text-text-secondary hover:text-white">Projects</a>
       <a href="#contact" class="px-4 py-1.5 rounded-full text-sm text-text-secondary hover:text-white">Contact</a>
     </nav>
-    <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400 text-sm font-bold text-surface-base">
-      <span class="material-symbols-outlined text-[16px]">bolt</span> Get in Touch
-    </a>
+    <a href="#contact" class="hidden sm:inline-flex px-5 py-2 rounded-full bg-indigo-500 text-sm font-bold text-white">Get in Touch</a>
   </div>
 </header>
 
 <main class="pt-16 flex-1">
 
-  <!-- ========== HERO + CLEAR FLOATING STREAMS (from index(1)) ========== -->
-  <section class="relative overflow-hidden py-16 lg:py-24 px-4 border-b border-white/5" id="hero">
-    <!-- Top Stream (very visible) -->
-    <div class="absolute inset-x-0 top-6 overflow-hidden pointer-events-none select-none opacity-95 z-0">
+  <!-- HERO + FLOATING STREAMS -->
+  <section class="relative overflow-hidden py-16 lg:py-24 px-4" id="hero">
+    <!-- Floating Streams -->
+    <div class="absolute inset-x-0 top-8 overflow-hidden pointer-events-none select-none opacity-90">
       <div class="animate-stream-left flex gap-5 py-2">
         <div class="flex gap-5">
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-cyan-400/50 flex items-center gap-3 shadow-[0_0_22px_rgba(56,189,248,0.3)]">
-            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card border border-cyan-400/40 flex items-center gap-3 shadow-[0_0_20px_rgba(56,189,248,0.25)]">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
             <span class="font-mono text-xs font-bold">SQL PIPELINE:</span>
             <span class="font-mono text-xs text-cyan-300">Snowflake ➔ dbt ➔ Power BI DirectQuery</span>
-            <span class="px-2 py-0.5 rounded bg-cyan-500/25 text-cyan-200 font-mono text-[10px] font-bold">12ms LATENCY</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px] font-bold">12ms</span>
           </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-indigo-400/50 flex items-center gap-3">
-            <span class="material-symbols-outlined text-[16px] text-indigo-300">schema</span>
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card border border-indigo-400/40 flex items-center gap-3">
             <span class="font-mono text-xs font-bold">DAX:</span>
-            <span class="font-mono text-xs text-indigo-200">[YoY Sales] = CALCULATE(SUM(Sales), SAMEPERIODLASTYEAR(...))</span>
-            <span class="px-2 py-0.5 rounded bg-emerald-500/25 text-emerald-300 font-mono text-[10px] font-bold">+28.4%</span>
+            <span class="font-mono text-xs text-indigo-300">[YoY Sales] = CALCULATE(SUM(Sales), SAMEPERIODLASTYEAR(...))</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">+28.4%</span>
           </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-emerald-400/50 flex items-center gap-3">
-            <span class="material-symbols-outlined text-[16px] text-emerald-300">speed</span>
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card border border-emerald-400/40 flex items-center gap-3">
             <span class="font-mono text-xs font-bold">ETL:</span>
-            <span class="font-mono text-xs text-emerald-200">42.8M rows/sec • 0 Nulls</span>
-            <span class="px-2 py-0.5 rounded bg-emerald-500/25 text-emerald-300 font-mono text-[10px] font-bold">PASS 100%</span>
+            <span class="font-mono text-xs text-emerald-300">42.8M rows/sec • 0 Nulls</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">PASS</span>
           </div>
         </div>
-        <!-- duplicate -->
         <div class="flex gap-5">
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-cyan-400/50 flex items-center gap-3">
-            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card border border-cyan-400/40 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
             <span class="font-mono text-xs font-bold">SQL PIPELINE:</span>
             <span class="font-mono text-xs text-cyan-300">Snowflake ➔ dbt ➔ Power BI DirectQuery</span>
-            <span class="px-2 py-0.5 rounded bg-cyan-500/25 text-cyan-200 font-mono text-[10px] font-bold">12ms LATENCY</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px] font-bold">12ms</span>
           </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-indigo-400/50 flex items-center gap-3">
-            <span class="material-symbols-outlined text-[16px] text-indigo-300">schema</span>
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card border border-indigo-400/40 flex items-center gap-3">
             <span class="font-mono text-xs font-bold">DAX:</span>
-            <span class="font-mono text-xs text-indigo-200">[YoY Sales] = CALCULATE(SUM(Sales), SAMEPERIODLASTYEAR(...))</span>
-            <span class="px-2 py-0.5 rounded bg-emerald-500/25 text-emerald-300 font-mono text-[10px] font-bold">+28.4%</span>
+            <span class="font-mono text-xs text-indigo-300">[YoY Sales] = CALCULATE(SUM(Sales), SAMEPERIODLASTYEAR(...))</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">+28.4%</span>
           </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-card/95 border border-emerald-400/50 flex items-center gap-3">
-            <span class="material-symbols-outlined text-[16px] text-emerald-300">speed</span>
+          <div class="px-5 py-2.5 rounded-2xl bg-surface-card border border-emerald-400/40 flex items-center gap-3">
             <span class="font-mono text-xs font-bold">ETL:</span>
-            <span class="font-mono text-xs text-emerald-200">42.8M rows/sec • 0 Nulls</span>
-            <span class="px-2 py-0.5 rounded bg-emerald-500/25 text-emerald-300 font-mono text-[10px] font-bold">PASS 100%</span>
+            <span class="font-mono text-xs text-emerald-300">42.8M rows/sec • 0 Nulls</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-bold">PASS</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bottom Stream -->
-    <div class="absolute inset-x-0 bottom-10 overflow-hidden pointer-events-none select-none opacity-85 z-0">
-      <div class="animate-stream-right flex gap-5 py-2">
-        <div class="flex gap-5">
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/95 border border-violet-400/40 flex items-center gap-3">
-            <span class="font-mono text-xs font-bold text-violet-300">PYTHON:</span>
-            <span class="font-mono text-xs text-violet-200">pd.pivot_table(df, values='margin', index='cluster')</span>
-            <span class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 font-mono text-[10px]">VECTORIZED</span>
-          </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/95 border border-cyan-400/40 flex items-center gap-3">
-            <span class="font-mono text-xs font-bold">STAR SCHEMA:</span>
-            <span class="font-mono text-xs text-cyan-300">Dim_Product 1:N Fact_Sales</span>
-            <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px]">ACTIVE</span>
-          </div>
-        </div>
-        <div class="flex gap-5">
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/95 border border-violet-400/40 flex items-center gap-3">
-            <span class="font-mono text-xs font-bold text-violet-300">PYTHON:</span>
-            <span class="font-mono text-xs text-violet-200">pd.pivot_table(df, values='margin', index='cluster')</span>
-            <span class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 font-mono text-[10px]">VECTORIZED</span>
-          </div>
-          <div class="px-5 py-2.5 rounded-2xl bg-surface-elevated/95 border border-cyan-400/40 flex items-center gap-3">
-            <span class="font-mono text-xs font-bold">STAR SCHEMA:</span>
-            <span class="font-mono text-xs text-cyan-300">Dim_Product 1:N Fact_Sales</span>
-            <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px]">ACTIVE</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center pt-20">
+    <div class="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center pt-16">
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-mono mb-5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          EXECUTIVE DATA & BI ARCHITECT • Available
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> EXECUTIVE DATA & BI ARCHITECT
         </div>
-        <h1 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight mb-3">
+        <h1 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight mb-4">
           HELLO! I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">Dan Babu Boddu</span>
         </h1>
         <div class="h-8 mb-5">
-          <span id="typing-text" class="font-mono text-cyan-300 text-lg"></span><span class="animate-pulse text-cyan-400">|</span>
+          <span id="typing-text" class="font-mono text-cyan-300 text-lg"></span><span class="animate-pulse">|</span>
         </div>
-        <p class="text-text-secondary text-lg leading-relaxed mb-7 max-w-xl">
+        <p class="text-text-secondary text-lg leading-relaxed mb-8 max-w-xl">
           15+ years of battle-tested business and commercial operations leadership, now engineered with modern enterprise BI: architecting high-performance Power BI models, scalable SQL data pipelines, and Python automation.
         </p>
-        <div class="flex flex-wrap gap-2 mb-8">
-          <span class="px-3 py-1.5 rounded-full bg-surface-card border border-white/10 text-sm">Power BI Architect</span>
-          <span class="px-3 py-1.5 rounded-full bg-surface-card border border-white/10 text-sm">DAX & Star Schema</span>
-          <span class="px-3 py-1.5 rounded-full bg-surface-card border border-white/10 text-sm">SQL Data Pipelines</span>
-          <span class="px-3 py-1.5 rounded-full bg-surface-card border border-white/10 text-sm">15+ Yrs Ops Heritage</span>
-        </div>
         <div class="flex flex-wrap gap-4">
-          <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 font-bold text-surface-base">
-            Explore BI Case Studies <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </a>
-          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 hover:border-cyan-400/50">Executive Connect</a>
+          <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-500 font-bold text-surface-base">Explore BI Case Studies →</a>
+          <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20">Executive Connect</a>
         </div>
       </div>
 
-      <!-- Hero Photo 3D -->
+      <!-- 3D Hero Card -->
       <div class="perspective-1000 flex justify-center">
-        <div id="hero-interactive-card" class="tilt-card relative w-full max-w-md rounded-3xl overflow-hidden border border-cyan-400/30 shadow-[0_0_40px_rgba(56,189,248,0.15)]">
+        <div id="hero-card" class="tilt-card relative w-full max-w-md rounded-3xl overflow-hidden border border-cyan-400/30 shadow-[0_0_40px_rgba(56,189,248,0.15)]">
           <img src="profile.jpg" alt="Dan Babu Boddu" class="w-full h-auto object-cover" onerror="this.src='https://via.placeholder.com/400x480/0B0F19/38BDF8?text=Dan+Babu'"/>
-          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-            <div class="px-3 py-1.5 rounded-full bg-surface-base/80 backdrop-blur text-xs font-mono border border-white/10">DATA DRIVES BETTER DECISIONS</div>
-            <div class="px-3 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-mono border border-cyan-400/30">12ms Latency</div>
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between">
+            <div class="px-3 py-1.5 rounded-full bg-black/70 text-xs font-mono border border-white/10">DATA DRIVES BETTER DECISIONS</div>
+            <div class="px-3 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-mono">12ms Latency</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== PROJECTS (exact hover from code.html) ========== -->
+  <!-- PROJECTS (exact hover from code.html) -->
   <section id="projects" class="py-20 px-4">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-14">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-400/30 text-indigo-300 text-xs font-mono mb-3">EXECUTIVE CASE STUDIES</div>
-        <h2 class="font-display font-bold text-3xl lg:text-4xl mb-2">Interactive Production Analytics Engines</h2>
-        <p class="text-text-secondary max-w-2xl mx-auto">Hover over the cards to see live DAX slicing and weather-to-telemetry shock transformations.</p>
+      <div class="text-center mb-12">
+        <div class="text-cyan-400 font-mono text-xs uppercase tracking-widest mb-2">CASE STUDIES</div>
+        <h2 class="font-display font-bold text-3xl lg:text-4xl">Interactive Analytics Engines</h2>
+        <p class="text-text-secondary mt-2">Hover over cards to see dynamic transformations.</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-8">
-        <!-- Sales Card -->
-        <div class="project-card-sales rounded-3xl bg-surface-card border border-white/10 p-6 hover:border-cyan-400/40 transition-all">
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-400/30">FLAGSHIP POWER BI APP</span>
+        <!-- Sales -->
+        <div class="project-card-sales tilt-card p-6 rounded-3xl bg-surface-card border border-white/10">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-mono border border-cyan-500/30">FLAGSHIP POWER BI APP</span>
             <span class="text-xs text-text-muted">Hover for Live Slicing</span>
           </div>
           <h3 class="font-display font-bold text-xl mb-2">Sales Analytics Interactive Dashboard</h3>
-          <p class="text-text-secondary text-sm mb-5">Multi-page Power BI suite with custom DAX YoY metrics and star-schema relationships.</p>
-
-          <div class="bg-surface-elevated rounded-2xl p-4 mb-5">
-            <div class="flex gap-2 mb-4">
-              <button class="pbi-tab active px-3 py-1 rounded-lg bg-cyan-500 text-surface-base text-xs font-bold">Executive</button>
-              <button class="pbi-tab px-3 py-1 rounded-lg bg-surface-card text-text-muted text-xs">Product</button>
-              <button class="pbi-tab px-3 py-1 rounded-lg bg-surface-card text-text-muted text-xs">Outlet</button>
+          <p class="text-text-secondary text-sm mb-5">Multi-page Power BI suite with custom DAX YoY metrics and star-schema.</p>
+          <div class="my-6 p-4 rounded-2xl bg-surface-elevated border border-white/10 h-36 flex items-end justify-between gap-3">
+            <div class="flex-1 flex flex-col items-center h-full justify-end">
+              <div class="w-full bg-indigo-500/50 rounded-t sales-bar bar-q1" style="height:45%"></div>
+              <span class="text-[11px] text-text-muted mt-1">Q1</span>
             </div>
-            <div class="grid grid-cols-3 gap-3 mb-4">
-              <div class="bg-surface-base rounded-xl p-3 text-center">
-                <div class="text-[10px] text-text-muted uppercase">Gross Revenue</div>
-                <div class="font-display font-bold text-lg text-cyan-300">$1,248,500</div>
-                <div class="text-[10px] text-emerald-400">+28.4% YoY</div>
-              </div>
-              <div class="bg-surface-base rounded-xl p-3 text-center">
-                <div class="text-[10px] text-text-muted uppercase">Margin</div>
-                <div class="font-display font-bold text-lg">48.2%</div>
-                <div class="text-[10px] text-emerald-400">+3.8 pts</div>
-              </div>
-              <div class="bg-surface-base rounded-xl p-3 text-center">
-                <div class="text-[10px] text-text-muted uppercase">Volume</div>
-                <div class="font-display font-bold text-lg">14,820</div>
-                <div class="text-[10px] text-emerald-400">+19.1%</div>
-              </div>
+            <div class="flex-1 flex flex-col items-center h-full justify-end">
+              <div class="w-full bg-cyan-500/50 rounded-t sales-bar bar-q2" style="height:60%"></div>
+              <span class="text-[11px] text-text-muted mt-1">Q2</span>
             </div>
-            <div class="flex items-end justify-between h-28 gap-2 px-2">
-              <div class="flex-1 flex flex-col items-center gap-1"><div class="sales-bar bar-q1 w-full rounded-t bg-indigo-400" style="height:55%"></div><span class="text-[10px] text-text-muted">Q1</span></div>
-              <div class="flex-1 flex flex-col items-center gap-1"><div class="sales-bar bar-q2 w-full rounded-t bg-cyan-400" style="height:70%"></div><span class="text-[10px] text-text-muted">Q2</span></div>
-              <div class="flex-1 flex flex-col items-center gap-1"><div class="sales-bar bar-q3 w-full rounded-t bg-violet-400" style="height:60%"></div><span class="text-[10px] text-text-muted">Q3</span></div>
-              <div class="flex-1 flex flex-col items-center gap-1"><div class="sales-bar bar-q4 w-full rounded-t bg-emerald-400" style="height:85%"></div><span class="text-[10px] text-text-muted">Q4</span></div>
+            <div class="flex-1 flex flex-col items-center h-full justify-end">
+              <div class="w-full bg-violet-500/50 rounded-t sales-bar bar-q3" style="height:75%"></div>
+              <span class="text-[11px] text-text-muted mt-1">Q3</span>
+            </div>
+            <div class="flex-1 flex flex-col items-center h-full justify-end">
+              <div class="w-full bg-emerald-500 rounded-t sales-bar bar-q4" style="height:85%"></div>
+              <span class="text-[11px] text-emerald-400 mt-1 font-bold">Q4</span>
             </div>
           </div>
-          <a href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" target="_blank" class="inline-flex items-center gap-2 text-sm text-cyan-400 hover:underline">
-            View Repository <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-          </a>
+          <a href="https://github.com/bdanbabu1991-dotcom/Sales-Analytics_Dashboard" target="_blank" class="text-sm text-cyan-400 hover:underline">View on GitHub →</a>
         </div>
 
-        <!-- Air Quality Card (exact sunny→storm from code.html) -->
-        <div class="project-card-air rounded-3xl bg-surface-card border border-white/10 p-6 hover:border-indigo-400/40 transition-all relative overflow-hidden">
-          <div class="flex items-center justify-between mb-3">
-            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-xs font-mono border border-indigo-400/30">FULL-STACK TELEMETRY</span>
-            <span class="text-xs text-text-muted">Hover for Shock</span>
+        <!-- Air Quality (sunny → storm) -->
+        <div class="project-card-air tilt-card p-6 rounded-3xl bg-surface-card border border-white/10">
+          <div class="flex justify-between items-center mb-3">
+            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-mono border border-indigo-500/30">MySQL + Python + BI</span>
+            <span class="text-xs text-text-muted">Hover for Telemetry Shock</span>
           </div>
           <h3 class="font-display font-bold text-xl mb-2">Air Quality & Health Dashboard</h3>
-          <p class="text-text-secondary text-sm mb-5">Strong AQI–Hospitalization correlation (r = 0.82). Hover to simulate weather shift & telemetry shock.</p>
+          <p class="text-text-secondary text-sm mb-5">Strong AQI–Hospitalization correlation (r = 0.82).</p>
 
-          <div class="relative h-56 rounded-2xl bg-surface-elevated overflow-hidden mb-5 border border-white/5">
-            <!-- Sunny (default) -->
-            <div class="weather-view absolute inset-0 flex flex-col items-center justify-center p-4">
+          <div class="relative my-6 p-4 rounded-2xl bg-surface-elevated border border-white/10 h-40 overflow-hidden">
+            <!-- Sunny -->
+            <div class="weather-view absolute inset-0 flex items-center justify-center">
               <div class="relative">
-                <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-300 animate-sun-pulse flex items-center justify-center shadow-[0_0_40px_rgba(251,191,36,0.7)]">
-                  <div class="w-12 h-12 rounded-full bg-amber-300/80"></div>
-                </div>
-                <div class="absolute -top-3 -left-10 text-3xl text-sky-200/60 animate-float-cloud1">☁️</div>
-                <div class="absolute -top-1 -right-12 text-2xl text-sky-200/50 animate-float-cloud2">☁️</div>
+                <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-300 animate-sun-pulse flex items-center justify-center shadow-[0_0_40px_rgba(251,191,36,0.8)]"></div>
+                <div class="absolute -top-2 -left-8 text-2xl animate-float-cloud1">☁️</div>
+                <div class="absolute -top-1 -right-10 text-xl animate-float-cloud2">☁️</div>
               </div>
-              <div class="mt-4 text-center">
-                <div class="text-sm font-medium">Clear Sunny Telemetry • AQI 42 (Good)</div>
-                <div class="text-xs text-text-muted mt-1">Hover to simulate weather shift</div>
-              </div>
+              <div class="absolute bottom-3 text-xs text-center w-full text-text-muted">Hover to simulate weather shift</div>
             </div>
-
-            <!-- Storm / Chart (on hover) -->
-            <div class="chart-view absolute inset-0 flex flex-col p-4 bg-slate-950/90">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono text-red-400 font-bold">AQI 382 • Severe Hazardous</span>
-                <span class="text-xs text-red-300">r = 0.82 (+68%)</span>
-              </div>
-              <div class="flex-1 relative">
-                <svg viewBox="0 0 300 70" class="w-full h-full text-red-400">
-                  <path d="M0,55 Q40,48 80,40 T160,22 T240,10 T300,4" fill="none" stroke="currentColor" stroke-width="2.5"/>
-                  <path d="M0,55 Q40,48 80,40 T160,22 T240,10 T300,4 L300,70 L0,70 Z" fill="url(#g)" opacity="0.25"/>
-                  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f87171"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+            <!-- Storm -->
+            <div class="chart-view absolute inset-0 flex flex-col items-center justify-center bg-slate-950/95 p-3">
+              <div class="text-xs font-mono text-red-400 font-bold mb-2">AQI 382 • Severe Hazardous</div>
+              <div class="relative w-full h-16">
+                <svg viewBox="0 0 300 50" class="w-full h-full text-red-400">
+                  <path d="M0,40 Q50,35 100,28 T200,12 T300,4" fill="none" stroke="currentColor" stroke-width="2.5"/>
                 </svg>
-                <div class="rain-layer absolute inset-0 opacity-0 transition-opacity duration-500">
-                  <div class="rain-drop" style="left:12%;animation-delay:0s"></div>
-                  <div class="rain-drop" style="left:28%;animation-delay:0.2s"></div>
-                  <div class="rain-drop" style="left:45%;animation-delay:0.4s"></div>
-                  <div class="rain-drop" style="left:62%;animation-delay:0.1s"></div>
-                  <div class="rain-drop" style="left:78%;animation-delay:0.3s"></div>
-                  <div class="rain-drop" style="left:90%;animation-delay:0.5s"></div>
+                <div class="rain-layer absolute inset-0 opacity-0">
+                  <div class="rain-drop" style="left:15%;animation-delay:0s"></div>
+                  <div class="rain-drop" style="left:35%;animation-delay:0.2s"></div>
+                  <div class="rain-drop" style="left:55%;animation-delay:0.4s"></div>
+                  <div class="rain-drop" style="left:75%;animation-delay:0.1s"></div>
+                  <div class="rain-drop" style="left:90%;animation-delay:0.3s"></div>
                 </div>
               </div>
-              <div class="text-xs text-red-300 font-medium mt-1">CRITICAL: Hospital Inflow Alert (+68%)</div>
+              <div class="text-xs text-red-300 mt-1">Hospital Inflow +68%</div>
             </div>
           </div>
-
-          <a href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" target="_blank" class="inline-flex items-center gap-2 text-sm text-indigo-400 hover:underline">
-            View Repository <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-          </a>
+          <a href="https://github.com/bdanbabu1991-dotcom/AirQuality-Weather-Health-Dashboard" target="_blank" class="text-sm text-indigo-400 hover:underline">View on GitHub →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== CONTACT with Night Mountains + Stars ========== -->
+  <!-- CONTACT with Mountains + Stars -->
   <section id="contact" class="relative py-24 px-4 overflow-hidden">
-    <!-- Mountains background -->
     <div class="absolute inset-0 bg-cover bg-center -z-20" style="background-image:url('mountains.jpg')"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-base/80 to-surface-base/50 -z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-base/80 to-surface-base/40 -z-10"></div>
     <!-- Stars -->
-    <div class="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-      <div class="absolute top-1/5 left-1/6 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-twinkle shadow-[0_0_8px_#38BDF8]"></div>
-      <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-indigo-300 rounded-full animate-twinkle shadow-[0_0_10px_#818CF8]" style="animation-delay:1.1s"></div>
-      <div class="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay:2s"></div>
-      <div class="absolute top-1/6 left-2/3 w-2 h-2 bg-cyan-200 rounded-full animate-twinkle shadow-[0_0_8px_#7bd0ff]" style="animation-delay:0.7s"></div>
-      <div class="absolute top-2/5 left-1/3 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay:1.6s"></div>
+    <div class="absolute inset-0 pointer-events-none -z-10">
+      <div class="absolute top-1/5 left-1/5 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-twinkle"></div>
+      <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-indigo-300 rounded-full animate-twinkle" style="animation-delay:1s"></div>
+      <div class="absolute top-1/3 left-1/2 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay:2s"></div>
+      <div class="absolute top-1/6 right-1/3 w-1.5 h-1.5 bg-cyan-200 rounded-full animate-twinkle" style="animation-delay:0.6s"></div>
     </div>
 
     <div class="max-w-5xl mx-auto relative z-10 text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-card/80 backdrop-blur border border-cyan-400/30 text-cyan-300 text-xs font-mono mb-5">
-        <span class="material-symbols-outlined text-[16px]">nights_stay</span>
-        Under the Stars • Bengaluru / Global Remote
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-card/80 border border-cyan-400/30 text-cyan-300 text-xs font-mono mb-5">
+        <span class="material-symbols-outlined text-[16px]">nights_stay</span> Under the Stars • Bengaluru / Global Remote
       </div>
-      <h2 class="font-display font-bold text-3xl lg:text-4xl mb-3">Let's Connect & Build Decisive Value</h2>
-      <p class="text-text-secondary mb-12 max-w-lg mx-auto">Discuss business intelligence transformations, enterprise data contracts, or supply chain analytics initiatives.</p>
+      <h2 class="font-display font-bold text-3xl lg:text-4xl mb-3">Let's Connect & Build</h2>
+      <p class="text-text-secondary mb-12 max-w-md mx-auto">Feel free to reach out — let's discuss business intelligence initiatives.</p>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-        <div class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur-xl border border-white/10 tilt-card">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur border border-white/10 tilt-card">
           <div class="text-cyan-400 mb-2"><span class="material-symbols-outlined text-2xl">location_on</span></div>
           <div class="text-xs text-text-muted uppercase">Location</div>
           <div class="font-semibold">Bengaluru, India</div>
-          <div class="text-xs text-cyan-400 mt-1">Global Remote Ready</div>
         </div>
-        <a href="tel:+919949711466" class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur-xl border border-white/10 hover:border-indigo-400/50 tilt-card">
+        <a href="tel:+919949711466" class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur border border-white/10 hover:border-cyan-400/50 tilt-card">
           <div class="text-indigo-400 mb-2"><span class="material-symbols-outlined text-2xl">phone_in_talk</span></div>
-          <div class="text-xs text-text-muted uppercase">Phone / WhatsApp</div>
+          <div class="text-xs text-text-muted uppercase">Phone</div>
           <div class="font-semibold">+91 99497 11466</div>
         </a>
-        <a href="mailto:b.danbabu1991@gmail.com" class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur-xl border border-white/10 hover:border-cyan-400/50 tilt-card">
+        <a href="mailto:b.danbabu1991@gmail.com" class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur border border-white/10 hover:border-cyan-400/50 tilt-card">
           <div class="text-cyan-400 mb-2"><span class="material-symbols-outlined text-2xl">mail</span></div>
           <div class="text-xs text-text-muted uppercase">Email</div>
           <div class="font-semibold text-sm truncate">b.danbabu1991@gmail.com</div>
         </a>
-        <a href="https://www.linkedin.com/in/dan_babu" target="_blank" class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur-xl border border-white/10 hover:border-indigo-400/50 tilt-card">
+        <a href="https://www.linkedin.com/in/dan_babu" target="_blank" class="p-5 rounded-2xl bg-surface-card/85 backdrop-blur border border-white/10 hover:border-indigo-400/50 tilt-card">
           <div class="text-indigo-400 mb-2"><span class="material-symbols-outlined text-2xl">groups</span></div>
           <div class="text-xs text-text-muted uppercase">LinkedIn</div>
           <div class="font-semibold">dan_babu</div>
@@ -363,25 +275,27 @@ tailwind.config={darkMode:"class",theme:{extend:{colors:{"accent-cyan":"#38BDF8"
   </section>
 </main>
 
-<footer class="py-8 border-t border-white/10 text-center text-sm text-text-muted">
-  © 2026 Dan Babu Boddu • Executive BI Specialist
+<footer class="py-6 border-t border-white/10 text-center text-xs text-text-muted">
+  © 2026 Dan Babu Boddu. Designed for High-Impact Operations.
 </footer>
 
 <script>
 (function(){
   // Typing
-  const phrases=["Data Analyst & Operations Specialist","Power BI Architect & DAX Modeler","SQL Query & Pipeline Engineer","15+ Years Driving Frontline Decisions"];
+  const phrases = ["Power BI Architect & DAX Modeler","SQL Query & Data Pipeline Specialist","Python Analytics & Automation Engineer","15+ Years Driving Frontline Decisions"];
   let i=0,j=0,del=false;
   const el=document.getElementById("typing-text");
-  function type(){if(!el)return;const c=phrases[i];el.textContent=del?c.substring(0,j-1):c.substring(0,j+1);j=del?j-1:j+1;let s=del?35:70;if(!del&&j===c.length){s=2000;del=true}else if(del&&j===0){del=false;i=(i+1)%phrases.length;s=350}setTimeout(type,s)}
+  function type(){if(!el)return;const c=phrases[i];el.textContent=del?c.substring(0,j-1):c.substring(0,j+1);j=del?j-1:j+1;let s=del?30:70;if(!del&&j===c.length){s=2000;del=true}else if(del&&j===0){del=false;i=(i+1)%phrases.length;s=400}setTimeout(type,s)}
   type();
 
-  // 3D Tilt
-  const card=document.getElementById("hero-interactive-card");
-  if(card){card.addEventListener("mousemove",e=>{const r=card.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const rx=((y-r.height/2)/(r.height/2))*-8,ry=((x-r.width/2)/(r.width/2))*8;card.style.transform=`perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02,1.02,1.02)`});card.addEventListener("mouseleave",()=>{card.style.transform=`perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)`})}
+  // 3D Tilt on hero + cards
+  const hero=document.getElementById("hero-card");
+  if(hero){hero.addEventListener("mousemove",e=>{const r=hero.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const rx=((y-r.height/2)/(r.height/2))*-8,ry=((x-r.width/2)/(r.width/2))*8;hero.style.transform=`perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02,1.02,1.02)`});hero.addEventListener("mouseleave",()=>{hero.style.transform=`perspective(1000px) rotateX(0) rotateY(0) scale3d(1,1,1)`})}
 
-  // General tilt cards
-  document.querySelectorAll(".tilt-card:not(#hero-interactive-card)").forEach(c=>{c.addEventListener("mousemove",e=>{const r=c.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const rx=((y-r.height/2)/(r.height/2))*-5,ry=((x-r.width/2)/(r.width/2))*5;c.style.transform=`perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`});c.addEventListener("mouseleave",()=>{c.style.transform=`perspective(1000px) rotateX(0) rotateY(0)`})});
+  document.querySelectorAll(".tilt-card:not(#hero-card)").forEach(c=>{
+    c.addEventListener("mousemove",e=>{const r=c.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const rx=((y-r.height/2)/(r.height/2))*-5,ry=((x-r.width/2)/(r.width/2))*5;c.style.transform=`perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg)`});
+    c.addEventListener("mouseleave",()=>{c.style.transform=`perspective(1000px) rotateX(0) rotateY(0)`});
+  });
 })();
 </script>
 </body>
