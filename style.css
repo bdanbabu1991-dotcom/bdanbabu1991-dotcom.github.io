@@ -94,6 +94,46 @@ body {
 .btn.secondary { background: transparent; border-color: var(--accent); color: var(--accent); }
 .btn.secondary:hover { background: var(--accent); color: #0b0614; }
 
+/* Hero Photo */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-photo-wrap {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+}
+.hero-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 3px solid var(--border);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.5),
+    0 0 40px rgba(167,139,250,0.2);
+  display: block;
+  transition: 0.4s;
+  object-fit: cover;
+}
+.hero-photo:hover {
+  border-color: var(--accent);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.55),
+    0 0 50px rgba(167,139,250,0.35);
+  transform: translateY(-6px) scale(1.02);
+}
+.hero-photo-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(167,139,250,0.25), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 30px;
+}
+
+
 /* ===== ISOMETRIC 3D HERO ===== */
 .hero-visual {
   display: flex; justify-content: center; align-items: center;
@@ -414,17 +454,35 @@ section { padding: 90px 0; position: relative; overflow: hidden; }
 .project-link:hover { gap: 12px; }
 .more-projects { text-align: center; position: relative; z-index: 2; }
 
-/* ===== CONTACT NIGHT SCENE ===== */
+/* ===== CONTACT NIGHT SCENE - Real mountains ===== */
 .contact {
   position: relative;
-  background: linear-gradient(180deg, #0a0612 0%, #0d1025 40%, #12182e 100%);
-  min-height: 700px;
+  background: #0a0612;
+  min-height: 720px;
   padding-bottom: 100px;
   overflow: hidden;
 }
+.contact::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('mountains.jpg') center bottom / cover no-repeat;
+  opacity: 0.55;
+  z-index: 0;
+}
+.contact::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11,6,20,0.75) 0%,
+    rgba(11,6,20,0.45) 40%,
+    rgba(11,6,20,0.7) 100%
+  );
+  z-index: 1;
+}
 .night-sky {
   position: absolute; inset: 0;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
 }
 .star {
@@ -432,58 +490,13 @@ section { padding: 90px 0; position: relative; overflow: hidden; }
   background: #fff;
   border-radius: 50%;
   animation: twinkle 3s ease-in-out infinite;
+  box-shadow: 0 0 4px rgba(255,255,255,0.8);
 }
 @keyframes twinkle {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.3); }
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
 }
-
-.mountains {
-  position: absolute;
-  bottom: 0; left: 0; width: 100%; height: 280px;
-  z-index: 1; pointer-events: none;
-}
-.mtn {
-  position: absolute; bottom: 0;
-  width: 0; height: 0;
-  border-style: solid;
-}
-.mtn-back {
-  left: -5%;
-  border-width: 0 35vw 180px 35vw;
-  border-color: transparent transparent #1a1f35 transparent;
-}
-.mtn-mid {
-  left: 25%;
-  border-width: 0 30vw 220px 30vw;
-  border-color: transparent transparent #151b2e transparent;
-}
-.mtn-front {
-  right: -10%;
-  border-width: 0 40vw 160px 40vw;
-  border-color: transparent transparent #0f1424 transparent;
-}
-.snow-cap {
-  position: absolute;
-  width: 0; height: 0;
-  border-style: solid;
-  z-index: 2;
-}
-.snow-cap.c1 {
-  left: 22%; bottom: 175px;
-  border-width: 0 40px 28px 40px;
-  border-color: transparent transparent rgba(200,220,255,0.35) transparent;
-}
-.snow-cap.c2 {
-  left: 48%; bottom: 210px;
-  border-width: 0 50px 35px 50px;
-  border-color: transparent transparent rgba(220,235,255,0.4) transparent;
-}
-.snow-cap.c3 {
-  right: 18%; bottom: 155px;
-  border-width: 0 45px 30px 45px;
-  border-color: transparent transparent rgba(200,220,255,0.3) transparent;
-}
+.mountains { display: none; }
 
 .contact-bg-text { color: rgba(167,139,250,0.05) !important; }
 .contact-content { position: relative; z-index: 3; }
