@@ -47,7 +47,6 @@ const typingEl = document.getElementById('typing');
 
 function typeEffect() {
   const current = roles[roleIndex];
-  
   if (isDeleting) {
     typingEl.textContent = current.substring(0, charIndex - 1);
     charIndex--;
@@ -55,9 +54,7 @@ function typeEffect() {
     typingEl.textContent = current.substring(0, charIndex + 1);
     charIndex++;
   }
-
   let speed = isDeleting ? 40 : 90;
-
   if (!isDeleting && charIndex === current.length) {
     speed = 1800;
     isDeleting = true;
@@ -66,13 +63,11 @@ function typeEffect() {
     roleIndex = (roleIndex + 1) % roles.length;
     speed = 400;
   }
-
   setTimeout(typeEffect, speed);
 }
-
 typeEffect();
 
-// Create rain drops for weather project
+// Rain drops
 const rainContainer = document.getElementById('rain-container');
 if (rainContainer) {
   for (let i = 0; i < 18; i++) {
@@ -82,6 +77,23 @@ if (rainContainer) {
     drop.style.animationDelay = Math.random() * 1.2 + 's';
     drop.style.animationDuration = (0.6 + Math.random() * 0.5) + 's';
     rainContainer.appendChild(drop);
+  }
+}
+
+// Stars for contact night sky
+const starsEl = document.getElementById('stars');
+if (starsEl) {
+  for (let i = 0; i < 80; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    const size = Math.random() * 2.5 + 0.5;
+    star.style.width = size + 'px';
+    star.style.height = size + 'px';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 70 + '%';
+    star.style.animationDelay = Math.random() * 4 + 's';
+    star.style.animationDuration = (2 + Math.random() * 3) + 's';
+    starsEl.appendChild(star);
   }
 }
 

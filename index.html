@@ -26,6 +26,7 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <section id="home" class="hero">
     <div class="container hero-content">
       <div class="hero-text">
@@ -43,46 +44,52 @@
         </div>
       </div>
 
+      <!-- Better 3D Hero Visual -->
       <div class="hero-visual">
-        <div class="desk-scene">
-          <div class="card3d card-main">
-            <div class="card-inner">
-              <div class="pie"></div>
-              <div class="mini-bars">
-                <span></span><span></span><span></span><span></span>
+        <div class="iso-scene">
+          <div class="iso-platform"></div>
+          <div class="iso-monitor main-mon">
+            <div class="iso-screen">
+              <div class="dash-header"></div>
+              <div class="dash-row">
+                <div class="kpi k1"></div>
+                <div class="kpi k2"></div>
+              </div>
+              <div class="dash-chart">
+                <span style="--h:40%"></span>
+                <span style="--h:70%"></span>
+                <span style="--h:55%"></span>
+                <span style="--h:85%"></span>
+                <span style="--h:60%"></span>
               </div>
             </div>
+            <div class="iso-stand"></div>
           </div>
-          <div class="card3d card-left">
-            <div class="card-inner">
-              <div class="bar-row"><div class="b1"></div></div>
-              <div class="bar-row"><div class="b2"></div></div>
-              <div class="bar-row"><div class="b3"></div></div>
+          <div class="iso-monitor side-mon left-mon">
+            <div class="iso-screen small">
+              <div class="mini-pie"></div>
             </div>
           </div>
-          <div class="card3d card-right">
-            <div class="card-inner code">
-              <div class="cl"></div>
-              <div class="cl short"></div>
-              <div class="cl"></div>
-              <div class="cl mid"></div>
+          <div class="iso-monitor side-mon right-mon">
+            <div class="iso-screen small">
+              <div class="code-lines"><i></i><i></i><i></i></div>
             </div>
           </div>
-          <div class="person3d">
-            <div class="head"></div>
-            <div class="body"></div>
+          <div class="iso-person">
+            <div class="p-head"></div>
+            <div class="p-body"></div>
+            <div class="p-chair"></div>
           </div>
-          <div class="orbit-icons">
-            <i class="fas fa-chart-pie o1"></i>
-            <i class="fas fa-database o2"></i>
-            <i class="fas fa-code o3"></i>
-            <i class="fas fa-chart-line o4"></i>
-          </div>
+          <div class="iso-float f1"><i class="fas fa-chart-pie"></i></div>
+          <div class="iso-float f2"><i class="fas fa-database"></i></div>
+          <div class="iso-float f3"><i class="fas fa-chart-line"></i></div>
+          <div class="iso-float f4"><i class="fas fa-brain"></i></div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about" class="about">
     <div class="section-bg-text">ABOUT</div>
     <div class="container">
@@ -126,56 +133,78 @@
     </div>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills" class="skills">
     <div class="section-bg-text">SKILLS</div>
     <div class="container">
       <h2 class="section-title">My Skills</h2>
       <p class="section-subtitle">Tools I use to turn data into insights</p>
       <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon python"><i class="fab fa-python"></i></div>
+        <div class="skill-card" data-skill="python">
+          <div class="skill-icon-wrap python-bg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-img">
+          </div>
           <h3>Python</h3>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon sql"><i class="fas fa-database"></i></div>
+        <div class="skill-card" data-skill="sql">
+          <div class="skill-icon-wrap sql-bg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="skill-img">
+          </div>
           <h3>SQL</h3>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon powerbi"><i class="fas fa-chart-bar"></i></div>
+        <div class="skill-card" data-skill="powerbi">
+          <div class="skill-icon-wrap powerbi-bg">
+            <i class="fas fa-chart-bar skill-fa" style="color:#f2c811"></i>
+          </div>
           <h3>Power BI</h3>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon excel"><i class="fas fa-file-excel"></i></div>
+        <div class="skill-card" data-skill="excel">
+          <div class="skill-icon-wrap excel-bg">
+            <i class="fas fa-file-excel skill-fa" style="color:#217346"></i>
+          </div>
           <h3>Excel</h3>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon pandas"><i class="fas fa-table"></i></div>
+        <div class="skill-card" data-skill="pandas">
+          <div class="skill-icon-wrap pandas-bg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-img">
+          </div>
           <h3>Pandas</h3>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon numpy"><i class="fas fa-square-root-alt"></i></div>
+        <div class="skill-card" data-skill="numpy">
+          <div class="skill-icon-wrap numpy-bg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="skill-img">
+          </div>
           <h3>NumPy</h3>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon matplotlib"><i class="fas fa-chart-area"></i></div>
+        <div class="skill-card" data-skill="matplotlib">
+          <div class="skill-icon-wrap matplotlib-bg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" class="skill-img">
+          </div>
           <h3>Matplotlib</h3>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon seaborn"><i class="fas fa-chart-pie"></i></div>
+        <div class="skill-card" data-skill="seaborn">
+          <div class="skill-icon-wrap seaborn-bg">
+            <i class="fas fa-chart-area skill-fa" style="color:#4c72b0"></i>
+          </div>
           <h3>Seaborn</h3>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon jupyter"><i class="fas fa-book-open"></i></div>
+        <div class="skill-card" data-skill="jupyter">
+          <div class="skill-icon-wrap jupyter-bg">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" class="skill-img">
+          </div>
           <h3>Jupyter</h3>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon analytics"><i class="fas fa-lightbulb"></i></div>
+        <div class="skill-card" data-skill="analytics">
+          <div class="skill-icon-wrap analytics-bg">
+            <i class="fas fa-lightbulb skill-fa" style="color:#a78bfa"></i>
+          </div>
           <h3>Analytics</h3>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects" class="projects">
     <div class="section-bg-text">PROJECTS</div>
     <div class="container">
@@ -236,11 +265,21 @@
     </div>
   </section>
 
+  <!-- CONTACT - Night mountains + stars -->
   <section id="contact" class="contact">
-    <div class="section-bg-text">CONTACT</div>
-    <div class="container">
+    <div class="night-sky" id="stars"></div>
+    <div class="mountains">
+      <div class="mtn mtn-back"></div>
+      <div class="mtn mtn-mid"></div>
+      <div class="mtn mtn-front"></div>
+      <div class="snow-cap c1"></div>
+      <div class="snow-cap c2"></div>
+      <div class="snow-cap c3"></div>
+    </div>
+    <div class="section-bg-text contact-bg-text">CONTACT</div>
+    <div class="container contact-content">
       <h2 class="section-title">Contact Me</h2>
-      <p class="section-subtitle">Feel free to reach out</p>
+      <p class="section-subtitle">Feel free to reach out — let's connect under the stars</p>
       
       <div class="contact-grid">
         <div class="contact-card">
