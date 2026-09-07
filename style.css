@@ -582,3 +582,25 @@ footer p { color: var(--muted); font-size: 0.88rem; }
   .hero-text h1 { font-size: 1.85rem; }
   .btn { padding: 10px 18px; font-size: 0.88rem; }
 }
+/* Project hover morphs */
+.project-card-sales:hover .construction-view {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.project-card-sales:hover .chart-view {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.project-card-air:hover .weather-view {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.project-card-air:hover .chart-view {
+  opacity: 1 !important;
+}
+.construction-view, .weather-view, .chart-view {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.chart-view {
+  opacity: 0;
+}
